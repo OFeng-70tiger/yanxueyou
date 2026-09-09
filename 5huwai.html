@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="HJ2FFsdgN7onjciG3EZSe0">
+<head data-page-node-id="U75MuE6ZPlQjEBx8mYq3KZ">
+<meta charset="UTF-8" data-page-node-id="Th4IYciPC7mKyC1txSbgQA">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="iBlofjy45QDG3Be3KhIImm">
+<title>吴地时光机 · 五堂户外现场课 · 公益课堂版</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" data-page-node-id="LZoSmF0KZFvTEsVq0AraNp">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin data-page-node-id="GAYnFHGlMJqFnhaurBcWCp">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" data-page-node-id="3QedhHhNjCxIVIijTFVwb8">
+<style>
+  :root {
+    --bg: #0e0c09;
+    --bg-card: #16130e;
+    --bg-card-hover: #1e1912;
+    --ink: #efe7d6;
+    --ink-light: #cdbf9f;
+    --ink-muted: #a2947c;
+    --vermillion: #b0432f;
+    --vermillion-dark: #8a3524;
+    --jade: #7fa08a;
+    --gold: #c8a96a;
+    --gold-light: #e9d5a3;
+    --sepia: #a68d5c;
+    --border: rgba(200, 169, 106, 0.22);
+    --border-light: rgba(200, 169, 106, 0.14);
+    --shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.6);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(200, 169, 106, 0.07) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 100%, rgba(200, 169, 106, 0.04) 0%, transparent 50%);
+    color: var(--ink);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* ===== Hero ===== */
+  .hero {
+    text-align: center;
+    padding: 72px 0 48px;
+    position: relative;
+  }
+
+  .hero::before, .hero::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 1px;
+    margin: 0 auto;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .hero::before { margin-bottom: 32px; }
+  .hero::after { margin-top: 32px; }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 15px;
+    letter-spacing: 0.35em;
+    text-indent: 0.35em;
+    color: var(--gold);
+    border: 1px solid rgba(200, 169, 106, 0.45);
+    border-radius: 999px;
+    padding: 8px 26px;
+    margin-bottom: 22px;
+    background: rgba(200, 169, 106, 0.07);
+  }
+
+  .hero h1 {
+    font-family: "Noto Serif SC", "Songti SC", serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: var(--ink);
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .hero h1 .book-mark {
+    position: absolute;
+    top: -8px;
+    right: -28px;
+    width: 20px;
+    height: 60px;
+    background: var(--vermillion);
+    border-radius: 2px;
+    opacity: 0.7;
+  }
+
+  .hero .subtitle {
+    font-family: "Noto Serif SC", serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--vermillion);
+    letter-spacing: 0.3em;
+    margin-bottom: 28px;
+  }
+
+  .hero .quote {
+    font-family: "Noto Serif SC", serif;
+    font-size: 16px;
+    color: var(--ink-light);
+    line-height: 2.2;
+    font-weight: 400;
+  }
+
+  /* ===== Photo Strip Banner ===== */
+  .photo-strip {
+    display: flex;
+    gap: 4px;
+    margin: 36px 0 0;
+    height: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .photo-strip .strip-img {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    transition: flex 0.4s ease;
+    cursor: pointer;
+    position: relative;
+  }
+  .photo-strip .strip-img:hover {
+    flex: 2;
+  }
+
+  /* ===== Stats Bar ===== */
+  .stats-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 20px;
+    margin-top: 24px;
+    padding: 20px 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+
+  .stats-bar span {
+    font-size: 14px;
+    color: var(--ink-light);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .stats-bar span::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  .stats-bar span:last-child {
+    color: var(--vermillion);
+  }
+  .stats-bar span:last-child::before {
+    background: var(--vermillion);
+  }
+
+  /* ===== Intro ===== */
+  .intro {
+    text-align: center;
+    padding: 40px 20px;
+    margin: 24px 0;
+  }
+
+  .intro p {
+    font-family: "Noto Serif SC", serif;
+    font-size: 17px;
+    color: var(--ink-light);
+    line-height: 2.4;
+  }
+
+  .intro p:first-child {
+    font-size: 18px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* ===== Toggle Bar ===== */
+  .toggle-bar {
+    text-align: center;
+    margin: 16px 0 32px;
+  }
+
+  .toggle-bar button {
+    font-family: "Noto Sans SC", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--vermillion);
+    background: transparent;
+    border: 1px solid var(--vermillion);
+    border-radius: 24px;
+    padding: 8px 24px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    letter-spacing: 0.05em;
+  }
+
+  .toggle-bar button:hover {
+    background: var(--vermillion);
+    color: #fff;
+  }
+
+  /* ===== Timeline ===== */
+  .timeline {
+    position: relative;
+    padding-left: 0;
+  }
+
+  .timeline-line {
+    position: absolute;
+    left: 28px;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold-light), var(--gold), var(--gold-light));
+    opacity: 0.4;
+  }
+
+  /* ===== Station Card ===== */
+  .station {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 64px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .station.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .station-seal {
+    position: absolute;
+    left: 8px;
+    top: 16px;
+    width: 42px;
+    height: 42px;
+    background: var(--vermillion);
+    color: #fff;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Noto Serif SC", serif;
+    font-size: 20px;
+    font-weight: 700;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(176, 67, 47, 0.35);
+    transition: transform 0.3s ease;
+  }
+
+  .station.expanded .station-seal {
+    transform: rotate(-5deg) scale(1.05);
+  }
+
+  .station-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .station.expanded .station-card {
+    border-color: var(--gold);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .station-header {
+    padding: 20px 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    transition: background 0.2s ease;
+  }
+
+  .station-header:hover {
+    background: var(--bg-card-hover);
+  }
+
+  .station-title-area {
+    flex: 1;
+  }
+
+  .station-title-area h2 {
+    font-family: "Noto Serif SC", serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+    letter-spacing: 0.02em;
+  }
+
+  .station-subtitle {
+    font-size: 13px;
+    color: var(--vermillion);
+    font-weight: 500;
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+  }
+
+  .station-tagline {
+    font-family: "Noto Serif SC", serif;
+    font-size: 15px;
+    color: var(--ink-light);
+    line-height: 1.6;
+  }
+
+  /* Thumbnail preview in header */
+  .station-thumb {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    filter: sepia(35%) contrast(1.05);
+  }
+
+  .station-thumb::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(166, 141, 92, 0.2), transparent);
+  }
+
+  .expand-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-muted);
+    transition: transform 0.35s ease, color 0.2s ease;
+    font-size: 14px;
+    margin-top: 2px;
+  }
+
+  .station.expanded .expand-icon {
+    transform: rotate(180deg);
+    color: var(--vermillion);
+  }
+
+  /* Body */
+  .station-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .station.expanded .station-body {
+    max-height: 2000px;
+  }
+
+  .station-content {
+    padding: 0 24px 28px;
+  }
+
+  /* ===== Photo Compare ===== */
+  .photo-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--border);
+  }
+
+  .photo-compare.with-portrait {
+    grid-template-columns: 1.4fr 1fr;
+    align-items: center;
+  }
+
+  .photo-frame.portrait {
+    aspect-ratio: 3/4;
+    max-height: 340px;
+    margin: 0 auto;
+    border-radius: 6px;
+    background: #16130e;
+    box-shadow: 0 0 0 6px #0e0c09, 0 0 0 7px rgba(200, 169, 106, 0.4), 0 6px 20px rgba(0, 0, 0, 0.5);
+  }
+  .photo-frame.portrait img { object-position: center 35%; }
+
+  .photo-frame {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 4/3;
+    border: 1px solid var(--border);
+    background: #000;
+  }
+
+  .photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .photo-frame:hover img {
+    transform: scale(1.04);
+  }
+
+  .photo-frame .photo-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(10, 8, 6, 0.85);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 12px;
+    letter-spacing: 0.05em;
+    z-index: 2;
+    backdrop-filter: blur(4px);
+  }
+
+  .photo-frame.old {
+    filter: sepia(40%) contrast(1.05) brightness(0.95);
+  }
+
+  .photo-frame.old .photo-label {
+    background: rgba(166, 141, 92, 0.9);
+  }
+
+  .photo-frame.new .photo-label {
+    background: rgba(176, 67, 47, 0.9);
+  }
+
+  .photo-frame .photo-year {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-family: "Noto Serif SC", serif;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    z-index: 2;
+  }
+
+  .photo-frame .zoom-icon {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 24px;
+    height: 24px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 12px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .photo-frame:hover .zoom-icon {
+    opacity: 1;
+  }
+
+  .photo-connector {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 36px;
+    height: 36px;
+    background: var(--bg-card);
+    border: 2px solid var(--vermillion);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Noto Serif SC", serif;
+    font-size: 12px;
+    color: var(--vermillion);
+    font-weight: 700;
+    z-index: 3;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+
+  /* ===== Description ===== */
+  .station-content .desc {
+    font-size: 15px;
+    color: var(--ink-light);
+    line-height: 2;
+    margin-bottom: 8px;
+  }
+
+  .station-content .desc strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .station-content .desc em {
+    color: var(--vermillion);
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  /* ===== Highlights ===== */
+  .highlights {
+    margin-top: 20px;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, rgba(127, 160, 138, 0.12), rgba(127, 160, 138, 0.08));
+    border-left: 3px solid var(--jade);
+    border-radius: 0 8px 8px 0;
+  }
+
+  .highlights h3 {
+    font-family: "Noto Serif SC", serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--jade);
+    margin-bottom: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .highlights ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .highlights li {
+    font-size: 13px;
+    color: var(--ink-light);
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    padding: 5px 12px;
+    transition: all 0.2s ease;
+  }
+
+  .highlights li:hover {
+    border-color: var(--jade);
+    color: var(--jade);
+  }
+
+  /* ===== Photo Tips ===== */
+  .photo-tip {
+    margin-top: 12px;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, rgba(200, 169, 106, 0.1), rgba(200, 169, 106, 0.03));
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+  }
+
+  .photo-tip h3 {
+    font-family: "Noto Serif SC", serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--sepia);
+    margin-bottom: 6px;
+    letter-spacing: 0.1em;
+  }
+
+  .photo-tip p {
+    font-size: 13px;
+    color: var(--ink-light);
+    line-height: 1.9;
+  }
+
+  .photo-tip em {
+    color: var(--sepia);
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  /* ===== Lightbox ===== */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    cursor: zoom-out;
+  }
+
+  .lightbox.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .lightbox img {
+    max-width: 92vw;
+    max-height: 88vh;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  }
+
+  .lightbox .lightbox-caption {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.8);
+    font-family: "Noto Serif SC", serif;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+
+  .lightbox .close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+  }
+
+  .lightbox .close-btn:hover {
+    background: rgba(255,255,255,0.2);
+  }
+
+  /* ===== Closing Section ===== */
+  .closing {
+    margin-top: 56px;
+    text-align: center;
+    position: relative;
+    padding: 48px 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .closing::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--vermillion), var(--gold), var(--jade));
+  }
+
+  .closing h2 {
+    font-family: "Noto Serif SC", serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 28px;
+    letter-spacing: 0.05em;
+  }
+
+  .reasons {
+    max-width: 560px;
+    margin: 0 auto 32px;
+  }
+
+  .reasons p {
+    font-family: "Noto Serif SC", serif;
+    font-size: 16px;
+    color: var(--ink-light);
+    line-height: 2.6;
+    position: relative;
+    padding-left: 24px;
+  }
+
+  .reasons p::before {
+    content: "因为";
+    position: absolute;
+    left: 0;
+    color: var(--vermillion);
+    font-weight: 500;
+  }
+
+  .closing-statement {
+    font-family: "Noto Serif SC", serif;
+    font-size: 18px;
+    color: var(--ink);
+    font-weight: 500;
+    line-height: 2.2;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    margin-top: 8px;
+  }
+
+  .closing-statement .accent {
+    color: var(--vermillion);
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    text-align: center;
+    padding: 40px 0 0;
+    color: var(--ink-muted);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+  }
+
+  .footer .organizer {
+    font-family: "Noto Serif SC", serif;
+    font-size: 14px;
+    color: var(--ink-light);
+    margin-bottom: 4px;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 38px; }
+    .hero .subtitle { font-size: 15px; letter-spacing: 0.2em; }
+    .hero .quote { font-size: 14px; }
+    .stats-bar { gap: 6px 12px; padding: 16px 20px; }
+    .stats-bar span { font-size: 12px; }
+    .station { padding-left: 52px; }
+    .station-seal { left: 4px; width: 36px; height: 36px; font-size: 17px; }
+    .timeline-line { left: 22px; }
+    .station-header { padding: 16px 18px; gap: 12px; }
+    .station-thumb { width: 52px; height: 52px; }
+    .station-title-area h2 { font-size: 19px; }
+    .station-tagline { font-size: 14px; }
+    .station-content { padding: 0 18px 22px; }
+    .photo-compare { grid-template-columns: 1fr; gap: 10px; }
+    .photo-connector { display: none; }
+    .station-content .desc { font-size: 14px; }
+    .reasons p { font-size: 14px; padding-left: 20px; }
+    .closing h2 { font-size: 22px; }
+    .closing-statement { font-size: 16px; }
+    .photo-strip { height: 60px; }
+  }
+</style>
+</head>
+<body data-page-node-id="8Jmn6HB3xqycBectfQtDMk">
+
+<div class="container" data-page-node-id="d5HpdJlFtAsJTMdY8F3aHj">
+
+  <!-- ===== Hero ===== -->
+  <header class="hero" data-page-node-id="8lT3P2OsqnuWlwVqkplLcB">
+    <p class="hero-eyebrow" data-page-node-id="ah2d4SPCuZC5mePP7xiASE">姑苏城 CITYWALK · 现场考古</p>
+    <h1 data-page-node-id="bMz4i36qJaYGSHuE6aRDkk">吴地时光机<span class="book-mark" data-page-node-id="37ACICPn67bTbcRuuHJlZS"></span></h1>
+    <p class="subtitle" data-page-node-id="Ivhg22oFfPhgZw6coa0Xd1">五 堂 户 外 现 场 课</p>
+    <p class="quote" data-page-node-id="HAqpApttDqXZjDnCpMHUPH">
+      读万卷书，行万里路。<br data-page-node-id="x9ohLQUvlV7XtQHJUnRcRs">
+      这一次，我们把课堂搬进苏州城。
+    </p>
+    <div class="photo-strip" data-page-node-id="op0kgUagtLNQJil62hxPG1">
+      <div class="strip-img" style="background-image: url('wd_images/01_wenmiao_old.jpg');" title="文庙大成殿 1908" data-page-node-id="0g3UI303lv014y3NuZtr1f"></div>
+      <div class="strip-img" style="background-image: url('wd_images/02_beisita_old.jpg');" title="北寺塔 1909" data-page-node-id="AF8ckVOX3yWhbcp7zm0fkE"></div>
+      <div class="strip-img" style="background-image: url('wd_images/03_changmen_old.jpg');" title="阊门" data-page-node-id="5YiO26nR63XUjPtBp4nOLi"></div>
+      <div class="strip-img" style="background-image: url('wd_images/04_shantang_old.jpg');" title="山塘河" data-page-node-id="X4OmHTC8FN7bGhJYFTt5kf"></div>
+      <div class="strip-img" style="background-image: url('wd_images/05_suda_old.jpg');" title="文星阁 1903" data-page-node-id="FTSCYQllbvHFZFQXWGkgo0"></div>
+    </div>
+    <div class="stats-bar" data-page-node-id="jQjh1VRef3dOxV7Xbmu0Ym">
+      <span data-page-node-id="9J1KpuSrA4R6gdmkI7J1SA">5堂现场行走</span>
+      <span data-page-node-id="ZJKcitSxSF8y7DxGxeC5YV">随堂手机摄影小记</span>
+      <span data-page-node-id="Rc7yvuK0tyRNQtn87pQUcJ">古今对照 · 知行合一</span>
+    </div>
+  </header>
+
+  <!-- ===== Intro ===== -->
+  <section class="intro" data-page-node-id="vMpq81Yzr7g71DlihCTJGc">
+    <p data-page-node-id="whDZNpQuMxSLUlIwTOkGDh">不是走马观花的打卡旅游，</p>
+    <p data-page-node-id="LvRXcPzJWD4cGGpnVXdgoJ">是带着故事、带着地图、带着古画，</p>
+    <p data-page-node-id="eEXi9PS6KvnSDbxbwf9ooG">到现场去——看真东西、听真故事、找真痕迹，顺手把美景带回家。</p>
+  </section>
+
+  <!-- ===== Toggle ===== -->
+  <div class="toggle-bar" data-page-node-id="qNCeayFZyqlk7Fflzcb0b0">
+    <button id="toggle-all" onclick="toggleAll()" data-page-node-id="eQBa9HsvEtyRStGjPW41lx">全部展开</button>
+  </div>
+
+  <!-- ===== Timeline ===== -->
+  <div class="timeline" data-page-node-id="VlaycdQMkwOgZDdyQbCHH5">
+    <div class="timeline-line" data-page-node-id="archDgBhisJyu9o8BMArFH"></div>
+
+    <!-- Station 1 -->
+    <div class="station" id="s1" data-page-node-id="aGiBuRzBJhl62lkK396WP9">
+      <div class="station-seal" data-page-node-id="PA4QcYmHkiIbqks4DX6o1B">壹</div>
+      <div class="station-card" data-page-node-id="lbA9ORGxSIIKElsQePajQy">
+        <div class="station-header" onclick="toggleStation(1)" data-page-node-id="vamDiDz7gDO7WNW00Oxbpv">
+          <div class="station-title-area" data-page-node-id="x7GPDtHkL0umpr0zWBRjCI">
+            <h2 data-page-node-id="rLTPOSsVmUAr9kaZ8EvHZP">苏州文庙</h2>
+            <p class="station-subtitle" data-page-node-id="oZgbF6Cvlq4CIuuv3fd5YU">苏州文脉之旅</p>
+            <p class="station-tagline" data-page-node-id="JPQ2uLn5HgY7BnkX3GnTBi">一座庙学，撑起苏州状元半壁江山</p>
+          </div>
+          <div class="station-thumb" style="background-image: url('wd_images/01_wenmiao_old.jpg');" data-page-node-id="kH0SM3nWoNkVRAUKdxVTOV"></div>
+          <div class="expand-icon" data-page-node-id="1f4zTecFv3XDCmHr6ddu67">▾</div>
+        </div>
+        <div class="station-body" data-page-node-id="VITVfgrbLNwc3ijwHH6A5U">
+          <div class="station-content" data-page-node-id="6Wz5DYiAI34FYOt1megq22">
+            <div class="photo-compare with-portrait" data-page-node-id="yKjwdzjdyy1VU15oXO66V2">
+              <div class="photo-frame old" onclick="openLightbox('wd_images/01_wenmiao_old.jpg', '文庙大成殿 · 1908年')" data-page-node-id="BZXYfFwIxHjY2pb8uGIpt7">
+                <span class="photo-label" data-page-node-id="U4aZkLpWcBGpAN7OQ3fb7S">当年</span>
+                <span class="photo-year" data-page-node-id="P3SlEvDZWLrTeKapX1bDfS">1908</span>
+                <span class="zoom-icon" data-page-node-id="o0D246rpSMuCkpRX1NdzIz">⤢</span>
+                <img src="wd_images/01_wenmiao_old.jpg" alt="文庙大成殿 1908年" data-page-node-id="o1EWidLknWNeqdrCU8wBVS">
+              </div>
+              <div class="photo-frame new portrait" onclick="openLightbox('wd_images/01_wenmiao_new.jpg', '文庙·银杏·范仲淹像 · 2025年12月')" data-page-node-id="YY8B5hTBpN0KTXoN7aEAZf">
+                <span class="photo-label" data-page-node-id="s4lSPun0Ua9wxcuhgzXQ5h">今日</span>
+                <span class="photo-year" data-page-node-id="HDZ1s6rhK0GIYGqJI0oQcK">2025</span>
+                <span class="zoom-icon" data-page-node-id="EXrGEZ9joY1jlwtrFqoxwR">⤢</span>
+                <img src="wd_images/01_wenmiao_new.jpg" alt="文庙银杏 范仲淹像 大成殿 2025年12月" style="object-position: center 65%;" data-page-node-id="7pnDeSTUCzYTkZgWWFgv8p">
+              </div>
+              <div class="photo-connector" data-page-node-id="qX0mWRRWOO3ulfevkHEtB1">今</div>
+            </div>
+            <p class="desc" data-page-node-id="qyfgYkf5xQJFIBgFNU9mz3">北宋景祐二年，<strong data-page-node-id="dRV0a89mOGsTEyI6tPnSd5">范仲淹捐宅办学</strong>，首创<em data-page-node-id="qcTO3f5eSFZFPIi3uU8J3R">"庙学合一"</em>，天下府学自此而始。四大宋碑静静矗立，平江图上的街巷如今还能一条条对上。</p>
+            <p class="desc" data-page-node-id="sySnSWNcdgqqh7h7TycRYn">大成殿<strong data-page-node-id="uG3x9gy8F6osMvIWynDYki">50根楠木柱</strong>顶天立地，苏州50余位状元的名字刻在碑上，也刻进了这座城市的基因。</p>
+            <div class="highlights" data-page-node-id="t5bJ2k2Ndn6jHUavFAFBCW">
+              <h3 data-page-node-id="oc1KF0BuUGxGDG7p8rNG1P">现场看点</h3>
+              <ul data-page-node-id="N6H8JqpNjBJFslpttZdRyT">
+                <li data-page-node-id="zOBS8ufMnHs6PGIomRJeV5">平江图碑上找自家街巷</li>
+                <li data-page-node-id="pfZPRPEvVd9OmqoeAEbIsU">四大宋碑近观</li>
+                <li data-page-node-id="vx1FrDgZNp3Z3uGJZ5MlYH">棂星门六百年规制</li>
+              </ul>
+            </div>
+            <div class="photo-tip" data-page-node-id="n2hnEcxdNf5QmZzGNNEG4p">
+              <h3 data-page-node-id="ixH9a5UbDRaAwpLYWHu3bF">手机摄影小记</h3>
+              <p data-page-node-id="UpA1a4HX1k9HOhWWEUFta2">深秋<em data-page-node-id="kHHFhLLyQdSTk7Hs86SRpA">银杏转黄</em>，800岁古树与红墙、大成殿一次同框——一年里最美的文庙，只在短短两三周，值得专程来赴。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Station 2 -->
+    <div class="station" id="s2" data-page-node-id="pGMWEnlfvdHlkPvZyybZg2">
+      <div class="station-seal" data-page-node-id="TFBrMzygp7wKRp7l9GoaIY">贰</div>
+      <div class="station-card" data-page-node-id="QZzOG0YBSbUsVqDFtVb4Sc">
+        <div class="station-header" onclick="toggleStation(2)" data-page-node-id="H3In67m67d4vgF0G5sudCY">
+          <div class="station-title-area" data-page-node-id="tfoTuU5lxBDQmd8j3fSURH">
+            <h2 data-page-node-id="S7wQI4Nf7oKsbLzAorAE75">北寺塔</h2>
+            <p class="station-subtitle" data-page-node-id="qEM907nMENEUZi9ooXSXfc">苏州古城龙脉</p>
+            <p class="station-tagline" data-page-node-id="VqfFDS3FdaHpX7XPq6l6vx">三国时孙权为母亲建的塔，至今仍在</p>
+          </div>
+          <div class="station-thumb" style="background-image: url('wd_images/02_beisita_old.jpg');" data-page-node-id="NNecz35TIR6dh7apimn4nU"></div>
+          <div class="expand-icon" data-page-node-id="BXYt89MkSOvOTKf7u0n5PJ">▾</div>
+        </div>
+        <div class="station-body" data-page-node-id="eTNii75A5fEMm5It5wJTUm">
+          <div class="station-content" data-page-node-id="sCz8gxiGyIPfQJmoOd1DEn">
+            <div class="photo-compare" data-page-node-id="YdEHxEs7nibEiaL6Etjrb6">
+              <div class="photo-frame old" onclick="openLightbox('wd_images/02_beisita_old.jpg', '北寺塔 · 1909年 柏诗曼摄影')" data-page-node-id="HCZp0J5rLbHMg3kchn1Iuv">
+                <span class="photo-label" data-page-node-id="ARagaQCQmIk7SQlkOTmRaP">当年</span>
+                <span class="photo-year" data-page-node-id="F2x1PSUVuIPjTTE8gq2MdD">1909</span>
+                <span class="zoom-icon" data-page-node-id="fZgxREuYmHgOqcCHiTImwR">⤢</span>
+                <img src="wd_images/02_beisita_old.jpg" alt="北寺塔 1909年" data-page-node-id="C58caNZPTWl7gHqD6xyEBG">
+              </div>
+              <div class="photo-frame new" onclick="openLightbox('wd_images/02_beisita_new.jpg', '北寺塔 · 2026年')" data-page-node-id="WntDwyDsw3ikhGiqfigKby">
+                <span class="photo-label" data-page-node-id="OTd150hKPijw4kDVas6eoc">今日</span>
+                <span class="photo-year" data-page-node-id="p6BRk75NegAgrwQxvbPAoM">2026</span>
+                <span class="zoom-icon" data-page-node-id="XqYusRVAEicfHY7yjoqI3h">⤢</span>
+                <img src="wd_images/02_beisita_new.jpg" alt="北寺塔 2026年" data-page-node-id="c4TOQ76bQR8E1TEjSOGorS">
+              </div>
+              <div class="photo-connector" data-page-node-id="gUGDngLwxMQJAUlFsASHAV">今</div>
+            </div>
+            <p class="desc" data-page-node-id="yhLnimMuRlYlz7leGCbEho"><strong data-page-node-id="0HoXdgbbPCqDVDU2GBr3EQ">九级八面，76米</strong>，江南最高砖木古塔。站在塔下抬头，塔檐层层收分，古城<em data-page-node-id="MUCHH44j9YMtqpwcH2vEX6">限高24米</em>的默契就是让它永远是天际线主角。</p>
+            <p class="desc" data-page-node-id="GMnXIiCaCisdSEkq4ByTGc">塔园中还藏着一块元代纪功碑，<strong data-page-node-id="qkkZTdojHlCTdfIyElz4q2">118个人物深浮雕</strong>，讲的是张士诚的故事——苏州人不一定都知道，但值得知道。</p>
+            <div class="highlights" data-page-node-id="zFrcUIvP5w7zUVmiTMT7O5">
+              <h3 data-page-node-id="Sr23qyp2XNoCgAqAEPpTvH">现场看点</h3>
+              <ul data-page-node-id="rz9Pe82lm2TG0U9HrEAQOR">
+                <li data-page-node-id="FnO2Wx5TrkOrBm13r6KQAq">楠木观音殿明代建筑</li>
+                <li data-page-node-id="tSL8mu8OezTvQUD2sR7yFY">张士诚纪功碑寻人物</li>
+                <li data-page-node-id="T7lmTVSOStgFjFlCpXIp4J">姑苏繁华图漆画巨制</li>
+              </ul>
+            </div>
+            <div class="photo-tip" data-page-node-id="sjvNYfhuI2HOKnI5iLo3Ym">
+              <h3 data-page-node-id="VFIX68SV30z25KD8spLoW3">手机摄影小记</h3>
+              <p data-page-node-id="qw0cNYSC3NBzCwJ5O4cKE1">塔前寻一棵圆冠树，蹲低仰拍，让树冠稳稳落在塔刹上——给宝塔戴上一顶<em data-page-node-id="rV7eBxY2BKuW4EQ3aV5fnd">"绿帽子"</em>，北寺塔最出圈的趣味机位。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Station 3 -->
+    <div class="station" id="s3" data-page-node-id="emhnUF7oSD08wE0rRafAQM">
+      <div class="station-seal" data-page-node-id="mHZsCFH4rmqrfdq05T795h">叁</div>
+      <div class="station-card" data-page-node-id="SSir9bkQmdLMA1wQew11S9">
+        <div class="station-header" onclick="toggleStation(3)" data-page-node-id="xxhBwtcXhX9Q2JnkwuZEr2">
+          <div class="station-title-area" data-page-node-id="J7ie0M1VO1ptbFjaHvXIBk">
+            <h2 data-page-node-id="eLNKzIcKjn28VE1LAszoIY">阊门</h2>
+            <p class="station-subtitle" data-page-node-id="HPLoJuppBSXUZm9vo9MFmj">红尘中一二等富贵风流</p>
+            <p class="station-tagline" data-page-node-id="lOtxR4Cinq7taLiN0xWR2L">曹雪芹开篇就写的地方，到底有多繁华？</p>
+          </div>
+          <div class="station-thumb" style="background-image: url('wd_images/03_changmen_old.jpg');" data-page-node-id="JHQzkLUUO4Z1lNPVVoJnA4"></div>
+          <div class="expand-icon" data-page-node-id="rJKqqwSsuAnkfYavgBWH20">▾</div>
+        </div>
+        <div class="station-body" data-page-node-id="3tXxeU76JkCJJyQHLfnSQD">
+          <div class="station-content" data-page-node-id="BsGVo0cwvfDD5sHRJvxzFl">
+            <div class="photo-compare with-portrait" data-page-node-id="CSgY3pH2MIeG7Anjhlwj5C">
+              <div class="photo-frame old" onclick="openLightbox('wd_images/03_changmen_old.jpg', '阊门 · 日据时期明信片')" data-page-node-id="HzM7pBDVnMwY5OQjbEW9GH">
+                <span class="photo-label" data-page-node-id="DRE1ylDLD3YBucWBOg9gyx">当年</span>
+                <span class="photo-year" data-page-node-id="eUekZdwKWTK41yC9xzxC4N">民国</span>
+                <span class="zoom-icon" data-page-node-id="baTO2thj7q7nqjCdCBtcrh">⤢</span>
+                <img src="wd_images/03_changmen_old.jpg" alt="阊门 日据时期明信片" data-page-node-id="whM87Fti0cbcGqcvsUZkBH">
+              </div>
+              <div class="photo-frame new portrait" onclick="openLightbox('wd_images/03_changmen_new.jpg', '阊门 · 2026年7月')" data-page-node-id="TOlp7lrmzPQZUsD1XRQuEh">
+                <span class="photo-label" data-page-node-id="Wp48MPSoJopphtOjCH05MF">今日</span>
+                <span class="photo-year" data-page-node-id="4ChtL9G7Vw0syVns3yhoGQ">2026</span>
+                <span class="zoom-icon" data-page-node-id="eQbW1F0ajkO7Vms5mCAnXq">⤢</span>
+                <img src="wd_images/03_changmen_new.jpg" alt="阊门附近 2026年" data-page-node-id="YATrd0Zl3CxS7ulsETot89">
+              </div>
+              <div class="photo-connector" data-page-node-id="ShtKrXjIyPoeGg3llGIqEO">今</div>
+            </div>
+            <p class="desc" data-page-node-id="YON4LM5X95XSkNeJiKJyeX">八大城门中唯一<strong data-page-node-id="ts5cnAg6C5irwcRiX8OKSp">水陆并行</strong>的双城门，曹雪芹在《红楼梦》开头把天下最繁华的地方定在了这里。</p>
+            <p class="desc" data-page-node-id="nL3IkZi6mJVHThWgLp4R8C"><em data-page-node-id="JcYiF6ZmDMlwQLcuJE00dV">五水汇阊</em>，运河商船从这里进苏州；城门西侧的瓮城是苏州现存最大，城墙砖上还能找到几百年前的烧造铭文。白居易在这里登船出发，山塘河从这里流向虎丘。</p>
+            <div class="highlights" data-page-node-id="UoxIkYxcGPxWXwLSYZakXN">
+              <h3 data-page-node-id="P93QnYMStMF0X18SSGH0rI">现场看点</h3>
+              <ul data-page-node-id="du7y7vbrG6KMtU2uvcXkdB">
+                <li data-page-node-id="rRzizoUYGwfqU6V7YI7kld">水陆城门构造</li>
+                <li data-page-node-id="ON44do08thHiWHjVmeYkqB">瓮城砖铭寻找</li>
+                <li data-page-node-id="aId1dxY5RuTymHqCN7KfoZ">五龙汇阊看水系</li>
+                <li data-page-node-id="CwB732QAgW49tFnnX6dbNr">北码头怀古</li>
+              </ul>
+            </div>
+            <div class="photo-tip" data-page-node-id="GZtidBFTqjAfaGmhQGTBn3">
+              <h3 data-page-node-id="BmLz9xKW3UzK0FMRZxnJkI">手机摄影小记</h3>
+              <p data-page-node-id="Oif37QJyb9cYJOc1EFDqhC">城墙上寻一处<em data-page-node-id="d7MpjLgLlWPBQdASwluiI8">射箭口</em>对准虎丘塔，雉堞为框、古塔入画；再用<em data-page-node-id="4GrbwGXMYJZ3trByXNJDZR">延时摄影</em>收尽西中市的车水马龙，用<em data-page-node-id="1Fad9JsdRyHuLI8EACVVEx">超广角</em>让北寺塔与东方之门千年同框。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Station 4 -->
+    <div class="station" id="s4" data-page-node-id="4ye7CGRQkuFBeGD46NY1mP">
+      <div class="station-seal" data-page-node-id="eLMJynUjnwvwLyqppftUUw">肆</div>
+      <div class="station-card" data-page-node-id="uBMJkoNNEnSfatcyLDbqZg">
+        <div class="station-header" onclick="toggleStation(4)" data-page-node-id="G8cs38xn00eauyo0t0MJlZ">
+          <div class="station-title-area" data-page-node-id="p3F7NbmY8IEqzA0dub14Ot">
+            <h2 data-page-node-id="W412X14Iqv8MY3S83GtFWD">山塘街</h2>
+            <p class="station-subtitle" data-page-node-id="ZeGMeOjrS2oClDEWausBf7">不为人知的故事</p>
+            <p class="station-tagline" data-page-node-id="h1pg08EGumtiqBeIrIrsUE">七里山塘，不只是游客的山塘</p>
+          </div>
+          <div class="station-thumb" style="background-image: url('wd_images/04_shantang_old.jpg');" data-page-node-id="LAI7FRHMT7nXgqEiEE45bz"></div>
+          <div class="expand-icon" data-page-node-id="izhTJlpGiE8NcNE2wdAtra">▾</div>
+        </div>
+        <div class="station-body" data-page-node-id="bCdoCT4vpPay85GxmEQZt6">
+          <div class="station-content" data-page-node-id="ApmOCneXSB8VbVwO3DgiP5">
+            <div class="photo-compare with-portrait" data-page-node-id="S6M8tkNBlVsrFJMjbyisWP">
+              <div class="photo-frame old" onclick="openLightbox('wd_images/04_shantang_old.jpg', '山塘河 · 民国民信片')" data-page-node-id="G1fwGePUqxTQwDFvnP4kq5">
+                <span class="photo-label" data-page-node-id="nRDfiTYsNNgDImmvEYhmBp">当年</span>
+                <span class="photo-year" data-page-node-id="UmzJRg4DnkPY93r23N6cqF">民国</span>
+                <span class="zoom-icon" data-page-node-id="laOhJoWsVC1fNpOGcyIXtl">⤢</span>
+                <img src="wd_images/04_shantang_old.jpg" alt="山塘河 民国民信片" data-page-node-id="DeetZ0QZaFrEO7ktaRofTL">
+              </div>
+              <div class="photo-frame new portrait" onclick="openLightbox('wd_images/04_shantang_new.jpg', '山塘河 · 2025年7月')" data-page-node-id="1rPdUf1e4LF7iMa2ii8KMS">
+                <span class="photo-label" data-page-node-id="li2hBlJ7WJJbxptmAvEgp4">今日</span>
+                <span class="photo-year" data-page-node-id="vp6VWB3cDi2n8jNCCLfd68">2026</span>
+                <span class="zoom-icon" data-page-node-id="ligiCEL2ZFfUBHO5wKKeGk">⤢</span>
+                <img src="wd_images/04_shantang_new.jpg" alt="山塘街 2026年" data-page-node-id="giHzPd5u2xwcN9m088GG4z">
+              </div>
+              <div class="photo-connector" data-page-node-id="3XnQ7n2VeOhCh3KfyI4xM6">今</div>
+            </div>
+            <p class="desc" data-page-node-id="3UiTPznAF9rGSFivifm3nr">唐宝历元年，<strong data-page-node-id="R5v8u11tYT5AoDRcEi34VU">白居易任苏州刺史</strong>，挖了山塘河、筑了山塘街，从此<em data-page-node-id="b0i5SUOGLkykkrV8t1p4qL">"自开山寺路，水陆往来频"</em>。</p>
+            <p class="desc" data-page-node-id="lFAMkvl6UVbTAiYJT7Qjig">街上会馆林立——陕西商人、潮州商人、岭南商人，都在这里安家。<strong data-page-node-id="mfVi6ijRdvxcplqqCfszYj">岭南会馆</strong>内仍可赏丝织与刺绣工艺，一窥当年"日出万绸"的繁华底色。野芳浜是当年才子佳人送别的地方，五人墓里葬着明代五位平民义士，张溥一篇《五人墓碑记》让他们名留青史。</p>
+            <div class="highlights" data-page-node-id="GRxlyXCvph5phVEl0oj7lw">
+              <h3 data-page-node-id="G48GBooLv1hvbRnrTh1S5z">现场看点</h3>
+              <ul data-page-node-id="6k287GOCpKI135prot7Dnz">
+                <li data-page-node-id="QcMaCy5gbtoOESf8P7pZYZ">河街并行格局</li>
+                <li data-page-node-id="lZFYq4eve8RAWyLxS7y1AD">会馆建筑遗存</li>
+                <li data-page-node-id="aXICCwKWZIEiUJnj4q8gNS">岭南会馆丝织刺绣</li>
+              </ul>
+            </div>
+            <div class="photo-tip" data-page-node-id="bEZurm8SOW03LxnAdZjWGf">
+              <h3 data-page-node-id="FViAxdOP4WMTmlGebCnDXk">手机摄影小记</h3>
+              <p data-page-node-id="B4XcCByJnUC2J1DH3kEpvn"><em data-page-node-id="dt8EaBSgbLYs44lVlO1QE0">通贵桥</em>畔是公认的"江南水乡标准像"机位——拱桥、流水、白墙黛瓦，一张照片说尽山塘。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Station 5 -->
+    <div class="station" id="s5" data-page-node-id="SOnfrZjPGNrNaFvezEBQrr">
+      <div class="station-seal" data-page-node-id="t0R0f1FVreQNx6tRx2thib">伍</div>
+      <div class="station-card" data-page-node-id="OFuxYHS2AyheAFGGbIe5jL">
+        <div class="station-header" onclick="toggleStation(5)" data-page-node-id="Z9jPQpaLxUlhOCuhBiT1xx">
+          <div class="station-title-area" data-page-node-id="BsdCVqV0bl4Di3q05HR9PE">
+            <h2 data-page-node-id="h4VIUdHyHVZXWlFV2VTVbX">苏州大学</h2>
+            <p class="station-subtitle" data-page-node-id="bGpiEYqDePlzhnl7s7LyOF">从教会学堂到近代大学</p>
+            <p class="station-tagline" data-page-node-id="g93rNOUyyFDWcvu6sbl88G">中西交汇的百年学府，苏州近代教育从这里起步</p>
+          </div>
+          <div class="station-thumb" style="background-image: url('wd_images/05_suda_old.jpg');" data-page-node-id="CTZLvBQoO9mvrqMYrHjYTZ"></div>
+          <div class="expand-icon" data-page-node-id="FRkqcMZhQIUWcG8jX2ZxGu">▾</div>
+        </div>
+        <div class="station-body" data-page-node-id="HABecn9hV6LmUDpYhXJudP">
+          <div class="station-content" data-page-node-id="Cs6KIlhxBYniwjJgvRSTsj">
+            <div class="photo-compare with-portrait" data-page-node-id="OSfJW90oVRzrh1Kq3Ifowu">
+              <div class="photo-frame old" onclick="openLightbox('wd_images/05_suda_old.jpg', '文星阁 · 1903年')" data-page-node-id="Mr55VEZWmazP2JBGMfhLX4">
+                <span class="photo-label" data-page-node-id="XCankIDg7XbjOCErwtkDUc">当年</span>
+                <span class="photo-year" data-page-node-id="thkTaSkrgoIz3TSngzOKad">1903</span>
+                <span class="zoom-icon" data-page-node-id="ZtYB6BlqcOj5zbV4kXOwDQ">⤢</span>
+                <img src="wd_images/05_suda_old.jpg" alt="文星阁 1903年" data-page-node-id="COyrQGApaILhuJyo4MCvWg">
+              </div>
+              <div class="photo-frame new portrait" onclick="openLightbox('wd_images/05_suda_new.jpg', '文星阁 · 2025年7月')" data-page-node-id="1NlkDVXOjPqSSreyXE498U">
+                <span class="photo-label" data-page-node-id="Tt0VJbucbZKGucXXfCnDZ6">今日</span>
+                <span class="photo-year" data-page-node-id="51qyJ9ERXzCeDc6UH77PGx">2025</span>
+                <span class="zoom-icon" data-page-node-id="o8CmbTpCAzAPmCyrgBdc1W">⤢</span>
+                <img src="wd_images/05_suda_new.jpg" alt="东吴门 2025年" data-page-node-id="gvWSwkYZtLTqBy6AgeuROt">
+              </div>
+              <div class="photo-connector" data-page-node-id="5Snox2GjbfJnikEv8tBBfj">今</div>
+            </div>
+            <p class="desc" data-page-node-id="Pi7pBhSL1DwIISuDz0I9qg"><strong data-page-node-id="nNbuhykhe669PmWyCo6dfI">1900年</strong>，美国基督教监理会在天赐庄创办东吴大学，这是中国最早的教会大学之一。林堂钟楼1903年落成，是苏州最老的西式主楼；孙堂哥特复兴式石墙厚重，葛堂是苏州第一座钢筋混凝土科学馆。</p>
+            <p class="desc" data-page-node-id="rwRYQ1Sm94fJdlzzuIlX4b">翁同龢题写的<em data-page-node-id="5QaQUC3adxz82FAV9oIQ6S">"东吴大学"</em>校门仍在，<em data-page-node-id="tPTU1FlKK3fCReFQNgU3xR">"养天地正气，法古今完人"</em>的校训仍在。从教会学堂到近代大学，天赐庄为苏州教育翻开了新的一页。</p>
+            <div class="highlights" data-page-node-id="l8aw1tRKDLTBZPoJBNsrwf">
+              <h3 data-page-node-id="MAS1CZ9HWeTy468G7Gv8im">现场看点</h3>
+              <ul data-page-node-id="rKl5GCDKfGKvUQSRPJgwIE">
+                <li data-page-node-id="qFtIOs21srNKI5Qkn2qRzU">东吴门</li>
+                <li data-page-node-id="PoSpVfzCfiUflA02zkd39v">林堂钟楼</li>
+                <li data-page-node-id="JLZFnk87Qyp48nF7oGpY4w">孙堂葛堂建筑群</li>
+                <li data-page-node-id="n93v0kPcbixFfFEEMdKqv5">文星阁明代方塔</li>
+              </ul>
+            </div>
+            <div class="photo-tip" data-page-node-id="g90iGKSNEN4Edp7IHqOBTA">
+              <h3 data-page-node-id="0nTXz5kWbfDsRRZVBYQlXU">手机摄影小记</h3>
+              <p data-page-node-id="a3BnHxy1gkMS42rHZIi6Es">林堂钟楼正前草坪放低机位仰拍，哥特尖顶衬<em data-page-node-id="1T5IiMy75ovSX8E49m9u76">蓝天白云</em>——百年学府的标准像，就差你按下快门。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== Closing ===== -->
+  <section class="closing" data-page-node-id="HCHMhQQxkc8eQDWijqGncR">
+    <h2 data-page-node-id="nUFZlS281B7UPExbX0LTDs">为什么要在现场上课？</h2>
+    <div class="reasons" data-page-node-id="piuzeEJcjwn0pMbmJwADtS">
+      <p data-page-node-id="vcEHiLBaYHugtiHw4YDQN8">古画里的桥洞，你得站在桥上才知道少了几个；</p>
+      <p data-page-node-id="Pk5oHVex5NfD0F9z1wUC9z">塔的高度，你得抬头才知道什么叫"巍巍"；</p>
+      <p data-page-node-id="avxCg4klnTSt4lIB00XV9y">城墙砖上的字，你得蹲下来才看得见；</p>
+      <p data-page-node-id="Wu4AdcX8YwQ1IA1ibkAxov">历史不是书上的文字，是脚下的路、眼前的屋、头顶的檐。</p>
+    </div>
+    <p class="closing-statement" data-page-node-id="hkPazlkegX0lZR4ta3GvQ2">
+      <span class="accent" data-page-node-id="cgsOXICcP0RIY7SqACqpeV">古今对照，知行合一</span>
+    </p>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <div class="footer" data-page-node-id="5QyzKx4Nqd9FLAB6VgsJzM">
+    <p class="organizer" data-page-node-id="OtLN6jlXZrXDkosvUgCm6V">苏州姑苏区老年大学</p>
+    <p data-page-node-id="thtjxkg02Q0PpJQlr3dC8q">《吴地时光机》文史课程</p>
+  </div>
+
+</div>
+
+<!-- ===== Lightbox ===== -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()" data-page-node-id="DGMx7RPo9QP1Xx7DbXkBbT">
+  <button class="close-btn" onclick="closeLightbox()" data-page-node-id="cAA29jAK6UBlBzpw9A0FqK">✕</button>
+  <img id="lightbox-img" src="" alt="" data-page-node-id="RiCzCmEXq9FaDCINTExr2q">
+  <div class="lightbox-caption" id="lightbox-caption" data-page-node-id="2RsQGt464DqaazqeUXLKNO"></div>
+</div>
+
+<script>
+  const stationIds = [1, 2, 3, 4, 5];
+  let allExpanded = false;
+
+  function toggleStation(id) {
+    const el = document.getElementById('s' + id);
+    el.classList.toggle('expanded');
+    updateToggleButtonText();
+  }
+
+  function toggleAll() {
+    allExpanded = !allExpanded;
+    stationIds.forEach(id => {
+      const el = document.getElementById('s' + id);
+      if (allExpanded) el.classList.add('expanded');
+      else el.classList.remove('expanded');
+    });
+    updateToggleButtonText();
+  }
+
+  function updateToggleButtonText() {
+    const btn = document.getElementById('toggle-all');
+    const expandedCount = stationIds.filter(id =>
+      document.getElementById('s' + id).classList.contains('expanded')
+    ).length;
+    allExpanded = expandedCount === stationIds.length;
+    btn.textContent = allExpanded ? '全部收起' : '全部展开';
+  }
+
+  // Lightbox
+  function openLightbox(src, caption) {
+    event.stopPropagation();
+    const lb = document.getElementById('lightbox');
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-caption').textContent = caption;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+
+  // Scroll animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.station').forEach(el => observer.observe(el));
+
+  // Auto-expand first station
+  setTimeout(() => {
+    document.getElementById('s1').classList.add('expanded');
+    updateToggleButtonText();
+  }, 600);
+</script>
+
+</body>
+</html>
