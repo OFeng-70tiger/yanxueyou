@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="zh-CN" data-page-node-id="COix5olfFRbJKTZBLQW5zk">
+<head data-page-node-id="REkphwWuISpkExjXt8USZU">
+<meta charset="UTF-8" data-page-node-id="CF3MoZcgSVCFmA2aBr4SxR">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" data-page-node-id="iMhll85foAxXTfGUIN3sIQ">
+<title>常熟古里古镇游学 · 秋日古韵人文之旅</title>
+<meta name="description" content="姑苏区老年大学秋季游学：古里古镇铁琴铜剑楼 · 红豆山庄 · 增福禅寺一日行" data-page-node-id="YcBKZUBiY9zhVVaCBFfmLB">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0e0c09;--surface:#16130e;--elev:#1e1912;
+  --gold:#c8a96a;--gold-bright:#e9d5a3;--gold-dim:rgba(200,169,106,.14);
+  --ink:#efe7d6;--muted:#a2947c;
+  --red:#b0432f;--line:rgba(200,169,106,.22);
+  --serif:Georgia,"Songti SC","Noto Serif SC","SimSun","STSong",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.9;font-size:16.5px;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(1200px 600px at 50% -10%,rgba(200,169,106,.06),transparent 60%),radial-gradient(900px 500px at 100% 40%,rgba(200,169,106,.04),transparent 55%)}
+img{max-width:100%;display:block}
+a{color:var(--gold);text-decoration:none}
+
+/* 顶部金色进度条 */
+.progress{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-bright));z-index:3000;box-shadow:0 0 8px rgba(233,213,163,.5)}
+
+/* 顶部细金线品牌条 */
+.topline{position:fixed;top:0;left:0;right:0;z-index:2000;display:flex;align-items:center;justify-content:center;gap:10px;padding:9px 14px;background:linear-gradient(180deg,rgba(14,12,9,.9),rgba(14,12,9,.45));backdrop-filter:blur(6px);border-bottom:1px solid rgba(200,169,106,.14)}
+.topline .tb-brand{font-family:var(--serif);font-size:16px;letter-spacing:3px;color:var(--gold-bright);white-space:nowrap}
+.topline .tb-chip{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.topline .tb-chip::-webkit-scrollbar{display:none}
+.tb-chip a{flex:none;font-size:13.5px;padding:5px 13px;border-radius:999px;border:1px solid rgba(200,169,106,.3);color:var(--muted);white-space:nowrap;transition:all .3s}
+.tb-chip a.on{color:#14100a;background:var(--gold-bright);border-color:var(--gold-bright)}
+@media(min-width:900px){.topline{display:none}}
+
+/* 右侧圆点导航 */
+.side-nav{position:fixed;right:26px;top:50%;transform:translateY(-50%);z-index:2500;display:flex;flex-direction:column;gap:16px}
+.side-nav a{width:9px;height:9px;border-radius:50%;border:1px solid var(--gold);background:transparent;position:relative;transition:all .35s}
+.side-nav a::after{content:attr(data-label);position:absolute;right:22px;top:50%;transform:translateY(-50%) translateX(4px);font-size:13px;letter-spacing:2px;color:var(--gold-bright);white-space:nowrap;opacity:0;transition:all .3s;pointer-events:none}
+.side-nav a:hover::after,.side-nav a.on::after{opacity:1;transform:translateY(-50%) translateX(0)}
+.side-nav a:hover,.side-nav a.on{background:var(--gold);box-shadow:0 0 0 4px rgba(200,169,106,.18);transform:scale(1.25)}
+@media(max-width:899px){.side-nav{display:none}}
+
+/* ── 首屏 ── */
+.hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-bg{position:absolute;inset:-12% 0;background:url('images/hero.jpg') center 30%/cover no-repeat;will-change:transform}
+.hero-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,12,9,.62) 0%,rgba(14,12,9,.38) 34%,rgba(14,12,9,.78) 74%,var(--bg) 100%)}
+.hero-in{position:relative;z-index:2;text-align:center;padding:70px 22px;max-width:820px}
+.hero-eyebrow{display:inline-block;font-size:14px;letter-spacing:6px;color:var(--gold-bright);border:1px solid rgba(200,169,106,.45);border-radius:999px;padding:8px 24px;margin-bottom:30px;opacity:0;animation:fadeUp 1s .25s forwards;background:rgba(14,12,9,.35);backdrop-filter:blur(4px)}
+.hero h1{font-family:var(--serif);font-size:clamp(46px,10vw,92px);font-weight:700;letter-spacing:.14em;line-height:1.18;color:#f6efdd;text-shadow:0 6px 40px rgba(0,0,0,.55);opacity:0;animation:fadeUp 1.1s .5s forwards}
+.hero-sub{font-family:var(--serif);font-size:clamp(19px,3.6vw,28px);letter-spacing:.55em;color:var(--gold-bright);margin:22px 0 34px;text-indent:.55em;opacity:0;animation:fadeUp 1.1s .75s forwards;text-shadow:0 3px 22px rgba(0,0,0,.5)}
+.hero-div{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:34px;opacity:0;animation:fadeUp 1s .95s forwards}
+.hero-div span{width:46px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.hero-div span:last-child{background:linear-gradient(90deg,var(--gold),transparent)}
+.hero-div svg{width:17px;height:17px;fill:var(--gold)}
+.hero-meta{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;opacity:0;animation:fadeUp 1s 1.15s forwards}
+.hm{min-width:120px;padding:14px 10px;border:1px solid rgba(200,169,106,.28);border-radius:10px;background:rgba(14,12,9,.42);backdrop-filter:blur(5px)}
+.hm b{display:block;font-family:var(--serif);font-size:27px;color:var(--gold-bright);line-height:1.25;letter-spacing:1px}
+.hm i{font-style:normal;font-size:12.5px;color:var(--muted);letter-spacing:2px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.scroll-hint{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0;animation:fadeUp 1s 1.7s forwards}
+.scroll-hint span{font-size:11.5px;color:var(--muted);letter-spacing:3px}
+.scroll-hint .bar{width:1px;height:46px;background:linear-gradient(var(--gold),transparent);animation:pulse 2.2s infinite}
+@keyframes pulse{0%,100%{opacity:.25;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+
+/* 区块通用 */
+.sec{max-width:1120px;margin:0 auto;padding:86px 20px 20px;position:relative}
+.sec-head{text-align:center;margin-bottom:48px}
+.sec-kicker{font-size:12.5px;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.sec-head h2{font-family:var(--serif);font-size:clamp(30px,5vw,44px);font-weight:700;letter-spacing:.12em;color:#f1e8d4}
+.sec-head h2::after{content:'';display:block;width:64px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:18px auto 0}
+.sec-head p{color:var(--muted);font-size:15.5px;margin-top:14px}
+
+/* 概览 */
+.info-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:stretch}
+.info{background:linear-gradient(160deg,var(--surface),rgba(30,25,18,.6));border:1px solid var(--line);border-radius:12px;padding:22px 14px;text-align:center;transition:transform .35s,border-color .35s;display:flex;flex-direction:column;justify-content:center;min-height:112px}
+.info:hover{transform:translateY(-3px);border-color:rgba(200,169,106,.5)}
+.info .k{font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
+.info .v{font-family:var(--serif);font-weight:700;font-size:18.5px;color:var(--gold-bright);line-height:1.55}
+@media(max-width:920px){.info-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.info .v{font-size:16.5px}}
+
+/* ── 时间线 左右交替 ── */
+.tl{position:relative;max-width:1000px;margin:0 auto;padding:20px 0}
+.tl::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;transform:translateX(-50%);background:linear-gradient(180deg,transparent,var(--gold) 12%,var(--gold) 88%,transparent)}
+.stop{position:relative;display:flex;align-items:center;margin-bottom:56px;padding:0 4%}
+.stop:last-child{margin-bottom:0}
+.stop-dot{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:18px;height:18px;border-radius:50%;border:2px solid var(--gold);background:var(--bg);z-index:3;box-shadow:0 0 0 5px rgba(200,169,106,.12)}
+.stop-dot::after{content:'';position:absolute;inset:4px;border-radius:50%;background:var(--gold)}
+.stop-fig{width:47%;border-radius:8px;overflow:hidden;position:relative;cursor:zoom-in;box-shadow:0 18px 50px rgba(0,0,0,.5);border:1px solid rgba(200,169,106,.16)}
+.stop-fig img{width:100%;aspect-ratio:16/10.5;object-fit:cover;transition:transform .9s cubic-bezier(.16,1,.3,1)}
+.stop:hover .stop-fig img{transform:scale(1.05)}
+.stop-fig::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,8,6,.55))}
+.stop-time{position:absolute;left:12px;bottom:12px;z-index:2;background:rgba(176,67,47,.92);color:#fff;font-family:var(--serif);font-size:15px;letter-spacing:1px;padding:5px 15px;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.stop-body{width:47%;padding:8px 6px}
+.stop:nth-child(odd){flex-direction:row}
+.stop:nth-child(even){flex-direction:row-reverse}
+.stop:nth-child(odd) .stop-body{text-align:right}
+.stop-num{font-size:12px;letter-spacing:5px;color:var(--gold);margin-bottom:6px}
+.stop-body h3{font-family:var(--serif);font-size:clamp(23px,3vw,30px);font-weight:700;letter-spacing:.1em;color:#f1e8d4;margin-bottom:12px;line-height:1.4}
+.stop-body p{font-size:15.5px;color:#bdb09a;line-height:1.95;margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.stop:nth-child(odd) .tags{justify-content:flex-end}
+.tag{font-size:12.5px;padding:5px 14px;border:1px solid rgba(200,169,106,.32);border-radius:999px;color:var(--gold-bright);letter-spacing:1px;background:rgba(200,169,106,.06)}
+.note{display:flex;gap:10px;align-items:flex-start;margin-top:16px;padding:13px 15px;border-radius:10px;background:rgba(176,67,47,.1);border:1px solid rgba(176,67,47,.34);text-align:left}
+.note svg{flex:none;width:20px;height:20px;stroke:#d97b63;fill:none;stroke-width:2;margin-top:4px}
+.note p{font-size:14px;color:#d8a695;margin:0}
+.note b{color:#efae98}
+@media(max-width:920px){
+  .tl::before{left:20px;transform:none}
+  .stop,.stop:nth-child(even),.stop:nth-child(odd){flex-direction:column;padding-left:52px;align-items:flex-start}
+  .stop-fig,.stop-body{width:100%}
+  .stop:nth-child(odd) .stop-body,.stop:nth-child(odd) .tags{text-align:left;justify-content:flex-start}
+  .stop-dot{left:20px;top:24px;transform:translate(-50%,-50%)}
+}
+
+/* ── 高光全宽区 ── */
+.spot{position:relative;margin-top:86px;padding:0;overflow:hidden}
+.spot-bg{position:absolute;inset:0;background:url('images/stop2_ta.jpg') center/cover no-repeat;background-attachment:fixed}
+.spot-veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,10,7,.94) 0%,rgba(12,10,7,.82) 48%,rgba(12,10,7,.5) 100%)}
+@media(max-width:920px){.spot-bg{background-attachment:scroll}.spot-veil{background:rgba(12,10,7,.88)}}
+.spot-in{position:relative;z-index:2;max-width:1120px;margin:0 auto;padding:96px 24px}
+.spot-box{max-width:600px}
+.spot-kicker{font-size:13px;letter-spacing:5px;color:var(--gold);margin-bottom:14px}
+.spot-box h2{font-family:var(--serif);font-size:clamp(32px,6vw,50px);font-weight:700;letter-spacing:.1em;line-height:1.45;color:#f3ead6;margin-bottom:20px}
+.spot-box h2 em{font-style:normal;color:var(--gold-bright)}
+.spot-box>p{font-size:16px;line-height:2.05;color:#cbbfa6;margin-bottom:28px}
+.spot-stats{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.sp{min-width:118px;padding:16px 18px;border:1px solid rgba(200,169,106,.34);border-radius:10px;background:rgba(14,12,9,.4);backdrop-filter:blur(4px)}
+.sp b{font-family:var(--serif);font-size:31px;color:var(--gold-bright);display:block;line-height:1.2;letter-spacing:1px}
+.sp i{font-style:normal;font-size:12.5px;color:#cfc3a8;letter-spacing:2px}
+.spot-note{margin-top:24px;font-size:14.5px;color:var(--gold-bright);border-left:3px solid var(--gold);padding-left:15px;line-height:1.85}
+
+/* ── 特色卡 ── */
+.hl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.hl{background:linear-gradient(165deg,var(--surface),rgba(28,23,15,.55));border:1px solid var(--line);border-radius:12px;padding:32px 22px;text-align:center;position:relative;overflow:hidden;transition:transform .4s cubic-bezier(.16,1,.3,1),border-color .4s,box-shadow .4s}
+.hl::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:scaleX(0);transform-origin:center;transition:transform .55s}
+.hl:hover{transform:translateY(-6px);border-color:rgba(200,169,106,.55);box-shadow:0 22px 44px rgba(0,0,0,.4)}
+.hl:hover::before{transform:scaleX(1)}
+.hl .ic{width:54px;height:54px;margin:0 auto 16px;border-radius:50%;border:1px solid rgba(200,169,106,.4);display:flex;align-items:center;justify-content:center;background:rgba(200,169,106,.07);transition:background .4s}
+.hl:hover .ic{background:rgba(200,169,106,.16)}
+.hl .ic svg{width:25px;height:25px;stroke:var(--gold);fill:none;stroke-width:1.6}
+.hl h3{font-family:var(--serif);font-size:21px;font-weight:700;letter-spacing:.14em;margin-bottom:10px;color:#f1e8d4}
+.hl p{font-size:14px;color:var(--muted);line-height:1.85}
+@media(max-width:920px){.hl-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.hl-grid{grid-template-columns:1fr 1fr;gap:10px}.hl{padding:20px 12px}.hl h3{font-size:17px}.hl p{font-size:12.5px}.hl .ic{width:44px;height:44px;margin-bottom:10px}.hl .ic svg{width:20px;height:20px}}
+
+/* ── 瀑布流图集 ── */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;grid-auto-flow:dense;gap:11px;max-width:1120px;margin:0 auto;padding:0 20px 30px}
+.gi{border-radius:9px;overflow:hidden;cursor:zoom-in;position:relative;border:1px solid rgba(200,169,106,.14)}
+.gi img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.gi:hover img{transform:scale(1.07)}
+.gi::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(10,8,6,.6));opacity:.9;transition:opacity .4s}
+.gi:hover::after{opacity:1}
+.gi .cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:20px 12px 9px;font-family:var(--serif);font-size:14.5px;color:#efe6d2;letter-spacing:.14em;text-align:center}
+.gi.wide{grid-column:span 2}
+.gi.tall{grid-row:span 2}
+@media(max-width:920px){.gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:140px}}
+@media(max-width:420px){.gal{grid-auto-rows:126px}.gi .cap{font-size:12.5px;padding-bottom:6px}}
+
+/* 灯箱 */
+.lb{position:fixed;inset:0;z-index:4000;background:rgba(8,6,4,.95);display:none;align-items:center;justify-content:center}
+.lb.open{display:flex}
+.lb img{max-width:93vw;max-height:83vh;object-fit:contain;border-radius:6px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lb-cap{position:absolute;bottom:26px;left:0;right:0;text-align:center;color:#e9d5a3;font-size:15px;letter-spacing:3px;font-family:var(--serif)}
+.lb-x{position:absolute;top:14px;right:16px;width:48px;height:48px;border-radius:50%;border:1px solid rgba(233,213,163,.35);background:rgba(14,12,9,.4);color:#e9d5a3;font-size:27px;line-height:1;cursor:pointer}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;border:1px solid rgba(233,213,163,.3);background:rgba(14,12,9,.45);color:#e9d5a3;font-size:25px;cursor:pointer}
+.lb-prev{left:14px}.lb-next{right:14px}
+@media(max-width:560px){.lb-prev{left:8px}.lb-next{right:8px}}
+
+/* 收尾 */
+.closing{position:relative;text-align:center;padding:96px 24px 70px;margin-top:40px;overflow:hidden}
+.closing::before{content:'';position:absolute;left:50%;top:0;transform:translateX(-50%);width:1px;height:64px;background:linear-gradient(transparent,var(--gold))}
+.seal{width:72px;height:72px;margin:0 auto 26px;border:2.5px solid var(--red);border-radius:9px;display:flex;align-items:center;justify-content:center;transform:rotate(-4deg);background:rgba(176,67,47,.08);box-shadow:0 0 0 5px rgba(176,67,47,.08),inset 0 0 0 1px rgba(176,67,47,.35)}
+.seal span{font-family:var(--serif);font-size:36px;font-weight:700;color:var(--red)}
+.closing h2{font-family:var(--serif);font-size:clamp(27px,5vw,38px);font-weight:700;letter-spacing:.16em;color:#f1e8d4;margin-bottom:16px}
+.closing p{color:var(--muted);font-size:16px;max-width:540px;margin:0 auto;line-height:2.1}
+footer{border-top:1px solid rgba(200,169,106,.14);text-align:center;padding:28px 20px 38px;color:#7d7261;font-size:13.5px;line-height:2.1}
+footer b{color:var(--gold);font-family:var(--serif);letter-spacing:3px;font-weight:700}
+
+/* 渐显 */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rv.vis{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.hero h1,.hero-sub,.hero-eyebrow,.hero-div,.hero-meta,.scroll-hint{animation:none;opacity:1}}
+</style>
+</head>
+<body data-page-node-id="qouibLfd7fmy5440fuaPxM">
+
+<div class="progress" id="progress" data-page-node-id="3ReokTwSkNNmG4WdDa6okY"></div>
+<nav class="topline" aria-label="章节导航" data-page-node-id="JLgnl6AiiaQ8Q2SoC3MuIy">
+  <div class="tb-brand" data-page-node-id="k36yZznJWIXepei7uQmz1Y">古里古镇游学</div>
+  <div class="tb-chip" id="chips" data-page-node-id="mZqhghinO1jP7GgQ2Kgiz5">
+    <a href="#ov" data-page-node-id="rHcxsvieEs5uPfBciXX6SN">概览</a><a href="#route" data-page-node-id="PoIQcfgpAT2jnJe7o67mnb">行程</a><a href="#spot" data-page-node-id="EdvjikL7FtwIAg0BWGZuLd">高光</a><a href="#hl" data-page-node-id="qaQek2YWcp1RCk4oFMSKTi">特色</a><a href="#gal" data-page-node-id="CT3JBrTPQsL47fy7fM8k8q">图集</a>
+  </div>
+</nav>
+
+<nav class="side-nav" id="sideNav" aria-label="章节导航" data-page-node-id="pD7VkPlZtKELy6VZTTaJXr">
+  <a href="#hero" data-label="首 页" class="on" data-page-node-id="AkzOKUK41DCpTIRxCiPMwc"></a>
+  <a href="#ov" data-label="行程概览" data-page-node-id="t6r7Gk2MdC60GEvT8TD31k"></a>
+  <a href="#route" data-label="三站行程" data-page-node-id="w9tiObl3Xn4Lxy7eoRWRCU"></a>
+  <a href="#spot" data-label="小红蛮腰" data-page-node-id="rVGAHVSFXLz1Nykr31V343"></a>
+  <a href="#hl" data-label="游学特色" data-page-node-id="XQd7k3ZiadgVxJro3iYNEA"></a>
+  <a href="#gal" data-label="风景图集" data-page-node-id="76zUP4ixBRHSH62Ns158Cp"></a>
+</nav>
+
+<header class="hero" id="hero" data-page-node-id="H9G5FhQQojMaEvywEFl9Fu">
+  <div class="hero-bg" id="heroBg" role="img" aria-label="江南水乡风光" data-page-node-id="Zc7qCUZQjeFycxAelErsER"></div>
+  <div class="hero-veil" data-page-node-id="n7jXe6P7TN0P96eVZeL4CM"></div>
+  <div class="hero-in" data-page-node-id="QRINUdjHJC1XS61da1vZNU">
+    <span class="hero-eyebrow" data-page-node-id="839iZo43d4sOoOzTLiCGDm">姑苏区老年大学 · 秋日游学</span>
+    <h1 data-page-node-id="ZFzIlIJ3XPA4f1grQo7r59">常熟古里古镇</h1>
+    <div class="hero-sub" data-page-node-id="30AGMbkpoGbYVvz2R171mA">秋日古韵 · 人文之旅</div>
+    <div class="hero-div" data-page-node-id="XmELnFQhVMku4AyMGXHKYl"><span data-page-node-id="eacQZy3QV2E8R30mWZdkEU"></span><svg viewBox="0 0 24 24" aria-hidden="true" data-page-node-id="FW9weFCINsY3Jlru9GTCv7"><path d="M12 2l2.1 6.3 6.4 1-4.7 4.7 1.1 6.4L12 17.3 7.1 20.4l1.1-6.4L3.5 9.3l6.4-1z" data-page-node-id="p4FgKWYGibEqGCHskfBvSm"/></svg><span data-page-node-id="95cEDjtgS0XJ7WFrrTCfv4"></span></div>
+    <div class="hero-meta" data-page-node-id="jFdtxdgC3RzvrGMbXFhab8">
+      <div class="hm" data-page-node-id="HrAlIsoCezSTp0kbaSUb3i"><b data-page-node-id="hFn8JQc6BJPCBin725OFH1">3 站</b><i data-page-node-id="sv1Fnh88RrkKD5eRB0rqyC">精品站点</i></div>
+      <div class="hm" data-page-node-id="E1AHVTDD8k0TLUUpAXFEL2"><b data-page-node-id="SqwyNEMt8gRDMvTQ0MA9KG">6.5 小时</b><i data-page-node-id="a2rVVc0lP1naftoP6emGOI">舒缓行程</i></div>
+      <div class="hm" data-page-node-id="wKfSDGYRfQicP1s95K4PKb"><b data-page-node-id="QkiKkh2vkpL6LQsaHsgNoh">66 米</b><i data-page-node-id="HRo7AiGDMfHGUcguXfQN86">高空观景</i></div>
+      <div class="hm" data-page-node-id="xRp68HkfF1lJpH2Iwu2BJg"><b data-page-node-id="bVbRqXFinkZdOzNkPmPsEc">500+ 年</b><i data-page-node-id="VIFnOWOXOEtOQNtQJNyApQ">红豆古树</i></div>
+    </div>
+  </div>
+  <div class="scroll-hint" data-page-node-id="wRq73upkJBoSpgo7yh8DJB"><span data-page-node-id="tO0oMD7j3FsWGUT19nBY5Y">向下探索</span><div class="bar" data-page-node-id="Uk4OZY55D4prE27VpTxjSf"></div></div>
+</header>
+
+<section class="sec" id="ov" data-page-node-id="ghL73gNkkLdNuDBJFrYzfE">
+  <div class="sec-head rv" data-page-node-id="pmDmC0VYk5MdovSo634CAx">
+    <div class="sec-kicker" data-page-node-id="9SIR8KFMfd6vcJ0m7IynIs">Overview</div>
+    <h2 data-page-node-id="pQXjjLMRwpUbC7UZI5sbKA">行程概览</h2>
+    <p data-page-node-id="mUACgbgh6p1exUTbAacC8F">一日尽览：藏书访古 · 登高望远 · 古寺静心</p>
+  </div>
+  <div class="info-grid rv" data-page-node-id="Be2yaD5OMn9c8LImsfcgac">
+    <div class="info" data-page-node-id="MSnH6WNYgdggAH2dtMoPAU"><div class="k" data-page-node-id="5AeDgmtEJGCP1aYWC2QsQ9">集合时间</div><div class="v" data-page-node-id="zeWwCjmJFx0D9EZJR5grIc">上午 8:30</div></div>
+    <div class="info" data-page-node-id="EPF9DgT1n2zCwYyq1EGKvd"><div class="k" data-page-node-id="xhOfeSv8DAxiciMjgRbuqu">行程时长</div><div class="v" data-page-node-id="bWa1jrtr3J0P9uuhGflhP2">全天<br data-page-node-id="MGVbpM4n6KHquZaZhNDegA">8:30 — 15:00</div></div>
+    <div class="info" data-page-node-id="HCEwaYKuXsiEwN6LEeeHlq"><div class="k" data-page-node-id="OTsoVKCNAsF9TziLpzDOWB">出行方式</div><div class="v" data-page-node-id="0wQ18aGvZFG7FKQIYT96L9">统一乘车</div></div>
+    <div class="info" data-page-node-id="FSwPGntE7uVEawPF6NOpFf"><div class="k" data-page-node-id="BqIl59F5XSOFQ4MYg8GipA">适合人群</div><div class="v" data-page-node-id="5rfoUfBTFRGal0b5CYVUpw">老年朋友<br data-page-node-id="UTFwpxoi8OJlGAqBz7AqKe">休闲出游</div></div>
+  </div>
+</section>
+
+<section class="sec" id="route" data-page-node-id="ghhOKEKJQwN8y9jJ53FTq9">
+  <div class="sec-head rv" data-page-node-id="rhUpBW4308tmOP1Z3WTI1o">
+    <div class="sec-kicker" data-page-node-id="jPoGOp7NKn7ngNtfk9z1Vc">Itinerary</div>
+    <h2 data-page-node-id="EB5ye1wF1H8JuLNBho8n4I">三站行程</h2>
+    <p data-page-node-id="FyludOnviw248O5sJDXqKT">节奏从容、路况平稳，人文与风光一路相伴</p>
+  </div>
+  <div class="tl" data-page-node-id="JQ5aESGIivs3CA9wwl8wzw">
+
+    <article class="stop rv" data-page-node-id="GzBJ3YFgA3zabHcp6lBUWw">
+      <span class="stop-dot" aria-hidden="true" data-page-node-id="GeDNFyR283iOsAycBQiCHu"></span>
+      <figure class="stop-fig" data-full="images/stop1_menkuang.jpg" data-cap="铁琴铜剑楼 · 门额砖框" data-page-node-id="WQcdyd2EoAuWe8IfJNoot5">
+        <img src="images/stop1_menkuang.jpg" alt="铁琴铜剑楼门额" loading="lazy" data-page-node-id="vuVvtgi4NsYN2DXJjHfvOp">
+        <figcaption class="stop-time" data-page-node-id="YWjE8QO3v6DLzIuVv3ndFk">09:40 — 11:40</figcaption>
+      </figure>
+      <div class="stop-body" data-page-node-id="WGTBoHrVG53r2Euv8VOLnP">
+        <div class="stop-num" data-page-node-id="iizRvehi8aK5ZA42An0qcg">第 一 站</div>
+        <h3 data-page-node-id="0YzNJrPAo2swirTuF1NE2b">古里古镇 · 铁琴铜剑楼</h3>
+        <p data-page-node-id="SnSt2EIWyEKpl3CDAcUOZM">漫步古镇沿河街区，白墙黛瓦、石桥流水，观景拍照打卡。随后参观百年藏书楼——铁琴铜剑楼，清代四大私家藏书楼之一，百年书香扑面而来，感受江南文脉的厚重传承。</p>
+        <div class="tags" data-page-node-id="BGoboW22MleehvGNeK6NIJ"><span class="tag" data-page-node-id="CkgwCuRVy5xU3dZv5Avpvf">百年藏书楼</span><span class="tag" data-page-node-id="i4TiiUVCTAzkaksMNUSYuW">江南水乡</span><span class="tag" data-page-node-id="YucG2qijXfYvtcHcbgHfHV">沿河古街</span></div>
+      </div>
+    </article>
+
+    <article class="stop rv" data-page-node-id="sxJEqqP0BaadYRs1QmR1bf">
+      <span class="stop-dot" aria-hidden="true" data-page-node-id="7P2LWBgcHH3oaBAz09CyZF"></span>
+      <figure class="stop-fig" data-full="images/stop2_ta.jpg" data-cap="红豆山庄 · 小红蛮腰" data-page-node-id="oCAw6gateOLxlDxYa46qGO">
+        <img src="images/stop2_ta.jpg" alt="红豆山庄小红蛮腰观景塔" loading="lazy" data-page-node-id="VJA0KDSiuaoAViFRbV4mBq">
+        <figcaption class="stop-time" data-page-node-id="7z88dJIhxoaiEMvrtaRe1X">11:40 — 14:20</figcaption>
+      </figure>
+      <div class="stop-body" data-page-node-id="RNIOrn5Lnt9fv028z9DyHM">
+        <div class="stop-num" data-page-node-id="WnD8menGvkMwgtJmGiR7yz">第 二 站</div>
+        <h3 data-page-node-id="pLGvQKPI3G9rtMLMTViPXl">红豆山庄</h3>
+        <p data-page-node-id="FbyqQuzyVY909GaByayutX">11:50 抵达，景区内统一用餐休整。12:40 起园内游览：打卡五百年古红豆树，参观钱柳纪念馆，追寻钱谦益与柳如是的白发红颜传奇；漫步园林、观景拍照。更可登上 66 米"小红蛮腰"玻璃观景平台，俯瞰全园。</p>
+        <div class="tags" data-page-node-id="krw9OWBSOGxGUljwASgDIQ"><span class="tag" data-page-node-id="gSVV0Bmalh7D1Eofv54CPB">五百年红豆树</span><span class="tag" data-page-node-id="pwyfx5QDparTtHEtF8SIVR">钱柳纪念馆</span><span class="tag" data-page-node-id="U4YC8URaVdQhpKfJsEXj1D">小红蛮腰登高</span></div>
+        <div class="note" data-page-node-id="uB4AkwJiYhv0L38tNVuMxS">
+          <svg viewBox="0 0 24 24" aria-hidden="true" data-page-node-id="Y0Onfbfj3suoRvMX20TAiq"><circle cx="12" cy="12" r="10" data-page-node-id="kSWdZOTRURmfbsnIoWSTOD"/><line x1="12" y1="8" x2="12" y2="12" data-page-node-id="KzrjgA43eaTRR7hyVCa5Sc"/><line x1="12" y1="16" x2="12.01" y2="16" data-page-node-id="OGmu5So6p3AFjT2gnQloGG"/></svg>
+          <p data-page-node-id="rRXWjgCT4WmkRxpEzaeqpn"><b data-page-node-id="0ArqYLIShDtT80G3NXstKV">温馨提示：</b>高空漂流为收费项目，考虑老年朋友身体状况，本次游程不含漂流，仅限登高观景拍照。</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="stop rv" data-page-node-id="FMRXNsTwiCZgRJ6Kj7XWt9">
+      <span class="stop-dot" aria-hidden="true" data-page-node-id="yJYbYWYkNftEOHXHf7df0H"></span>
+      <figure class="stop-fig" data-full="images/stop3_temple.jpg" data-cap="增福禅寺" data-page-node-id="wBiA5ACU2vJAg7ZGZW22vW">
+        <img src="images/stop3_temple.jpg" alt="增福禅寺" loading="lazy" data-page-node-id="4LWu9GXiLiLzyct6ACOpM9">
+        <figcaption class="stop-time" data-page-node-id="YU4AMUJ2Vfl51eupOEIiKq">14:20 — 15:00</figcaption>
+      </figure>
+      <div class="stop-body" data-page-node-id="5dtGsNkTNUP6ndlHLSCr6I">
+        <div class="stop-num" data-page-node-id="uTmaffxmbEs5eInmwAHmxu">第 三 站</div>
+        <h3 data-page-node-id="O8FXiPupcFcIOzKK0YAxpd">增福禅寺</h3>
+        <p data-page-node-id="iTYwWJMqK2dy9O04SKyNAW">于红豆山庄南门集合，前往古寺游览。增福禅寺免费开放，黄墙黛瓦、梵音袅袅，静心漫步、祈福赏景、打卡留念，停留约 30 分钟。15:00 全天行程圆满结束，集合乘车返程。</p>
+        <div class="tags" data-page-node-id="NwCVGtC4j2RyYUSOasZYy7"><span class="tag" data-page-node-id="8tQQ7wWJrKzVyNbXvVUZ6B">古寺祈福</span><span class="tag" data-page-node-id="Ju8TUALqAQC3v9fKTONWpS">免费开放</span><span class="tag" data-page-node-id="i3vVc9ZAjcdJiYzBOGGZUH">静心漫步</span></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="spot" id="spot" data-page-node-id="bYx7oJhetJSgVE9zkzkjIz">
+  <div class="spot-bg" role="img" aria-label="小红蛮腰观景塔" data-page-node-id="Li5rHjsZqbAJsKjYmqSDqX"></div>
+  <div class="spot-veil" data-page-node-id="NM865Fib80FaVOMKYWhRx3"></div>
+  <div class="spot-in" data-page-node-id="50wtiWDhxroir2GFDKloB8">
+    <div class="spot-box rv" data-page-node-id="zUDFFOFBme98KWxfjXR23u">
+      <div class="spot-kicker" data-page-node-id="1b6dEDGeKkXtph6XAqcOIz">行程高光时刻</div>
+      <h2 data-page-node-id="CeEVaoFedQHiq6ztmI368O">登<em data-page-node-id="GCrSCv83GlPSN9DiCAwmHj">「小红蛮腰」</em><br data-page-node-id="FA4V6NXhN8hxcrsz6FqCDa">俯瞰镜面湖景</h2>
+      <p data-page-node-id="5m3HlMBVKk9ZeO87jVvpaq">66 米高的地标观景塔，形似迷你广州塔。四个四叶草造型玻璃观景平台凌空探出，脚下是告白心岛与开阔湖面，晴空之下镜面倒影如梦似幻——举起手机，每一帧都是大片。</p>
+      <div class="spot-stats" data-page-node-id="Zpl72bWlquLlVC1GLD3sMr">
+        <div class="sp" data-page-node-id="yRUdQAzFHWUYkqi1WzlZMj"><b data-page-node-id="ZXUuGQDoIbtVpR27mVkBcn">66 米</b><i data-page-node-id="w48kDnKbuUkCyt7af6KaBA">观景塔高度</i></div>
+        <div class="sp" data-page-node-id="2V585pColDXdDlqrhbAvff"><b data-page-node-id="LlYiJr1TqcZM34kpHXoltk">4 个</b><i data-page-node-id="TuKaFgPI0TCsbfOVV8unDr">玻璃观景平台</i></div>
+        <div class="sp" data-page-node-id="lhzUP6kS2yKNkNl4heE8Bx"><b data-page-node-id="KfYz2JqgtoS9fD9dA5XOsZ">360°</b><i data-page-node-id="Gpd2R384HPeJiYBIPybnyi">全园俯瞰视野</i></div>
+      </div>
+      <div class="spot-note" data-page-node-id="dYwB8aTo7horfoj8GNXS7P">仅登高观景拍照，不含高空漂流项目</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="hl" data-page-node-id="zYvka0eFuD6xv2JOOEEYCH">
+  <div class="sec-head rv" data-page-node-id="5SHSrGCcqn3X4G1OYfdejP">
+    <div class="sec-kicker" data-page-node-id="p1zbcvHlkRNKeUMHjqb9vc">Highlights</div>
+    <h2 data-page-node-id="6iR7yv9M0NBCIxczgewLWV">五大游学特色</h2>
+    <p data-page-node-id="cFGQytHZKB03zSqHFdJbTp">藏书访古、姻缘寻踪、高空观景、古寺静心——一天之内，五种体验</p>
+  </div>
+  <div class="hl-grid" data-page-node-id="kmKmawwF4lFVxfw1qtBDgt">
+    <div class="hl rv" data-page-node-id="lZGv6FOuIRoXjchvq5NnnZ"><div class="ic" data-page-node-id="HtVUQHjCD8vvUhFL5VFKCH"><svg viewBox="0 0 24 24" aria-hidden="true" data-page-node-id="ueizFQuSNghPyDqk1xQyfF"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" data-page-node-id="HjBz12KzWej8qClunBxNv2"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" data-page-node-id="9WSEnmPKrNsDgosYTFckx3"/></svg></div><h3 data-page-node-id="mJmVTTdBFewsZRSFQut8zr">藏书楼访古</h3><p data-page-node-id="1neAfGdyhqZERZYW9mEFym">清代四大私家藏书楼之一，百年书香扑面，沿河古街白墙黛瓦，水乡韵味十足。</p></div>
+    <div class="hl rv" data-page-node-id="KUOJDp1ORuyyV5kOIwCHGy"><div class="ic" data-page-node-id="JtkVJsDwX1BmDlM7Q24QO6"><svg viewBox="0 0 24 24" aria-hidden="true" data-page-node-id="EItfFNjq4Sv9w2CwURluee"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" data-page-node-id="qUP3Uw0QfqPQdtIT0Ma8uE"/></svg></div><h3 data-page-node-id="NmlEyBorcqJbqEUr61SdCx">钱柳姻缘寻踪</h3><p data-page-node-id="0FAbleA5CKkO8KAuRp3FQn">五百年红豆古树见证钱谦益与柳如是的白发红颜传奇，馆内细品明末文人风骨。</p></div>
+    <div class="hl rv" data-page-node-id="fsdZEpptZbNrPlZTG2C04z"><div class="ic" data-page-node-id="x1OPrwmnSn4hcb3fkuOb75"><svg viewBox="0 0 24 24" aria-hidden="true" data-page-node-id="lho6PaDHxbU8rZNIEpB2AF"><path d="M3 21L12 3l9 18" data-page-node-id="plCEyF12EQYkXXWbeBPe9Y"/><path d="M7 14h10" data-page-node-id="rAfOoKTDTDv5rcHxuY8Ocd"/></svg></div><h3 data-page-node-id="DaYQvTeoxtVwxXccYnmw2P">高空观景出片</h3><p data-page-node-id="pjOL48DNUf8kW5v5Mi3Gs8">登 66 米"小红蛮腰"玻璃平台，上帝视角俯瞰告白心岛与湖光倒影。</p></div>
+    <div class="hl rv" data-page-node-id="qcVWa1a4Rv35UBlU5XHc40"><div class="ic" data-page-node-id="FBByLESyiDZFkwJNcEKb8M"><svg viewBox="0 0 24 24" aria-hidden="true" data-page-node-id="wPhqpQJiYUG4ccAB6uHEj4"><path d="M12 2L2 7l10 5 10-5-10-5z" data-page-node-id="7tG7p1OPS0FB95zTWw0Apv"/><path d="M2 17l10 5 10-5" data-page-node-id="iNqkrtZy8ifTNGm2XKcfrm"/><path d="M2 12l10 5 10-5" data-page-node-id="4BM3wWFPZqSNjSWDXFviaq"/></svg></div><h3 data-page-node-id="fx1Slk6j0rhfCbdejVYOck">古寺静心祈福</h3><p data-page-node-id="WsGISBKxhx6iL82CRuHD10">增福禅寺梵音袅袅，免费开放，黄墙黛瓦间漫步祈福，放空身心。</p></div>
+    <div class="hl rv" data-page-node-id="iPFpgO9bsUtk6k8IPonGBa"><div class="ic" data-page-node-id="O4VW9d1AoB81DtPE12E1Ye"><svg viewBox="0 0 24 24" aria-hidden="true" data-page-node-id="e7FU6zjQSfZRdALDwVK2g8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" data-page-node-id="tQgXVZXO2h1lufHpVypvts"/></svg></div><h3 data-page-node-id="ScEp5shSSxCe5ArXCDXELa">行程舒缓宜人</h3><p data-page-node-id="55lnAhGanL5jDvjfV7jbpO">全天路况平稳、节奏从容，人文景点与自然风光兼备，秋日出游正当时。</p></div>
+  </div>
+</section>
+
+<section class="sec" id="gal" style="padding-bottom:40px" data-page-node-id="x0UY55taVJPiV3iS4RSLy6">
+  <div class="sec-head rv" data-page-node-id="8QfH3mcsRnb2tO1QBx3yyG">
+    <div class="sec-kicker" data-page-node-id="JfknNrDGlDkQFQqq4hMio8">Gallery</div>
+    <h2 data-page-node-id="4RW83p35s67W8oECwszhf6">风景图集</h2>
+    <p data-page-node-id="VYNWxl8J8xP3r0JOmXpGns">点击任意图片查看大图 · 支持左右切换</p>
+  </div>
+</section>
+<div class="gal rv" data-page-node-id="BnCeGKFpDNczwvIJJgMKzO">
+  <div class="gi wide" data-full="images/g1_shuixiang.jpg" data-cap="古镇水乡" data-page-node-id="kKD1ftPbNGuVmOLQwGPPZ6"><img src="images/g1_shuixiang.jpg" alt="古镇水乡" loading="lazy" data-page-node-id="vDiaobtj921wwQwsUpc8mA"><span class="cap" data-page-node-id="mKaKs2Ti8RSV1do6CXL3Sf">古镇水乡</span></div>
+  <div class="gi" data-full="images/g2_huilang.jpg" data-cap="藏书楼 · 庭院回廊" data-page-node-id="Y6nysyCtul3wpDZmykONfA"><img src="images/g2_huilang.jpg" alt="藏书楼庭院回廊" loading="lazy" data-page-node-id="nlSB5lUKHO4yjV0iO3vgSV"><span class="cap" data-page-node-id="EJc4Zkjn2nC4QSzc7VvVeZ">庭院回廊</span></div>
+  <div class="gi tall" data-full="images/g4_hangpai.jpg" data-cap="小红蛮腰航拍" data-page-node-id="EcDOERF3JYNPOtOrXOiNku"><img src="images/g4_hangpai.jpg" alt="小红蛮腰航拍" loading="lazy" data-page-node-id="xD0DsHa686kQdCDa2YUez5"><span class="cap" data-page-node-id="sW6Jc6i0FlobKDvNJW3UBr">观景塔航拍</span></div>
+  <div class="gi" data-full="images/g3_jie.jpg" data-cap="古镇街景" data-page-node-id="KTz3mFN7d56TvB0c6jz4IG"><img src="images/g3_jie.jpg" alt="古镇街景" loading="lazy" data-page-node-id="yGe9QIXcRz0LMrCtuvWuJI"><span class="cap" data-page-node-id="I631skRi1l93NBq2jZb2em">古镇街景</span></div>
+  <div class="gi" data-full="images/g8_yuanjing.jpg" data-cap="藏书楼 · 园径" data-page-node-id="GFbVLbSXShgjKKkmCPtK7y"><img src="images/g8_yuanjing.jpg" alt="藏书楼园径" loading="lazy" data-page-node-id="4ws09mQDVDwFpfhHCLJcZi"><span class="cap" data-page-node-id="72qe2yJEShnEjHJlUEQE0s">楼前园径</span></div>
+  <div class="gi wide" data-full="images/g7_lindong.jpg" data-cap="临水人家" data-page-node-id="uJMmTmiaExZhjOPXohYTZB"><img src="images/g7_lindong.jpg" alt="临水建筑" loading="lazy" data-page-node-id="nT7POyGHC7EB9Bj9teFptF"><span class="cap" data-page-node-id="LBHhj9T348QYxBeBgEahDy">临水人家</span></div>
+  <div class="gi" data-full="images/g6_yanjiao.jpg" data-cap="藏书楼 · 檐角" data-page-node-id="A9c68kGCYOTu28JUhStuHH"><img src="images/g6_yanjiao.jpg" alt="藏书楼檐角" loading="lazy" data-page-node-id="FvWJFc4uKNDvnFBPyQ4Wad"><span class="cap" data-page-node-id="UMOvF6V26pJT5vcq7N3NDf">檐角风姿</span></div>
+  <div class="gi" data-full="images/g5_shuian.jpg" data-cap="山庄水岸" data-page-node-id="ij6eUgr98wkkdIK9Cx8qMF"><img src="images/g5_shuian.jpg" alt="山庄水岸风光" loading="lazy" data-page-node-id="Mq2tpv49gSuQGdhbZSJeKr"><span class="cap" data-page-node-id="Pe7KOCfgDWR0LVkv3IliwQ">山庄水岸</span></div>
+</div>
+
+<section class="closing rv" data-page-node-id="Pq37qJvurdHdtiOC0vEsNj">
+  <div class="seal" aria-hidden="true" data-page-node-id="Dx7jsoSMx1TJv8KmlvhHsw"><span data-page-node-id="9yz50mHW7KdU0nhdgX9ZyV">福</span></div>
+  <h2 data-page-node-id="zw7Zy6bzSqkxHQsYlTwqQN">共赴秋日古韵之旅</h2>
+  <p data-page-node-id="Fdbj77vzK5xfHhNTLq90BN">藏书访古、登高望远、古寺静心，一日尽览江南秋色。具体出行日期以班级通知为准。</p>
+</section>
+
+<footer data-page-node-id="9FFuwX4FwDQgHmNzVURoQo">
+  <b data-page-node-id="GAYzcKBx5opZaGI3U0Dy3g">姑苏区老年大学 · 吴地时光机</b><br data-page-node-id="IrupfHIFFb4H77tx7IYxII">
+  常熟古里古镇游学 · 秋日古韵人文之旅
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="图片查看" data-page-node-id="6twnWCsRG88PZPImhpBPrG">
+  <button class="lb-x" id="lbX" aria-label="关闭" data-page-node-id="o66xAuUKwayZHrfPKiOpAV">&times;</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="上一张" data-page-node-id="9rgIHgahjlycDfRh3t9Jex">&#8249;</button>
+  <img id="lbImg" alt="大图查看" data-page-node-id="dUYSHPT8giQrI6VTAcfHDR">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="下一张" data-page-node-id="I8UavxHCZRN2jGbTEYE1W2">&#8250;</button>
+  <div class="lb-cap" id="lbCap" data-page-node-id="D2mi0FP1GWbqJiFbYUPA1S"></div>
+</div>
+
+<script>
+(function(){
+  var progress=document.getElementById('progress');
+  var heroBg=document.getElementById('heroBg');
+  var sideNav=[].slice.call(document.querySelectorAll('#sideNav a'));
+  var chips=[].slice.call(document.querySelectorAll('.tb-chip a'));
+  var secs=sideNav.map(function(a){return document.querySelector(a.getAttribute('href'))});
+
+  // 顶部进度条 + 视差 + 高亮
+  function onScroll(){
+    var docH=document.documentElement.scrollHeight-window.innerHeight;
+    var st=window.scrollY;
+    progress.style.width=(docH>0?st/docH*100:0)+'%';
+    if(heroBg)heroBg.style.transform='translateY('+(st*0.28)+'px)';
+    var y=st+window.innerHeight*.42,cur=0;
+    secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i});
+    sideNav.forEach(function(a,i){a.classList.toggle('on',i===cur)});
+    if(cur===0){chips.forEach(function(a){a.classList.remove('on')})}
+    else{
+      chips.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+secs[cur].id)});
+    }
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  // 渐显
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}});
+  },{threshold:.08,rootMargin:'0px 0px -24px 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+
+  // 平滑跳转（含 hero 顶部）
+  [].concat(sideNav,chips).forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t=document.querySelector(a.getAttribute('href'));
+      if(t){e.preventDefault();window.scrollTo({top:t.offsetTop,behavior:'smooth'})}
+    });
+  });
+
+  // 灯箱
+  var items=[].slice.call(document.querySelectorAll('[data-full]'));
+  var lb=document.getElementById('lb'),img=document.getElementById('lbImg'),cap=document.getElementById('lbCap');
+  var idx=0;
+  function open(i){idx=(i+items.length)%items.length;var it=items[idx];
+    img.src=it.getAttribute('data-full');cap.textContent=it.getAttribute('data-cap')||'';lb.classList.add('open');document.body.style.overflow='hidden'}
+  function close(){lb.classList.remove('open');document.body.style.overflow=''}
+  function nav(d){open(idx+d)}
+  items.forEach(function(el,i){el.addEventListener('click',function(){open(i)})});
+  document.getElementById('lbX').addEventListener('click',close);
+  document.getElementById('lbPrev').addEventListener('click',function(e){e.stopPropagation();nav(-1)});
+  document.getElementById('lbNext').addEventListener('click',function(e){e.stopPropagation();nav(1)});
+  lb.addEventListener('click',function(e){if(e.target===lb)close()});
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft')nav(-1);
+    if(e.key==='ArrowRight')nav(1);
+  });
+  // 触屏左右滑动切换灯箱
+  var tx=0,ty=0;
+  lb.addEventListener('touchstart',function(e){tx=e.changedTouches[0].clientX;ty=e.changedTouches[0].clientY},{passive:true});
+  lb.addEventListener('touchend',function(e){
+    var dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;
+    if(Math.abs(dx)>46&&Math.abs(dx)>Math.abs(dy)*1.4){dx<0?nav(1):nav(-1)}
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
