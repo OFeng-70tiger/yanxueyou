@@ -85,6 +85,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--rounder);line-heigh
 /* 卡片 */
 .card{background:var(--card);border:3px solid #f2e4c8;border-radius:26px;padding:26px 22px 24px;margin-top:28px;
   position:relative;overflow:hidden;box-shadow:0 6px 0 rgba(226,172,118,.18);transition:transform .3s,box-shadow .3s}
+a.card{display:block;text-decoration:none;color:inherit}
 .card:hover{transform:translateY(-4px) rotate(.3deg);box-shadow:0 10px 0 rgba(226,172,118,.22)}
 .card.c1{border-color:#cfe8ff}
 .card.c2{border-color:#d8f0dc}
@@ -129,6 +130,28 @@ body{background:var(--bg);color:var(--ink);font-family:var(--rounder);line-heigh
 .tip .seal{margin-left:auto;flex:none;background:#fff;border:3px solid var(--orange);color:var(--orange-deep);
   border-radius:14px;padding:2px 12px;font-weight:900;transform:rotate(-4deg)}
 
+/* ===== 报名须知 ===== */
+.notes{display:grid;gap:14px;margin-top:26px}
+.note{background:var(--card);border:3px solid #f2e4c8;border-radius:22px;padding:18px 20px 16px;
+  box-shadow:0 6px 0 rgba(226,172,118,.16)}
+.note b{display:inline-flex;align-items:center;gap:8px;font-size:1.04rem;color:var(--orange-deep);letter-spacing:.06em}
+.note p{margin-top:6px;color:var(--ink-soft);font-size:.97rem}
+.note p b{display:inline;color:var(--ink);font-size:inherit}
+
+/* ===== 带队讲师 ===== */
+.teacher{display:block;margin:26px auto 0;max-width:400px;text-align:center;text-decoration:none;
+  background:var(--card);border:3px solid #f2e4c8;border-radius:26px;padding:20px 18px 20px;
+  box-shadow:0 6px 0 rgba(226,172,118,.18);transition:transform .3s,box-shadow .3s}
+.teacher:hover{transform:translateY(-4px);box-shadow:0 10px 0 rgba(226,172,118,.24)}
+.teacher img{display:block;width:clamp(200px,52vw,300px);margin:0 auto;border-radius:16px;
+  border:3px solid var(--yellow);box-shadow:0 8px 20px rgba(226,172,118,.35)}
+.teacher .t-name{margin-top:14px;font-weight:900;font-size:1.02rem;color:var(--ink);letter-spacing:.06em}
+.teacher .t-sub{font-size:.82rem;color:var(--ink-soft);margin-top:2px}
+.teacher .t-link{display:inline-block;margin-top:10px;font-size:.9rem;font-weight:700;color:var(--orange-deep);
+  background:#fff3e4;border-radius:30px;padding:5px 20px;letter-spacing:.08em;
+  box-shadow:0 3px 0 var(--orange-deep)}
+.teacher:hover .t-link{background:var(--orange);color:#fff;box-shadow:0 3px 0 var(--orange-deep)}
+
 /* 底部 */
 footer{margin-top:70px;text-align:center;color:var(--ink-soft);font-size:.86rem}
 footer .big{font-size:1.25rem;font-weight:900;letter-spacing:.2em;
@@ -155,7 +178,7 @@ footer .big{font-size:1.25rem;font-weight:900;letter-spacing:.2em;
   .sec-sub{margin-left:0}
 }
 @media(min-width:641px){
-  .spots{display:grid;grid-template-columns:1fr 1fr;gap:0 22px;align-items:start}
+  .spots{display:grid;grid-template-columns:1fr 1fr;gap:0 22px;align-items:start;grid-auto-flow:dense}
   .card-big{grid-column:1/-1}
 }
 </style>
@@ -238,6 +261,15 @@ footer .big{font-size:1.25rem;font-weight:900;letter-spacing:.2em;
       <p>北宋景祐二年（1035），<b>范仲淹</b>知苏州，舍宅建学，创办苏州府学，是全国最早的地方官办学校之一。此后苏州文教兴盛、状元辈出，源头便在这座府学文庙。</p>
       <div class="key">跟爸爸妈妈一起念一句："先天下之忧而忧"——范仲淹爷爷一生三起三落不改兴学之志；苏州人对教育的看重，自此而始。</div>
     </div>
+
+    <a class="card c1" href="https://weixin.qq.com/sph/AskDupdqly" target="_blank" rel="noopener">
+      <div class="top-ico">🎬</div>
+      <div class="stopbadge" style="background:var(--pink);box-shadow:0 3px 0 #d14b4b">🎬 视频号</div>
+      <h3>封子老师讲文庙 · 大成殿前的五棵古银杏</h3>
+      <div class="media"><img src="images/sph_wenmiao.jpg" alt="视频封面 · 文庙古银杏" loading="lazy"><div class="cap">▶ 点击观看 · 老照片里的文庙与古银杏故事</div></div>
+      <p>850岁的<b>寿杏</b>、650岁的<b>福杏</b>、雷击后又复活的<b>三元杏</b>、怀抱朴树的<b>连理杏</b>、默默站在角落的<b>灵杏</b>——大成殿前五棵古银杏，每棵都有一段传奇。</p>
+      <div class="key">看视频找答案：哪棵银杏遭过雷劈却"浴火重生"？等会儿进园子去找一找它！</div>
+    </a>
 
     </div>
 
@@ -323,6 +355,42 @@ footer .big{font-size:1.25rem;font-weight:900;letter-spacing:.2em;
       <span class="seal">源</span>
     </div>
   </div>
+
+  <!-- ===== 报名须知 ===== -->
+  <div class="sec-head">
+    <div class="sec-no">📋</div>
+    <div><h2>报名须知</h2><div class="en">BOOKING NOTES</div></div>
+  </div>
+  <div class="notes">
+    <div class="note">
+      <b>👨‍👩‍👦 人数配比</b>
+      <p>每组家庭限 <b>一大一小</b>（1名家长＋1名儿童）；如需 <b>两大一小</b>，请提前报备确认。</p>
+    </div>
+    <div class="note">
+      <b>🎒 成团规模</b>
+      <p>每团上限 <b>20 组</b>家庭，报满即截止。</p>
+    </div>
+    <div class="note">
+      <b>🎯 适合年龄</b>
+      <p>适合 <b>小学二年级及以上</b>（建议 8 岁以上）儿童参加。</p>
+    </div>
+    <div class="note">
+      <b>🎁 有奖闯关</b>
+      <p>全程设有 <b>多个有奖竞猜答题关卡</b>，更有<b>彩蛋大奖</b>等着你来夺取！</p>
+    </div>
+  </div>
+
+  <!-- ===== 带队讲师 ===== -->
+  <div class="sec-head">
+    <div class="sec-no">🧑‍🏫</div>
+    <div><h2>带队讲师</h2><div class="en">YOUR GUIDE</div></div>
+  </div>
+  <a class="teacher" href="https://ofeng-70tiger.github.io/shiguangji/Teacher%20introduce/" target="_blank" rel="noopener">
+    <img src="images/s5_teacher.jpg" alt="封子老师古风形象照" loading="lazy">
+    <p class="t-name">封子老师</p>
+    <p class="t-sub">姑苏区老年大学特聘文史讲师 · 苏州本土文旅内容创作者</p>
+    <p class="t-link">教师风采，请点这里 →</p>
+  </a>
 
   <footer>
     <div style="margin-bottom:14px;font-size:1.4rem">🏯 ⭐ ⛵</div>
