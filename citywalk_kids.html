@@ -123,11 +123,30 @@ a.card{display:block;text-decoration:none;color:inherit}
 .vid .cap{position:absolute;top:10px;bottom:auto;padding:4px 12px;font-size:.76rem;background:rgba(255,138,61,.9);
   border-radius:30px;left:12px;color:#fff;font-weight:700}
 
+/* ===== 段落导航（吸顶） ===== */
+.secnav{position:sticky;top:var(--stickH,74px);z-index:60;
+  margin:10px -18px 0;padding:10px 18px;display:flex;gap:8px;align-items:center;
+  background:rgba(255,248,236,.97);backdrop-filter:blur(8px);border-bottom:3px dashed var(--yellow);
+  overflow-x:auto;scrollbar-width:none}
+.secnav::-webkit-scrollbar{display:none}
+.secnav a{flex:none;text-decoration:none;font-size:.86rem;font-weight:700;color:var(--ink-soft);
+  background:#fff;border:2px solid #f2e4c8;border-radius:30px;padding:6px 15px;letter-spacing:.04em;
+  transition:transform .2s,background .2s,color .2s;white-space:nowrap}
+.secnav a:active{transform:scale(.95)}
+.secnav a.num{min-width:36px;text-align:center;padding:6px 0;font-family:Georgia,serif;font-size:.92rem;
+  border-color:var(--orange);color:var(--orange-deep)}
+.secnav a.on{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 3px 0 var(--blue-deep)}
+.secnav a.num.on{background:var(--orange);color:#fff;border-color:var(--orange);box-shadow:0 3px 0 var(--orange-deep)}
+.secnav .lb{flex:none;font-size:.82rem;font-weight:700;color:var(--ink-soft);letter-spacing:.06em;white-space:nowrap}
+[data-anchor]{scroll-margin-top:180px}
+
 /* 提示条 */
-.tip{margin-top:36px;border-radius:24px;padding:18px 22px;display:flex;gap:12px;align-items:flex-start;font-size:.95rem;
-  background:linear-gradient(135deg,#eaf5ff,#e3f8e8);border:3px solid #bfe3c9;color:var(--ink-soft)}
-.tip b{color:var(--blue-deep);flex:none}
-.tip .seal{margin-left:auto;flex:none;background:#fff;border:3px solid var(--orange);color:var(--orange-deep);
+.tip{margin-top:36px;border-radius:24px;padding:22px 20px 20px;position:relative;text-align:center;
+  background:linear-gradient(135deg,#eaf5ff,#e3f8e8);border:3px solid #bfe3c9;color:var(--ink-soft);font-size:.95rem}
+.tip .tip-head{display:inline-block;font-weight:900;color:var(--blue-deep);font-size:1.02rem;letter-spacing:.08em;
+  background:#fff;border-radius:30px;padding:7px 22px;box-shadow:0 3px 0 rgba(61,155,233,.22)}
+.tip p{margin:14px 0 0;background:rgba(255,255,255,.75);border-radius:16px;padding:14px 16px;text-align:left}
+.tip .seal{position:absolute;right:16px;top:-15px;background:#fff;border:3px solid var(--orange);color:var(--orange-deep);
   border-radius:14px;padding:2px 12px;font-weight:900;transform:rotate(-4deg)}
 
 /* ===== 报名须知 ===== */
@@ -207,9 +226,17 @@ footer .big{font-size:1.25rem;font-weight:900;letter-spacing:.2em;
     <div class="tab t2" data-r="r2"><span class="ico">⛵</span>线路二<small>胥江胥门 · 古城起源</small></div>
   </div>
 
-  <!-- ============================================================ -->
-  <!-- 线路一 文庙（亲子版） -->
-  <!-- ============================================================ -->
+  <!-- ===== 段落导航（吸顶，在"小小研究员集合"上方） ===== -->
+  <nav class="secnav" id="secnav">
+    <a href="#notes">📋 报名须知</a>
+    <a href="#teacher">🧑‍🏫 带队讲师</a>
+    <span class="lb">🚩 四站打卡</span>
+    <a href="#" class="num" data-stop="1">1</a>
+    <a href="#" class="num" data-stop="2">2</a>
+    <a href="#" class="num" data-stop="3">3</a>
+    <a href="#" class="num" data-stop="4">4</a>
+  </nav>
+
   <div class="route on" id="r1">
     <div class="sec-head">
       <div class="sec-no">🏛️</div>
@@ -274,9 +301,9 @@ footer .big{font-size:1.25rem;font-weight:900;letter-spacing:.2em;
     </div>
 
     <div class="tip">
-      <b>🎈 给爸爸妈妈的小提示</b>
-      <span>本线路全程位于苏州文庙，适合半日亲子 Citywalk：优先看四大宋碑，再参观大成殿、拜范仲淹像；春秋两季银杏季景致最佳，记得带相机！</span>
       <span class="seal">学</span>
+      <div class="tip-head">🎈 给爸爸妈妈的小提示</div>
+      <p>本线路全程位于苏州文庙，适合半日亲子 Citywalk：优先看四大宋碑，再参观大成殿、拜范仲淹像；春秋两季银杏季景致最佳，记得带相机！</p>
     </div>
   </div>
 
@@ -350,14 +377,14 @@ footer .big{font-size:1.25rem;font-weight:900;letter-spacing:.2em;
     </div>
 
     <div class="tip">
-      <b>🎈 给爸爸妈妈的小提示</b>
-      <span>适合半日亲子 Citywalk，路线顺序：胥江沿岸 → 苏州城市展览馆 → 万年桥 → 胥门。点位集中、步行强度低，推婴儿车也基本无障碍。</span>
       <span class="seal">源</span>
+      <div class="tip-head">🎈 给爸爸妈妈的小提示</div>
+      <p>适合半日亲子 Citywalk，路线顺序：胥江沿岸 → 苏州城市展览馆 → 万年桥 → 胥门。点位集中、步行强度低，推婴儿车也基本无障碍。</p>
     </div>
   </div>
 
   <!-- ===== 报名须知 ===== -->
-  <div class="sec-head">
+  <div class="sec-head" id="notes" data-anchor>
     <div class="sec-no">📋</div>
     <div><h2>报名须知</h2><div class="en">BOOKING NOTES</div></div>
   </div>
@@ -381,7 +408,7 @@ footer .big{font-size:1.25rem;font-weight:900;letter-spacing:.2em;
   </div>
 
   <!-- ===== 带队讲师 ===== -->
-  <div class="sec-head">
+  <div class="sec-head" id="teacher" data-anchor>
     <div class="sec-no">🧑‍🏫</div>
     <div><h2>带队讲师</h2><div class="en">YOUR GUIDE</div></div>
   </div>
@@ -422,6 +449,56 @@ tabs.forEach(function(t){
 });
 var v=document.querySelector('video');
 if(v){v.addEventListener('play',function(){v.setAttribute('controls','')});}
+
+/* ===== 段落导航：吸顶偏移 + 跳转 + 高亮 ===== */
+(function(){
+  var tabbar=document.querySelector('.tabbar'), nav=document.getElementById('secnav');
+  function syncStick(){
+    document.documentElement.style.setProperty('--stickH', Math.round(tabbar.offsetHeight)+'px');
+  }
+  syncStick(); addEventListener('resize',syncStick); addEventListener('orientationchange',syncStick);
+
+  // 给两条线路的站点卡编号 1-4
+  [].slice.call(document.querySelectorAll('.route')).forEach(function(r){
+    [].slice.call(r.querySelectorAll('.spots > .card')).slice(0,4).forEach(function(c,i){
+      c.dataset.stop=String(i+1); c.setAttribute('data-anchor','');
+    });
+  });
+
+  function curStops(){
+    var r=document.querySelector('.route.on');
+    return r? [].slice.call(r.querySelectorAll('.spots > .card')).slice(0,4) : [];
+  }
+  function navH(){ return tabbar.offsetHeight + nav.offsetHeight + 12; }
+  function goTo(el){
+    if(!el) return;
+    var y=el.getBoundingClientRect().top + scrollY - navH();
+    scrollTo({top:Math.max(0,y),behavior:'smooth'});
+  }
+
+  [].slice.call(nav.querySelectorAll('a')).forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      if(a.dataset.stop){ goTo(curStops()[+a.dataset.stop-1]); }
+      else { goTo(document.querySelector(a.getAttribute('href'))); }
+    });
+  });
+
+  // 滚动时高亮当前站点
+  var obs=new IntersectionObserver(function(es){
+    es.forEach(function(en){
+      if(!en.isIntersecting || !en.target.dataset.stop) return;
+      [].slice.call(nav.querySelectorAll('a.num')).forEach(function(x){
+        x.classList.toggle('on', x.dataset.stop===en.target.dataset.stop);
+      });
+    });
+  },{rootMargin:'-38% 0px -52% 0px'});
+  addEventListener('load',function(){
+    [].slice.call(document.querySelectorAll('.route .spots > .card')).forEach(function(c){obs.observe(c);});
+  });
+  // tab 切换后同步吸顶高度
+  [].slice.call(document.querySelectorAll('.tab')).forEach(function(t){ t.addEventListener('click',function(){ setTimeout(syncStick,50); }); });
+})();
 </script>
 </body>
 </html>
