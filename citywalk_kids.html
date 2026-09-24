@@ -81,7 +81,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--rounder);line-heigh
 .routeflag .fs{font-size:.86rem;color:var(--ink-soft)}
 .routeflag.hot .fk{background:linear-gradient(135deg,#c9492f,#9e2b22);box-shadow:0 4px 0 rgba(158,43,34,.30)}
 .routeflag.next .fk{background:linear-gradient(135deg,#8a97a8,#6f7d90);box-shadow:0 4px 0 rgba(111,125,144,.28)}
-.tab .mini-flag{position:absolute;top:5px;right:12px;font-size:.66rem;background:linear-gradient(135deg,#c9492f,#9e2b22);color:#fff;padding:2px 9px;border-radius:999px;font-weight:800;font-style:normal;letter-spacing:.05em}
+.tab .mini-flag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);font-size:.66rem;background:linear-gradient(135deg,#c9492f,#9e2b22);color:#fff;padding:2px 11px;border-radius:999px;font-weight:800;font-style:normal;letter-spacing:.05em;white-space:nowrap;box-shadow:0 2px 0 rgba(158,43,34,.28);z-index:2}
 .tab .mini-flag.grey{background:linear-gradient(135deg,#8a97a8,#6f7d90)}
 .sec-no{flex:none;width:56px;height:56px;border-radius:20px;display:flex;align-items:center;justify-content:center;
   font-size:1.7rem;background:#fff;border:3px solid var(--blue);box-shadow:0 4px 0 rgba(61,155,233,.3);transform:rotate(-6deg)}
@@ -146,6 +146,11 @@ a.card{display:block;text-decoration:none;color:inherit}
 .secnav a.on{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 3px 0 var(--blue-deep)}
 .secnav a.num.on{background:var(--orange);color:#fff;border-color:var(--orange);box-shadow:0 3px 0 var(--orange-deep)}
 .secnav .lb{flex:none;font-size:.82rem;font-weight:700;color:var(--ink-soft);letter-spacing:.06em;white-space:nowrap}
+.secnav .stops{display:contents}
+@media(max-width:560px){
+  .secnav{flex-wrap:wrap;justify-content:center;row-gap:6px}
+  .secnav .stops{display:flex;width:100%;justify-content:center;align-items:center;gap:8px}
+}
 [data-anchor]{scroll-margin-top:180px}
 
 /* 提示条 */
@@ -238,11 +243,13 @@ footer .big{font-size:1.25rem;font-weight:900;letter-spacing:.2em;
   <nav class="secnav" id="secnav">
     <a href="#notes">📋 报名须知</a>
     <a href="#teacher">🧑‍🏫 带队讲师</a>
-    <span class="lb">🚩 四站打卡</span>
-    <a href="#" class="num" data-stop="1">1</a>
-    <a href="#" class="num" data-stop="2">2</a>
-    <a href="#" class="num" data-stop="3">3</a>
-    <a href="#" class="num" data-stop="4">4</a>
+    <span class="stops">
+      <span class="lb">🚩 四站打卡</span>
+      <a href="#" class="num" data-stop="1">1</a>
+      <a href="#" class="num" data-stop="2">2</a>
+      <a href="#" class="num" data-stop="3">3</a>
+      <a href="#" class="num" data-stop="4">4</a>
+    </span>
   </nav>
 
   <div class="route on" id="r1">
