@@ -65,7 +65,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--rounder);line-heigh
 /* ===== 双线 Tab ===== */
 .tabbar{position:sticky;top:0;z-index:50;background:rgba(255,248,236,.96);backdrop-filter:blur(8px);
   border-bottom:3px dashed var(--yellow);margin:0 -18px;padding:12px 18px;display:flex;gap:12px}
-.tab{flex:1;text-align:center;padding:13px 6px;border-radius:18px;cursor:pointer;color:var(--ink-soft);
+.tab{flex:1;position:relative;text-align:center;padding:13px 6px;border-radius:18px;cursor:pointer;color:var(--ink-soft);
   font-size:clamp(1rem,3vw,1.14rem);font-weight:700;letter-spacing:.05em;border:3px solid transparent;
   transition:.25s;user-select:none;background:#fff}
 .tab small{display:block;font-size:.74rem;color:var(--ink-soft);margin-top:2px;font-weight:400}
@@ -75,6 +75,14 @@ body{background:var(--bg);color:var(--ink);font-family:var(--rounder);line-heigh
 
 /* ===== 区块头 ===== */
 .sec-head{margin:52px 0 6px;display:flex;align-items:center;gap:16px}
+/* 线路档期标注 */
+.routeflag{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:34px 0 -14px}
+.routeflag .fk{display:inline-block;font-weight:900;font-size:1rem;letter-spacing:.08em;padding:7px 20px;border-radius:999px;color:#fff}
+.routeflag .fs{font-size:.86rem;color:var(--ink-soft)}
+.routeflag.hot .fk{background:linear-gradient(135deg,#c9492f,#9e2b22);box-shadow:0 4px 0 rgba(158,43,34,.30)}
+.routeflag.next .fk{background:linear-gradient(135deg,#8a97a8,#6f7d90);box-shadow:0 4px 0 rgba(111,125,144,.28)}
+.tab .mini-flag{position:absolute;top:5px;right:12px;font-size:.66rem;background:linear-gradient(135deg,#c9492f,#9e2b22);color:#fff;padding:2px 9px;border-radius:999px;font-weight:800;font-style:normal;letter-spacing:.05em}
+.tab .mini-flag.grey{background:linear-gradient(135deg,#8a97a8,#6f7d90)}
 .sec-no{flex:none;width:56px;height:56px;border-radius:20px;display:flex;align-items:center;justify-content:center;
   font-size:1.7rem;background:#fff;border:3px solid var(--blue);box-shadow:0 4px 0 rgba(61,155,233,.3);transform:rotate(-6deg)}
 .route2 .sec-no{border-color:var(--green);box-shadow:0 4px 0 rgba(87,178,106,.3);transform:rotate(6deg)}
@@ -222,8 +230,8 @@ footer .big{font-size:1.25rem;font-weight:900;letter-spacing:.2em;
 
   <!-- ===== Tab ===== -->
   <div class="tabbar">
-    <div class="tab t1 on" data-r="r1"><span class="ico">🏛️</span>线路一<small>文庙 · 府学文脉</small></div>
-    <div class="tab t2" data-r="r2"><span class="ico">⛵</span>线路二<small>胥江胥门 · 古城起源</small></div>
+    <div class="tab t1 on" data-r="r1"><i class="mini-flag">国庆限定</i><span class="ico">🏛️</span>线路一<small>文庙 · 府学文脉</small></div>
+    <div class="tab t2" data-r="r2"><i class="mini-flag grey">预告</i><span class="ico">⛵</span>线路二<small>胥江胥门 · 古城起源</small></div>
   </div>
 
   <!-- ===== 段落导航（吸顶，在"小小研究员集合"上方） ===== -->
@@ -238,6 +246,7 @@ footer .big{font-size:1.25rem;font-weight:900;letter-spacing:.2em;
   </nav>
 
   <div class="route on" id="r1">
+    <div class="routeflag hot"><span class="fk">🏮 国庆限定</span><span class="fs">2026 国庆档 · 10月5日开营 · 报满即止</span></div>
     <div class="sec-head">
       <div class="sec-no">🏛️</div>
       <div><h2>苏州文庙 · 小小研究员集合！</h2><div class="en">SUZHOU CONFUCIAN TEMPLE</div></div>
@@ -311,6 +320,7 @@ footer .big{font-size:1.25rem;font-weight:900;letter-spacing:.2em;
   <!-- 线路二 胥江胥门（亲子版） -->
   <!-- ============================================================ -->
   <div class="route" id="r2">
+    <div class="routeflag next"><span class="fk">🌱 后续精彩</span><span class="fs">线路内容先睹为快 · 敬请期待正式上线</span></div>
     <div class="sec-head">
       <div class="sec-no">⛵</div>
       <div><h2>胥江胥门 · 找到古城的"出生证明"</h2><div class="en">XUJIANG RIVER &amp; XUMEN GATE</div></div>
