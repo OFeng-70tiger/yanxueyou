@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>吴地时光机 · 千里研学 Citywalk 狮子山重阳图志（耆骥版）</title>
+<style>
+:root{
+  --bg:#fff8ec; --bg2:#fff3dd; --card:#ffffff;
+  --ink:#3d3226; --ink-soft:#6b5c48;
+  --blue:#3d9be9; --blue-deep:#1f6fb2;
+  --orange:#ff8a3d; --orange-deep:#e8641c;
+  --green:#57b26a; --green-deep:#2f8b47;
+  --yellow:#ffc53d; --yellow-deep:#e8a20a;
+  --pink:#ff7a7a;
+  --rounder:"Microsoft YaHei","PingFang SC",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--rounder);line-height:1.85;font-size:17px;
+  background-image:
+    radial-gradient(circle at 12% 6%, rgba(61,155,233,.10) 0 60px, transparent 61px),
+    radial-gradient(circle at 90% 4%, rgba(255,197,61,.14) 0 44px, transparent 45px),
+    radial-gradient(circle at 78% 18%, rgba(87,178,106,.08) 0 34px, transparent 35px);
+}
+.wrap{max-width:880px;margin:0 auto;padding:0 18px 90px}
+
+/* 顶部进度条 */
+#topbar{position:fixed;top:0;left:0;right:0;height:5px;background:transparent;z-index:99}
+#topbar i{display:block;height:100%;width:0;border-radius:0 3px 3px 0;
+  background:linear-gradient(90deg,var(--blue),var(--green),var(--yellow),var(--orange));}
+
+/* ===== Hero ===== */
+.hero{position:relative;min-height:520px;display:flex;align-items:center;justify-content:center;text-align:center;
+  overflow:hidden;border-bottom:4px dashed var(--yellow);
+  background:linear-gradient(180deg,#bfe3ff 0%,#d9f0ff 34%,#fff3d6 78%,var(--bg) 100%)}
+/* 卡通太阳与云朵（CSS手绘） */
+.sun{position:absolute;top:34px;right:9%;width:74px;height:74px;border-radius:50%;
+  background:radial-gradient(circle at 38% 36%,#ffe28a,var(--yellow) 70%);
+  box-shadow:0 0 0 12px rgba(255,197,61,.25),0 0 0 26px rgba(255,197,61,.12)}
+.cloud{position:absolute;background:#fff;border-radius:60px;opacity:.9}
+.cloud::before,.cloud::after{content:"";position:absolute;background:#fff;border-radius:50%}
+.cloud.c1{top:52px;left:8%;width:120px;height:40px}
+.cloud.c1::before{width:52px;height:52px;top:-26px;left:20px}
+.cloud.c1::after{width:38px;height:38px;top:-16px;left:62px}
+.cloud.c2{top:120px;right:16%;width:92px;height:30px;opacity:.75}
+.cloud.c2::before{width:40px;height:40px;top:-20px;left:16px}
+.cloud.c2::after{width:28px;height:28px;top:-12px;left:50px}
+/* 卡通山与塔剪影 */
+.hill{position:absolute;bottom:0;left:0;right:0;height:96px;opacity:.55;
+  background:repeating-linear-gradient(90deg,#8fd08f 0 70px,#7cc47e 70px 140px);
+  clip-path:polygon(0 100%,0 62%,9% 30%,18% 58%,27% 12%,36% 52%,45% 34%,54% 64%,63% 6%,66% 0,67% 6%,72% 60%,82% 40%,92% 66%,100% 48%,100% 100%)}
+.hill.h2{height:56px;opacity:.35;background:repeating-linear-gradient(90deg,#57b26a 0 90px,#4aa75e 90px 180px);
+  clip-path:polygon(0 100%,0 55%,12% 78%,24% 30%,38% 70%,52% 44%,66% 76%,80% 36%,92% 66%,100% 52%,100% 100%)}
+.hero-inner{position:relative;z-index:2;padding:56px 24px 104px;max-width:760px}
+.badge{display:inline-block;background:var(--orange);color:#fff;font-weight:700;font-size:.92rem;letter-spacing:.18em;
+  border-radius:40px;padding:7px 24px;margin-bottom:22px;box-shadow:0 4px 0 var(--orange-deep);transform:rotate(-2deg)}
+.brand{font-size:clamp(2rem,6.8vw,3.1rem);font-weight:900;letter-spacing:.14em;margin-bottom:6px;
+  background:linear-gradient(90deg,var(--blue-deep),var(--green-deep) 40%,var(--orange-deep) 78%,var(--pink));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 3px 0 rgba(255,255,255,.9)) drop-shadow(0 6px 14px rgba(61,107,178,.25))}
+.brand-sub{font-size:clamp(1rem,3.4vw,1.3rem);font-weight:700;color:var(--ink);letter-spacing:.3em;margin-bottom:14px}
+.brand-emoji{font-size:2rem;letter-spacing:.4em;margin-bottom:10px}
+.hero p{color:var(--ink-soft);font-size:clamp(.95rem,2.7vw,1.05rem);max-width:600px;margin:0 auto}
+.hero-meta{margin-top:22px;font-weight:700;color:var(--blue-deep);font-size:.98rem;letter-spacing:.12em}
+.hero-meta span{margin:0 12px;color:var(--orange)}
+
+/* ===== 区块头 ===== */
+.sec-head{margin:52px 0 6px;display:flex;align-items:center;gap:16px}
+.sec-no{flex:none;width:56px;height:56px;border-radius:20px;display:flex;align-items:center;justify-content:center;
+  font-size:1.7rem;background:#fff;border:3px solid var(--blue);box-shadow:0 4px 0 rgba(61,155,233,.3);transform:rotate(-6deg)}
+.sec-head h2{font-size:clamp(1.35rem,4.6vw,1.75rem);font-weight:900;letter-spacing:.06em}
+.sec-head .en{font-size:.78rem;color:var(--ink-soft);letter-spacing:.28em;margin-top:2px;font-weight:400}
+.sec-sub{color:var(--ink-soft);font-size:.97rem;margin:6px 0 0 72px}
+
+/* 卡片 */
+.card{background:var(--card);border:3px solid #f2e4c8;border-radius:26px;padding:26px 22px 24px;margin-top:28px;
+  position:relative;overflow:hidden;box-shadow:0 6px 0 rgba(226,172,118,.18);transition:transform .3s,box-shadow .3s}
+a.card{display:block;text-decoration:none;color:inherit}
+.card:hover{transform:translateY(-4px) rotate(.3deg);box-shadow:0 10px 0 rgba(226,172,118,.22)}
+.card.c1{border-color:#cfe8ff}
+.card.c2{border-color:#d8f0dc}
+.card .top-ico{position:absolute;top:-8px;right:14px;font-size:3.4rem;opacity:.16;transform:rotate(12deg)}
+.stopbadge{display:inline-flex;align-items:center;gap:6px;background:var(--blue);color:#fff;font-weight:900;
+  font-size:.9rem;letter-spacing:.14em;border-radius:30px;padding:4px 16px 4px 12px;margin-bottom:8px;box-shadow:0 3px 0 var(--blue-deep)}
+.stopbadge.gold{background:var(--orange);box-shadow:0 3px 0 var(--orange-deep)}
+.pbadge{display:inline-flex;align-items:center;gap:6px;color:#fff;font-weight:900;font-size:.9rem;
+  letter-spacing:.14em;border-radius:30px;padding:4px 16px 4px 12px;margin-bottom:8px;
+  background:linear-gradient(135deg,var(--yellow-deep),#c47f08);box-shadow:0 3px 0 #a36805}
+.pbadge.up{background:linear-gradient(135deg,#7a5cc4,#5a3fa0);box-shadow:0 3px 0 #47307e}
+.pbadge.gold{background:linear-gradient(135deg,#c9492f,#9e2b22);box-shadow:0 3px 0 rgba(158,43,34,.3)}
+.more-tip{margin-top:22px;text-align:center;color:var(--ink-soft);font-size:.92rem;
+  background:#fff;border:2px dashed var(--yellow-deep);border-radius:22px;padding:14px 18px}
+.more-tip b{color:var(--orange-deep)}
+.card h3{font-size:clamp(1.15rem,4vw,1.38rem);font-weight:900;letter-spacing:.04em;margin:2px 40px 6px 0}
+.card .tag{display:inline-block;font-size:.78rem;font-weight:700;color:var(--orange-deep);background:#fff3e4;
+  border-radius:30px;padding:2px 14px;margin:2px 6px 10px 0}
+.card p{color:var(--ink-soft);margin:8px 0;font-size:.99rem}
+.card p b{color:var(--ink)}
+.hl{color:var(--orange-deep);font-weight:700}
+.key{background:linear-gradient(135deg,#fff8d6,#ffedb8);border:2px dashed var(--yellow-deep);
+  padding:12px 16px;border-radius:18px;color:var(--ink-soft);font-size:.94rem;margin-top:14px;position:relative}
+.key b{color:var(--orange-deep)}
+.key::before{content:"⭐ 千里任务卡";position:absolute;top:-14px;left:14px;background:var(--yellow);color:#5a4200;
+  font-size:.76rem;font-weight:900;border-radius:20px;padding:2px 14px;box-shadow:0 2px 0 var(--yellow-deep)}
+/* 卷首语 */
+.qintro{margin:18px 0 8px;background:linear-gradient(180deg,#fff8e0,#fffdf5);
+  border:2px solid var(--yellow-deep);border-radius:22px;padding:16px 20px 14px;
+  box-shadow:0 4px 0 rgba(232,162,10,.18)}
+.qintro h3{font-size:1.05rem;color:var(--orange-deep);letter-spacing:.03em;line-height:1.6}
+.qintro p{font-size:.95rem;color:var(--ink-soft);line-height:1.9;margin-top:8px}
+.qintro b{color:var(--orange-deep)}
+/* 时间线 */
+.tl{list-style:none;margin-top:10px}
+.tl li{position:relative;padding:0 0 14px 26px;border-left:3px dashed var(--yellow);margin-left:8px;color:var(--ink-soft);font-size:.96rem}
+.tl li:last-child{border-left-color:transparent;padding-bottom:2px}
+.tl li::before{content:"";position:absolute;left:-8.5px;top:8px;width:11px;height:11px;border-radius:50%;
+  background:var(--orange);border:2.5px solid #fff;box-shadow:0 0 0 2px var(--yellow-deep)}
+.tl li b{color:var(--ink)}
+.tl li .yr{display:inline-block;min-width:86px;font-weight:900;color:var(--orange-deep)}
+
+/* 图片区 */
+.media{margin:16px -4px 4px;border-radius:20px;overflow:hidden;border:3px solid #f2e4c8;position:relative;background:#fff}
+.card.c1 .media{border-color:#cfe8ff}
+.card.c2 .media{border-color:#d8f0dc}
+.media img{display:block;width:100%;height:clamp(210px,40vw,320px);object-fit:cover;object-position:center;transition:transform .6s}
+.card:hover .media img{transform:scale(1.02)}
+.media img.tall{height:auto;max-height:520px;object-fit:contain;background:#fffdf7}
+.media .cap{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 8px;font-size:.8rem;font-weight:700;color:#fff;
+  background:linear-gradient(transparent,rgba(40,30,15,.72));letter-spacing:.08em}
+.media img.tall+.cap{position:static;padding:8px 14px;background:#fffdf7;color:var(--ink-soft)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.g2 .media,.g3 .media{margin:0}
+.g2 img,.g3 img{height:clamp(150px,26vw,210px)}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.g3 .cap,.g2 .cap{font-size:.68rem;padding-top:16px}
+
+/* ===== 段落导航（吸顶） ===== */
+.secnav{position:sticky;top:var(--stickH,0px);z-index:60;
+  margin:10px -18px 0;padding:10px 18px;display:flex;gap:8px;align-items:center;
+  background:rgba(255,248,236,.97);backdrop-filter:blur(8px);border-bottom:3px dashed var(--yellow);
+  overflow-x:auto;scrollbar-width:none}
+.secnav::-webkit-scrollbar{display:none}
+.secnav a{flex:none;text-decoration:none;font-size:.86rem;font-weight:700;color:var(--ink-soft);
+  background:#fff;border:2px solid #f2e4c8;border-radius:30px;padding:6px 15px;letter-spacing:.04em;
+  transition:transform .2s,background .2s,color .2s;white-space:nowrap}
+.secnav a:active{transform:scale(.95)}
+.secnav a.num{min-width:36px;text-align:center;padding:6px 0;font-family:Georgia,serif;font-size:.92rem;
+  border-color:var(--orange);color:var(--orange-deep)}
+.secnav a.on{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 3px 0 var(--blue-deep)}
+.secnav a.num.on{background:var(--orange);color:#fff;border-color:var(--orange);box-shadow:0 3px 0 var(--orange-deep)}
+.secnav .lb{flex:none;font-size:.82rem;font-weight:700;color:var(--ink-soft);letter-spacing:.06em;white-space:nowrap}
+.secnav .stops{display:contents}
+[data-anchor]{scroll-margin-top:180px}
+
+/* 提示条 */
+.tip{margin-top:36px;border-radius:24px;padding:22px 20px 20px;position:relative;text-align:center;
+  background:linear-gradient(135deg,#eaf5ff,#e3f8e8);border:3px solid #bfe3c9;color:var(--ink-soft);font-size:.95rem}
+.tip .tip-head{display:inline-block;font-weight:900;color:var(--blue-deep);font-size:1.02rem;letter-spacing:.08em;
+  background:#fff;border-radius:30px;padding:7px 22px;box-shadow:0 3px 0 rgba(61,155,233,.22)}
+.tip p{margin:14px 0 0;background:rgba(255,255,255,.75);border-radius:16px;padding:14px 16px;text-align:left}
+.tip .seal{position:absolute;right:16px;top:-15px;background:#fff;border:3px solid var(--orange);color:var(--orange-deep);
+  border-radius:14px;padding:2px 12px;font-weight:900;transform:rotate(-4deg)}
+
+/* 报名须知 */
+.notes{display:grid;gap:14px;margin-top:26px}
+.note{background:var(--card);border:3px solid #f2e4c8;border-radius:22px;padding:18px 20px 16px;
+  box-shadow:0 6px 0 rgba(226,172,118,.16)}
+.note b{display:inline-flex;align-items:center;gap:8px;font-size:1.04rem;color:var(--orange-deep);letter-spacing:.06em}
+.note p{margin-top:6px;color:var(--ink-soft);font-size:.97rem}
+.note p b{display:inline;color:var(--ink);font-size:inherit}
+
+/* 带队讲师 */
+.teacher{display:block;margin:26px auto 0;max-width:400px;text-align:center;text-decoration:none;
+  background:var(--card);border:3px solid #f2e4c8;border-radius:26px;padding:20px 18px 20px;
+  box-shadow:0 6px 0 rgba(226,172,118,.18);transition:transform .3s,box-shadow .3s}
+.teacher:hover{transform:translateY(-4px);box-shadow:0 10px 0 rgba(226,172,118,.24)}
+.teacher img{display:block;width:clamp(200px,52vw,300px);margin:0 auto;border-radius:16px;
+  border:3px solid var(--yellow);box-shadow:0 8px 20px rgba(226,172,118,.35)}
+.teacher .t-name{margin-top:14px;font-weight:900;font-size:1.02rem;color:var(--ink);letter-spacing:.06em}
+.teacher .t-sub{font-size:.82rem;color:var(--ink-soft);margin-top:2px}
+.teacher .t-link{display:inline-block;margin-top:10px;font-size:.9rem;font-weight:700;color:var(--orange-deep);
+  background:#fff3e4;border-radius:30px;padding:5px 20px;letter-spacing:.08em;
+  box-shadow:0 3px 0 var(--orange-deep)}
+.teacher:hover .t-link{background:var(--orange);color:#fff;box-shadow:0 3px 0 var(--orange-deep)}
+
+/* 底部 */
+footer{margin-top:70px;text-align:center;color:var(--ink-soft);font-size:.86rem}
+footer .big{font-size:1.25rem;font-weight:900;letter-spacing:.2em;
+  background:linear-gradient(90deg,var(--blue-deep),var(--orange-deep));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* 动画 */
+@keyframes popIn{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}
+.fade{opacity:0;animation:popIn .8s cubic-bezier(.2,.7,.2,1) forwards}
+.hero .badge{animation-delay:0s}.brand{animation-delay:.08s}.brand-sub{animation-delay:.16s}
+.brand-emoji{animation-delay:.22s}.hero p{animation-delay:.3s}.hero-meta{animation-delay:.42s}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.sun{animation:floaty 5s ease-in-out infinite}
+.cloud{animation:floaty 7s ease-in-out infinite}
+.cloud.c2{animation-delay:1.2s}
+
+@media(max-width:640px){
+  body{font-size:16px}
+  .card{padding:20px 16px 18px}
+  .g3{grid-template-columns:1fr 1fr}
+  .g3 img{height:150px}
+  .sec-sub{margin-left:0}
+  .hero-inner{padding-bottom:84px}
+}
+@media(min-width:641px){
+  .spots{display:grid;grid-template-columns:1fr 1fr;gap:0 22px;align-items:start;grid-auto-flow:dense}
+  .card-big{grid-column:1/-1}
+}
+</style>
+</head>
+<body>
+<div id="topbar"><i id="pb"></i></div>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="sun"></div><div class="cloud c1"></div><div class="cloud c2"></div>
+  <div class="hill"></div><div class="hill h2"></div>
+  <div class="hero-inner">
+    <div class="badge fade">🌿 耆骥千里版 · 重阳登高特辑</div>
+    <div class="brand fade">吴地时光机</div>
+    <div class="brand-sub fade">文史研学 CITYWALK · 千里狮山图志</div>
+    <div class="brand-emoji fade">⛰️ 🧭 📜 🏮 🚶‍♂️‍➡️</div>
+    <p class="fade">老骥伏枥，志在千里；重九登高，步步生风。邀您登一座 114.5 米的小山：石头会留言，山顶望五塔，一眼看一千年——边走边聊，把重阳的高，登进心里去！</p>
+    <div class="hero-meta fade"><span>◆</span>狮子山线 · 重阳登高寻踪<span>◆</span><br>九站打卡 · 半日慢游</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ===== 段落导航（吸顶） ===== -->
+  <nav class="secnav" id="secnav">
+    <a href="#story">⭐ 狮山故事堂</a>
+    <a href="#history">📜 狮山2500年</a>
+    <a href="#notes">📋 报名须知</a>
+    <a href="#teacher">🧑‍🏫 带队讲师</a>
+    <span class="stops">
+      <span class="lb">🚩 九站打卡</span>
+      <a href="#" class="num" data-stop="1">1</a>
+      <a href="#" class="num" data-stop="2">2</a>
+      <a href="#" class="num" data-stop="3">3</a>
+      <a href="#" class="num" data-stop="4">4</a>
+      <a href="#" class="num" data-stop="5">5</a>
+      <a href="#" class="num" data-stop="6">6</a>
+      <a href="#" class="num" data-stop="7">7</a>
+      <a href="#" class="num" data-stop="8">8</a>
+      <a href="#" class="num" data-stop="9">9</a>
+    </span>
+  </nav>
+
+  <!-- ===== 关于重阳 · 关于千里 ===== -->
+  <div class="qintro">
+    <h3>🌿 关于重阳 · 关于「千里」——这条登高线的心意</h3>
+    <p>农历九月九日，两九相重，故名「<b>重阳</b>」。曹丕说：「九为阳数，而日月并应，俗嘉其名，以为宜于长久。」——久久长寿，所以重阳要登高、吃糕、敬老。<b>登高的本义，是秋天最后一次站到高处，看一眼这一年。</b></p>
+    <p>这条线专为长者而设，取名「<b>千里</b>」，取曹操《龟虽寿》之意：「<b>老骥伏枥，志在千里；烈士暮年，壮心不已。</b>」脚步可以放慢，眼光仍要放远——重阳登高，正是一年里最相宜的一场。</p>
+    <p>山只有 <b>114.5 米</b>，全台阶步道，登顶约 15～30 分钟；但站上山顶，<b>一座山望得见五座塔</b>——从隋朝大业四年（608）到 1995 年，<b>一眼看一千四百年</b>。本页里每张小任务，都叫「<b>千里任务卡</b>」：不为考记忆，只为给您一个由头——边走、边看、边聊。</p>
+  </div>
+
+  <div class="route on" id="r1">
+    <div class="sec-head">
+      <div class="sec-no">⛰️</div>
+      <div><h2>狮子山 · 千里同行集合！</h2><div class="en">LION HILL · SUZHOU</div></div>
+    </div>
+    <p class="sec-sub">主题：重阳登高 · 一座孤山凭什么看得最远。北线上山、南线下山，全程约 2～2.5 小时，地铁 1 号线狮子山站直达。</p>
+
+    <div class="spots">
+
+    <div class="card card-big c1" data-stop="1" data-anchor>
+      <div class="top-ico">🏔️</div>
+      <div class="stopbadge">🚩 第一站</div>
+      <h3>狮山广场 · 天狮湖 —— 从"迪士尼太远"到"东有金鸡湖，西有狮子山"</h3>
+      <span class="tag">🏷️ 集合点</span><span class="tag">🏷️ 还山于民</span>
+      <div class="media"><img src="images/szs_shan.jpg" alt="狮子山天狮湖航拍" loading="lazy"><div class="cap">狮子山与天狮湖 —— 114.5 米的小山，卧在湖水与城市之间</div></div>
+      <p>脚下的湖叫<b>天狮湖</b>，狮子山的倒影就卧在水里。明代的《姑苏志》专门记了一笔：城西这四座小山，<b>"与诸山不相连"</b>——孤零零，是这座山的地理；热闹，是它的今天。</p>
+      <p>1997 年，苏州乐园欢乐世界就在山脚下开园，一句"<span class="hl">迪士尼太远，去苏州乐园</span>"，苏州人都会背。2017 年乐园闭园，2023 年原址建成<b>狮山公园</b>，2024 年<b>狮子山、天狮湖全面开放登山</b>。湖对岸，苏州博物馆西馆、狮山大剧院隔水相望——一代人的旋转木马，换成了博物馆和剧院。这叫四个字：<b>还山于民。</b></p>
+      <div class="g2">
+        <div class="media"><img src="images/szs_then_now.jpg" alt="狮子山古今对比" loading="lazy"><div class="cap">上：1759年《姑苏繁华图》里的狮子山｜下：2026年狮山公园</div></div>
+      </div>
+      <div class="key">找一找：乐园的过山车轨道，如今还留着一段，就在山脚——找到了就是"还山于民"的见证。谁小时候去过苏州乐园？走的时候讲一段乐园记忆给大家听听。</div>
+    </div>
+
+    <div class="card c1" data-stop="2" data-anchor>
+      <div class="top-ico">🏞️</div>
+      <div class="stopbadge">🚩 第二站</div>
+      <h3>何山望狮 —— 一座孤山，是它最大的本事</h3>
+      <span class="tag">🏷️ 四山不相连</span><span class="tag">🏷️ 平江图铁证</span>
+      <div class="media"><img class="tall" src="images/pj_xishan.jpg" alt="平江图城西群山" loading="lazy"><div class="cap">宋《平江图》（1229）城西群山：何山 → 岝崿山 → 高景山——岝崿山就是狮子山</div></div>
+      <p>往北看，一公里外那座 63.8 米的小山叫<b>何山</b>——邻居，但不是亲戚。苏州城西有天平山、灵岩山一条大山系，可狮子山<b>不挂在山脉上</b>：明《姑苏志》白纸黑字——<b>"以上四山与诸山不相连。"</b></p>
+      <p>正因四面无遮挡，<b>站上山顶，360 度视野</b>——这就是待会儿能望五塔的底气。1229 年刻的《平江图》上，它还叫<b>"岝崿山"</b>（zuò è shān），何山画在正北，与今天方位全同。"狮子山"是后人按山形叫出来的俗名。</p>
+      <div class="key">拿出手机扫《平江图》网页，在城西群山里找到"岝崿山"三个字——八百年前的地图，替我们作证。</div>
+    </div>
+
+    <div class="card c1" data-stop="3" data-anchor>
+      <div class="top-ico">🪨</div>
+      <div class="stopbadge">🚩 第三站</div>
+      <h3>北线登山口 · 摩崖石刻群 —— 一座山的"留言墙"</h3>
+      <span class="tag">🏷️ 狮山十八景</span><span class="tag">🏷️ 名家题刻</span>
+      <p>为什么这座山几乎不长树？因为它整个是<b>一块 1.5 亿年前从地底拱出来的大花岗岩</b>，裸岩占六成以上。石头上种不了几棵树，但石头上能干另一件事：<b>刻字</b>——清朝的进士、民国的先生、现代的大师，都来留过言。</p>
+      <p>山腰的<b>洗心泉</b>，题者有两说（一说康有为、一说清道光年间僧人），旁边还有郭沫若题的"物洗则洁，心洗则清"；山南巨石<b>坠星岩</b>，是书画宗师<b>吴昌硕</b>光绪八年（1882）所题，相传那块石头是天外坠星所化；再加上仙人靴、云溪、飞雨坡、中流砥柱、石船等，合称<b>狮山十八景</b>——一座小山攒下七八处摩崖，苏州近郊数得上。</p>
+      <div class="key">一路上山一路"认字"：看到石头上的题字就记下名字，登顶前对答案。"仙人靴"那块石头，您看像靴子，还是像汉堡？古人看石头，跟我们玩的是同一件事。</div>
+    </div>
+
+    <div class="card c1" data-stop="4" data-anchor>
+      <div class="top-ico">🛕</div>
+      <div class="stopbadge">🚩 第四站</div>
+      <h3>思益寺与石佛寺遗址 —— 白居易来过的山顶寺</h3>
+      <span class="tag">🏷️ 南朝古寺</span><span class="tag">🏷️ 白居易</span>
+      <p>1500 年前，山顶是一座寺：南朝梁天监二年（503）建，初名<b>法音寺</b>，唐代改称<b>思益寺</b>。唐代的苏州刺史、大诗人<b>白居易</b>专门为它写过一首诗——《自思益寺次楞伽寺》：从狮子山的思益寺，一路走到上方山的楞伽寺。<b>公元九世纪，一位"苏州市长"，从这座山走到那座山。</b></p>
+      <p>寺早没了，石头还记得：狮子下巴的岩洞，是后来<b>石佛寺</b>的位置，洞里至今供着一块《般若波罗蜜多心经》刻碑。1926 年，辛亥元老<b>李根源</b>专程爬上来访古，把所见一条条记进《吴郡西山访古记》。</p>
+      <div class="key">在狮子下巴的岩洞里找一找那块《心经》碑；白居易的诗题念一遍——《自思益寺次楞伽寺》，十四个字里藏着两座山。</div>
+    </div>
+
+    <div class="card c1" data-stop="5" data-anchor>
+      <div class="top-ico">📚</div>
+      <div class="stopbadge">🚩 第五站</div>
+      <h3>状元读书台 —— 一块石桌，一个身世之谜</h3>
+      <span class="tag">🏷️ 申时行</span><span class="tag">🏷️ 玉蜻蜓</span>
+      <p>这块石桌石凳，叫<b>状元读书台</b>。主人是明朝苏州人<b>申时行</b>——嘉靖四十一年（1562）状元，后来做到万历朝的内阁首辅。传说他小时候就在狮子山的寺庙里发奋读书。</p>
+      <p>他身上还藏着苏州人讲了几百年的身世之谜——鼎鼎大名的弹词<b>《玉蜻蜓》</b>：孩子自幼送人收养，后来高中状元，持信物玉蜻蜓入庵认母，"庵堂认母"一折是评弹经典。很多人认为故事原型就是申时行。传说归传说，但"狮子山上读过书"这一笔，苏州人愿意信——<b>一座山出一位宰相，读书台就是苏州人给孩子立的精神地标。</b></p>
+      <div class="key">在石桌旁坐一坐，往西望——天平山、灵岩山一线正好入画。当年读书人看的就是这一眼。</div>
+    </div>
+
+    <div class="card c1" data-stop="6" data-anchor>
+      <div class="top-ico">🦁</div>
+      <div class="stopbadge">🚩 第六站</div>
+      <h3>狮首 · 狮子回头望虎丘 —— 一句老话，两版传说</h3>
+      <span class="tag">🏷️ 摩崖石刻</span><span class="tag">🏷️ 狮虎对望</span>
+      <p>登顶先看脚下：整座山像一头伏在地上的大狮子，往东南探出的那一角是<b>狮首</b>，回望的方向正是五公里半外的<b>虎丘</b>。山顶"狮子回头望虎丘"七个字的石刻，苏州人从小听到大。</p>
+      <p>这句老话有两版讲法：<b>传说一</b>，寒山寺神僧的坐骑青狮下凡，斗死了祸害百姓的白虎，自己误了回灵山的时辰，跌落凡间化作石山，化石一瞬还不甘心回头望一眼；<b>传说二</b>更接历史——公元前 515 年专诸刺吴王僚，阖闾即位；吴王僚葬在狮子山，阖闾葬在虎丘剑池下，<b>一狮一虎、叔侄对望</b>，有人说狮子回头，是冤魂怒视篡位者。两版传说指向同一个地方：虎丘。</p>
+      <p>小知识：明《姑苏志》记，山顶原有两块巨石"云是<b>狮子两耳</b>"，可惜"自元以来凿石且尽"——你们今天看到的，是一头<b>缺了耳朵的狮子</b>。</p>
+      <div class="key">绕着狮首找角度：从哪一边看，狮子的"头颈回望"最传神？再猜猜，那两只六百年前被凿掉的"耳朵"原本长在哪儿？</div>
+    </div>
+
+    <div class="card card-big c1" data-stop="7" data-anchor>
+      <div class="top-ico">🗼</div>
+      <div class="stopbadge gold">🚩 第七站 · 全线王牌</div>
+      <h3>山顶五塔 —— 一眼一千年</h3>
+      <span class="tag">🏷️ 斜 · 方 · 高 · 山 · 旧</span><span class="tag">🏷️ 1387 年跨度</span>
+      <p>天气通透时，苏州五座名塔在山顶<b>一次看全</b>。认塔有个五字诀——<b>斜、方、高、山、旧</b>：</p>
+      <div class="g3">
+        <div class="media"><img src="images/ta_huqiu.jpg" alt="虎丘塔" loading="lazy"><div class="cap">虎丘塔 · 认那个"斜"字——倾斜2.34米的东方斜塔</div></div>
+        <div class="media"><img src="images/ta_beisi.jpg" alt="北寺塔" loading="lazy"><div class="cap">北寺塔 · 认那个"高"字——76米苏州古塔之最</div></div>
+        <div class="media"><img src="images/ta_lengqie.jpg" alt="楞伽塔" loading="lazy"><div class="cap">楞伽塔 · 认那个"旧"字——隋代始建，五塔中最老</div></div>
+      </div>
+      <p><b>北偏东 34°·5.6km｜虎丘塔</b>：五代后周显德六年（959）始建，塔身倾斜 2.34 米，"东方斜塔"。<b>东北 47°·2.7km｜寒山寺普明宝塔</b>：1995 年落成，四方五层，五塔里唯一的方形唐塔——此前寒山寺六百多年只闻钟声、不见塔影。<b>东偏北 65°·7.5km｜北寺塔</b>：高约 76 米，苏州古塔之最，全城天际线的锚点。<b>西南 231°·5.6km｜灵岩山寺多宝佛塔</b>：现存塔身建于南宋绍兴十七年（1147），塔与山融为一体，吴王夫差为西施建的馆娃宫就在那座山上。<b>南偏东 149°·6.5km｜上方山楞伽塔</b>：隋大业四年（608）始建，与虎丘塔并称"姐妹塔"，塔身微倾，"苏州第二斜塔"。</p>
+      <p>数一数年纪：楞伽塔 608 年始建，普明宝塔 1995 年落成——<b>最老和最新，差了一千三百八十七年</b>。站在一座 114.5 米的小山上看尽它们，这就是"不与诸山相连"送给苏州的礼物。</p>
+      <div style="overflow-x:auto;margin:14px -4px 4px">
+      <svg viewBox="0 0 680 580" style="display:block;min-width:560px;max-width:640px;width:100%;margin:0 auto;background:#fffdf7;border:1px solid #f2e4c8;border-radius:12px" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+        <circle cx="340" cy="300" r="236" fill="none" stroke="#f0e4c8" stroke-width="1.5" stroke-dasharray="5 6"/>
+        <circle cx="340" cy="300" r="118" fill="none" stroke="#f6eeda" stroke-width="1.2" stroke-dasharray="3 6"/>
+        <line x1="340" y1="52" x2="340" y2="548" stroke="#f6eeda" stroke-width="1.2"/>
+        <line x1="92" y1="300" x2="588" y2="300" stroke="#f6eeda" stroke-width="1.2"/>
+        <g>
+          <polygon points="340,34 334,54 346,54" fill="#e8641c"/>
+          <text x="340" y="26" text-anchor="middle" font-size="14" fill="#e8641c" font-weight="bold">北</text>
+        </g>
+        <g>
+          <circle cx="340" cy="300" r="9" fill="#e8641c"/>
+          <text x="340" y="332" text-anchor="middle" font-size="16" fill="#c9492f" font-weight="bold">狮子山</text>
+          <text x="340" y="350" text-anchor="middle" font-size="11" fill="#6b5c48">海拔 114.5 米 · 孤山</text>
+        </g>
+        <g>
+          <line x1="340" y1="300" x2="452" y2="132" stroke="#e8a20a" stroke-width="1.6" stroke-dasharray="2 4"/>
+          <rect x="441" y="106" width="22" height="30" rx="3" fill="#c9492f"/>
+          <text x="452" y="98" text-anchor="middle" font-size="13" fill="#3d3226" font-weight="bold">虎丘塔 47.7m</text>
+          <text x="452" y="152" text-anchor="middle" font-size="11" fill="#6b5c48">959 始建 · 斜塔 2.34m</text>
+        </g>
+        <g>
+          <line x1="340" y1="300" x2="411" y2="234" stroke="#e8a20a" stroke-width="1.6" stroke-dasharray="2 4"/>
+          <rect x="402" y="210" width="18" height="26" rx="2" fill="#2f8b47"/>
+          <text x="424" y="204" text-anchor="middle" font-size="13" fill="#3d3226" font-weight="bold">寒山寺普明宝塔 42.2m</text>
+          <text x="424" y="250" text-anchor="middle" font-size="11" fill="#6b5c48">1995 落成 · 唯一方形唐塔</text>
+        </g>
+        <g>
+          <line x1="340" y1="300" x2="585" y2="187" stroke="#e8a20a" stroke-width="1.6" stroke-dasharray="2 4"/>
+          <rect x="574" y="147" width="22" height="40" rx="3" fill="#1f6fb2"/>
+          <text x="586" y="140" text-anchor="middle" font-size="13" fill="#3d3226" font-weight="bold">北寺塔 76m</text>
+          <text x="560" y="202" text-anchor="middle" font-size="11" fill="#6b5c48">1153 重建 · 苏州之最</text>
+        </g>
+        <g>
+          <line x1="340" y1="300" x2="183" y2="427" stroke="#e8a20a" stroke-width="1.6" stroke-dasharray="2 4"/>
+          <rect x="172" y="402" width="22" height="28" rx="3" fill="#e8a20a"/>
+          <text x="183" y="394" text-anchor="middle" font-size="13" fill="#3d3226" font-weight="bold">灵岩山多宝佛塔</text>
+          <text x="183" y="448" text-anchor="middle" font-size="11" fill="#6b5c48">1147 现存 · 馆娃宫故地</text>
+        </g>
+        <g>
+          <line x1="340" y1="300" x2="462" y2="500" stroke="#e8a20a" stroke-width="1.6" stroke-dasharray="2 4"/>
+          <rect x="451" y="474" width="22" height="30" rx="3" fill="#6b5c48"/>
+          <text x="462" y="466" text-anchor="middle" font-size="13" fill="#3d3226" font-weight="bold">上方山楞伽塔</text>
+          <text x="462" y="522" text-anchor="middle" font-size="11" fill="#6b5c48">608 始建 · 第二斜塔</text>
+        </g>
+        <g>
+          <circle cx="322" cy="196" r="5" fill="#b3a48c"/>
+          <text x="322" y="186" text-anchor="middle" font-size="11" fill="#b3a48c">何山 63.8m（北一里）</text>
+        </g>
+        <text x="20" y="566" font-size="11" fill="#b3a48c">示意方位角／距离按地图坐标实算（2026-10）· 非等比例尺 · 现场以目验为准</text>
+      </svg>
+      </div>
+      <div class="key">认塔比赛：两位老友一组，按"斜、方、高、山、旧"五字诀，在真实天际线里把塔一一指认出来——塔在几公里外只是个小点，靠特征认塔，才是本事。</div>
+    </div>
+
+    <div class="card c1" data-stop="8" data-anchor>
+      <div class="top-ico">🚩</div>
+      <div class="stopbadge gold">🚩 第八站</div>
+      <h3>招国魂 —— 1903 年，山顶上那面黑幡</h3>
+      <span class="tag">🏷️ 朱梁任</span><span class="tag">🏷️ 醒狮</span>
+      <p>脚下站的位置，123 年前站过二十个年轻人。1903 年，苏州二十岁的青年<b>朱梁任</b>约了<b>包天笑、苏曼殊</b>等十八人，雇小船出城登上狮子山，摆开祭品，扯起两面幡：黑幡写"<span class="hl">魂兮归来</span>"，白幡画一头雄狮，落款"黄帝之曾孙小子"——最后朝天鸣枪一响。为什么选这座山？因为他们喊的口号就是"<b>睡狮醒兮</b>"：中国是一头睡狮，要醒，就得有人先站到狮子头顶上去喊。朱梁任回城后，把家门口一条弄堂改名<b>"醒狮路"</b>——今天还在石路那边。</p>
+      <p>更妙的是十四年后：1917 年，朱梁任与叶德辉出钱<b>督工深刻宋碑《平江图》</b>——文庙里那块碑右缘"郡人叶德辉朱锡梁督工深刻"的落款，就是他。<b>这座山和文庙那块碑，是同一个人的两件"作品"</b>：一个在山顶上喊醒中国，一个在碑刻里唤醒一座城。走过文庙线的朋友，此刻该起鸡皮疙瘩了。</p>
+      <div class="key">记一个名字：朱梁任。下次走进文庙看《平江图》时，到碑右缘找一找"朱锡梁督工深刻"——狮子山与文庙，就这么接上了。</div>
+    </div>
+
+    <div class="card c1" data-stop="9" data-anchor>
+      <div class="top-ico">🍰</div>
+      <div class="stopbadge">🚩 第九站</div>
+      <h3>下山 · 西晋墓与重阳糕 —— 山脚下还有两千年</h3>
+      <span class="tag">🏷️ 南线只下不上</span><span class="tag">🏷️ 敬老收队</span>
+      <p>下山走<b>南线</b>——官方设计成"只下不上"，一边下一边看湖。1976 年，山麓平整土地时挖出了古墓，考古队两次发掘，清出<b>四座西晋砖室墓</b>，出土随葬品 126 件——青瓷扁壶、兔形水注、金钗金环，如今都在苏州博物馆。一千七百年前，苏州人就觉得这座山是块好地：吴王僚传说葬在这、西晋人把家族墓安在这、状元在这读过书、青年在这喊醒过中国。</p>
+      <p>回到山脚，做重阳的正经事：<b>重阳糕</b>——"糕"与"高"同音，古人把糕放在儿女额头，祝一声"愿儿<b>百事俱高</b>"。重阳也是<b>敬老节</b>：今天谁是被家人一路牵来的，下山请反过来——<b>替他们背包，扶他们下最后一段台阶</b>。登高的规矩，从来不是自己站到最高，是<b>把最好看的风景，指给你爱的人看。</b></p>
+      <div class="key">分一口重阳糕，把今天登的高"吃"进肚子里；下山时替家人背包——这一站的任务，不用拍照，用心完成。</div>
+    </div>
+
+    </div>
+
+    <div class="tip">
+      <span class="seal">登</span>
+      <div class="tip-head">🎈 登山小贴士</div>
+      <p><b>自备饮水</b>（山上无售卖点）；<b>穿防滑鞋</b>（全台阶步道，雨天湿滑）；重阳及节假日人流较大，<b>留意预约与错峰</b>；北线、中线上下自如，<b>南线只下不上</b>——别把上山的路走反了。节奏不赶，半山休息点随时可以歇脚看湖。</p>
+    </div>
+  </div>
+
+  <!-- ===== 狮山2500年 ===== -->
+  <div class="sec-head" id="history" data-anchor>
+    <div class="sec-no">📜</div>
+    <div><h2>狮山 2500 年 · 一条时间线</h2><div class="en">TWELVE CENTURIES &amp; MORE</div></div>
+  </div>
+  <p class="sec-sub">一座山的"生老病死"和"死而复生"——从吴王僚到狮山大剧院。</p>
+  <div class="card card-big c2">
+    <div class="top-ico">📜</div>
+    <div class="pbadge">时间长卷</div>
+    <h3>山还是那座山，还山于民</h3>
+    <ul class="tl">
+      <li><span class="yr">春秋 · 前515年</span>专诸刺吴王僚，阖闾即位。唐《吴地记》载："岝崿山在吴县西十二里，<b>吴王僚葬此山中</b>。"</li>
+      <li><span class="yr">南朝梁 · 503</span>山顶建寺，初名法音寺，后改<b>思益寺</b>——白居易写过它。</li>
+      <li><span class="yr">宋 · 1229</span>《平江图》刻碑，城西群山题写"<b>岝崿山</b>"，其北紧邻何山，与今天方位全同。</li>
+      <li><span class="yr">元～明</span>采石渐盛，"狮子两耳"般的巨石"自元以来凿石且尽"；状元申时行"狮山读书"的传说流传开来。</li>
+      <li><span class="yr">清 · 1882</span>吴昌硕题"坠星岩"；道光年间山腰留下"洗心泉"摩崖。</li>
+      <li><span class="yr">1903</span>朱梁任等十八人登山顶"<b>招国魂</b>"，扯幡鸣枪——苏州辛亥前史在此拉开幕。</li>
+      <li><span class="yr">1917</span>同一位朱梁任督工深刻宋碑《平江图》——文庙那块国宝碑，有他一份。</li>
+      <li><span class="yr">1976～1979</span>东麓发掘<b>西晋砖室墓 4 座</b>，出土文物 126 件，现藏苏州博物馆。</li>
+      <li><span class="yr">1997～2017</span><b>苏州乐园</b>开园又闭园，整 20 年——"迪士尼太远，去苏州乐园"。</li>
+      <li><span class="yr">2021～2024</span>苏州博物馆西馆启用、狮山公园建成、狮子山天狮湖全面开放登山、狮山大剧院开幕。</li>
+      <li><span class="yr">今天</span>"东有金鸡湖，西有狮子山"——一代人的旋转木马换成了博物馆与剧院，<b>山还是那座山。</b></li>
+    </ul>
+  </div>
+
+  <!-- ===== 狮山故事堂 ===== -->
+  <div class="sec-head" id="story" data-anchor>
+    <div class="sec-no">⭐</div>
+    <div><h2>狮山故事堂 · 和这座山有关的人</h2><div class="en">HALL OF STORIES</div></div>
+  </div>
+  <p class="sec-sub">一座小山，半城人物。这六位（组）人物，都能在狮子山找到他们的"踪迹"——登山时对照找一找！</p>
+
+  <div class="spots">
+
+    <div class="card card-big c1">
+      <div class="top-ico">👑</div>
+      <div class="pbadge gold">霸主疑冢</div>
+      <h3>吴王僚 · 史书里葬在这座山</h3>
+      <span class="tag">🏷️ 春秋 · 前515年</span><span class="tag">🏷️ 唐《吴地记》</span>
+      <p>公元前 515 年，专诸把匕首藏进鱼腹，在宴席上刺杀了吴王僚，公子光即位，就是<b>阖闾</b>。唐代《吴地记》记载："岝崿山在吴县西十二里，<b>吴王僚葬此山中</b>。"——这是"狮虎对望"（僚葬狮山、阖闾葬虎丘）的史源。墓的具体位置至今未经考古确认，但唐代人言之凿凿，1926 年李根源访古时也记下"吴王僚墓旧在寺中"。</p>
+      <div class="key">想一想：吴王僚葬狮子山、阖闾葬虎丘——叔侄二人隔空对望了两千五百年。"狮子回头望虎丘"的传说，是不是就从这来的？</div>
+    </div>
+
+    <div class="card c1">
+      <div class="top-ico">🌾</div>
+      <div class="pbadge">刺史诗人</div>
+      <h3>白居易 · 从这座山走到那座山</h3>
+      <span class="tag">🏷️ 唐代苏州刺史</span><span class="tag">🏷️ 思益寺题诗</span>
+      <p>任苏州刺史期间，白居易写下《自思益寺次楞伽寺》——从狮子山的思益寺，走到上方山的楞伽寺（今治平寺一带）。后来他主持开凿的山塘河，成了另一条研学线。<b>一位大诗人，把苏州的山山水水都写进了诗里。</b></p>
+      <div class="key">背一句白居易最出名的句子吧——"野火烧不尽，春风吹又生"，就是他十六岁时写的。</div>
+    </div>
+
+    <div class="card c1">
+      <div class="top-ico">🌿</div>
+      <div class="pbadge up">山中高士</div>
+      <h3>何求 · 何点 —— 把名字留给一座山</h3>
+      <span class="tag">🏷️ 南朝隐士</span><span class="tag">🏷️ 何山</span>
+      <p>狮子山北面的何山，原名<b>鹤阜山</b>，因南朝齐梁间的隐士兄弟<b>何求、何点</b>归隐安葬于此而改姓"何"。何点被时人尊称"<b>通隐</b>"——看得通透的隐士，是当时士大夫的精神偶像。山清水秀不图名利，把名字留给了山。</p>
+      <div class="key">小地理课：何山只有 63.8 米，比狮子山还矮一半——找找看，从狮子山哪一段路能望见它？</div>
+    </div>
+
+    <div class="card c1">
+      <div class="top-ico">🏆</div>
+      <div class="pbadge">状元首辅</div>
+      <h3>申时行 · 《玉蜻蜓》的主角原型</h3>
+      <span class="tag">🏷️ 明嘉靖四十一年状元</span><span class="tag">🏷️ 万历朝首辅</span>
+      <p>苏州人申时行，状元出身，官至内阁首辅。传说他幼年在狮子山寺庙里读书，山上"状元读书台"因此得名；弹词《玉蜻蜓》"庵堂认母"的故事，民间也常算在他头上。传说归传说，正史记他早年在卫道观读书——但苏州人愿意把这一笔文脉，安在这座山上。</p>
+      <div class="key">听一段《玉蜻蜓》"庵堂认母"的评弹选段——回家搜一搜，下次把故事讲给同行老友听。</div>
+    </div>
+
+    <div class="card c1">
+      <div class="top-ico">🚩</div>
+      <div class="pbadge gold">招国魂</div>
+      <h3>朱梁任 · 山顶扯幡的苏州青年</h3>
+      <span class="tag">🏷️ 1903 招国魂</span><span class="tag">🏷️ 1917 督工深刻平江图</span>
+      <p>二十岁登上狮子山扯幡鸣枪"招国魂"，回城把弄堂改名"醒狮路"；十四年后又督工深刻《平江图》碑。他还是南社发起人之一、宋大儒朱长文的三十三世孙。1932 年，他为保护甪直保圣寺唐塑奔走，归途覆舟遇难，父子同殉——<b>为保护文物而捐躯。</b></p>
+      <div class="key">数一数朱梁任和苏州的三个缘分：一座山（招国魂）、一块碑（平江图）、一条路（醒狮路）。</div>
+    </div>
+
+    <div class="card c1">
+      <div class="top-ico">🏯</div>
+      <div class="pbadge">隔壁的庙</div>
+      <h3>张士诚 · 何山顶上的张王庙</h3>
+      <span class="tag">🏷️ 元末吴王</span><span class="tag">🏷️ 民间善政</span>
+      <p>隔壁何山山顶有一座<b>张王庙</b>，祭祀的是元末在苏州称吴王的<b>张士诚</b>——民间感念他在苏州的善政，给他立庙香火不绝。北寺塔线讲过他的纪功碑，山塘线讲过他的故事，狮子的隔壁山上还有他的庙：苏州人对这位"张家王爷"的感情，走到哪儿都能撞见。</p>
+      <div class="key">数一数：张士诚在几条研学线里出现过？北寺塔、山塘街，还有今天的何山——"老熟人"第三次见面了。</div>
+    </div>
+
+  </div>
+
+  <div class="more-tip">✨ 故事堂<b>持续补充中</b>——狮子山两千五百年，来过、留下故事的人还有很多，敬请期待下一批"重量级嘉宾"！</div>
+
+  <!-- ===== 报名须知 ===== -->
+  <div class="sec-head" id="notes" data-anchor>
+    <div class="sec-no">📋</div>
+    <div><h2>报名须知</h2><div class="en">BOOKING NOTES</div></div>
+  </div>
+  <div class="notes">
+    <div class="note">
+      <b>👥 同行方式</b>
+      <p>可个人报名，也欢迎<b>老友结伴</b>同行；如需家人陪同参加，请提前报备确认。</p>
+    </div>
+    <div class="note">
+      <b>🎒 成团规模</b>
+      <p>每团上限 <b>30 人</b>，报满即截止。</p>
+    </div>
+    <div class="note">
+      <b>🎯 适合人群</b>
+      <p>本线路为长者研学设计，适合 <b>55 岁以上</b>、行动自如的活力长者参加。登顶为台阶步道约 15～30 分钟，节奏放慢、量力而行；不便登顶的老友可在半山休息点看湖等候，同样精彩。</p>
+    </div>
+    <div class="note">
+      <b>🎁 有奖闯关</b>
+      <p>全程设有 <b>多个有奖竞猜答题关卡</b>，更有<b>彩蛋大奖</b>等着你来夺取！</p>
+    </div>
+  </div>
+
+  <!-- ===== 带队讲师 ===== -->
+  <div class="sec-head" id="teacher" data-anchor>
+    <div class="sec-no">🧑‍🏫</div>
+    <div><h2>带队讲师</h2><div class="en">YOUR GUIDE</div></div>
+  </div>
+  <a class="teacher" href="https://ofeng-70tiger.github.io/shiguangji/Teacher%20introduce/" target="_blank" rel="noopener">
+    <img src="images/s5_teacher.jpg" alt="封子老师古风形象照" loading="lazy">
+    <p class="t-name">封子老师</p>
+    <p class="t-sub">姑苏区老年大学特聘文史讲师 · 苏州本土文旅内容创作者</p>
+    <p class="t-link">教师风采，请点这里 →</p>
+  </a>
+
+  <footer>
+    <div style="margin-bottom:14px;font-size:1.4rem">⛰️ ⭐ 🏮</div>
+    <p class="big">吴地时光机 · 文史研学系列</p>
+    <p style="margin-top:8px">耆骥千里版 · 重阳登高特辑 ｜ 图文素材 · 实景拍摄 ｜ 狮子山单线九站，可微信转发</p>
+  </footer>
+</div>
+
+<script>
+var pb=document.getElementById('pb');
+addEventListener('scroll',function(){
+  var h=document.documentElement.scrollHeight-innerHeight;
+  pb.style.width=(h>0?(scrollY/h*100):0)+'%';
+},{passive:true});
+
+/* ===== 段落导航：吸顶偏移 + 跳转 + 高亮 ===== */
+(function(){
+  var nav=document.getElementById('secnav');
+  document.documentElement.style.setProperty('--stickH','0px');
+
+  function navH(){ return nav.offsetHeight + 12; }
+  function goTo(el){
+    if(!el) return;
+    var y=el.getBoundingClientRect().top + scrollY - navH();
+    scrollTo({top:Math.max(0,y),behavior:'smooth'});
+  }
+
+  [].slice.call(nav.querySelectorAll('a')).forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      if(a.dataset.stop){ goTo(document.querySelector('.spots > .card[data-stop="'+a.dataset.stop+'"]')); }
+      else { goTo(document.querySelector(a.getAttribute('href'))); }
+    });
+  });
+
+  // 滚动时高亮当前站点
+  var obs=new IntersectionObserver(function(es){
+    es.forEach(function(en){
+      if(!en.isIntersecting || !en.target.dataset.stop) return;
+      [].slice.call(nav.querySelectorAll('a.num')).forEach(function(x){
+        x.classList.toggle('on', x.dataset.stop===en.target.dataset.stop);
+      });
+    });
+  },{rootMargin:'-38% 0px -52% 0px'});
+  addEventListener('load',function(){
+    [].slice.call(document.querySelectorAll('.spots > .card[data-stop]')).forEach(function(c){obs.observe(c);});
+  });
+})();
+</script>
+</body>
+</html>
