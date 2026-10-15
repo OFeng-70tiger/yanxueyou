@@ -69,10 +69,10 @@
   .aside b{color:var(--red)}
 
   /* 收尾 */
-  .take{margin-top:28px;background:var(--red);color:#fdf6e6;border-radius:16px;padding:22px 18px}
+  .take{margin-top:28px;background:var(--red);color:#fdf6e6;border-radius:16px;padding:22px 18px;overflow:hidden}
   .take h3{font-family:"Kaiti SC","KaiTi","STKaiti",serif;font-size:30px;letter-spacing:2px;margin-bottom:10px;text-align:center;color:#f6e6c4}
-  .take li{list-style:none;font-size:16px;line-height:2.2;padding-left:4px;letter-spacing:0;white-space:nowrap}
-  .take li::before{content:"·";color:var(--gold-l);margin-right:12px;font-weight:700}
+  .take li{list-style:none;font-size:clamp(15px,4.1vw,22px);line-height:1.9;padding-left:0;letter-spacing:0;text-align:justify;word-break:break-word}
+  .take li::before{content:"·";color:var(--gold-l);margin-right:8px;font-weight:700}
   footer{margin-top:34px;text-align:center;font-size:21px;color:var(--ink-l);line-height:2}
   footer .seal{display:block;color:var(--red);letter-spacing:4px;font-size:23px;margin-bottom:6px}
 
@@ -88,6 +88,9 @@
     .point{font-size:21px}
     .key{font-size:22px}
     .aside{font-size:19px}
+    .take{padding:18px 14px;margin-top:22px}
+    .take h3{font-size:26px;margin-bottom:8px}
+    .take li{line-height:1.85;font-size:clamp(15px,4.6vw,21px)}
     .route{font-size:16px;padding:10px 6px}
     .route .pill{padding:3px 10px;margin:2px 1px}
     .route{line-height:1.6}
@@ -141,18 +144,18 @@
   <article class="stop" id="songbei">
     <div class="body"><div class="no">04</div><h2>四大宋碑<span>天 · 地 · 人 · 城</span></h2>
       <figure class="ph"><img src="images/wenmiao_12120df4c2.jpg" alt="现场照"><figcaption>今天在碑前讲"天 地 人 城"（2026·10·15 摄）</figcaption></figure>
-      <p class="point">1961 年第一批全国重点文物保护单位，全国只有 180 处。那一年苏州入选六处，另外五处全是虎丘塔、拙政园这样的"大家伙"，唯独这一处是四块石碑，官方单独归入"石刻及其他"。</p>
+      <p class="point">1961 年第一批全国重点文物保护单位，全国只有 180 处。那一年苏州入选六处，另外五处全是虎丘塔、拙政园这样的"大家伙"，唯独这一处是四块石碑。</p>
       <p class="key">个头不大，地位一样。</p>
       <p class="aside">天文图＝天、地理图＝地、帝王绍运图＝人、平江图＝城。前三碑出自南宋学者黄裳之手，平江图是苏州城的"八百年前地图"。</p>
     </div>
   </article>
 
   <article class="stop" id="yinxing">
-    <div class="body"><div class="no">05</div><h2>五棵古银杏<span>看过九百年读书人的"活文物"</span></h2>
+    <div class="body"><div class="no">05</div><h2>五棵古银杏<span>看过八百多年读书人的"活文物"</span></h2>
       <figure class="ph"><img src="images/wenmiao_e523590a48.jpg" alt="现场照"><figcaption>寿杏与满地金黄（2025·12·14 摄）</figcaption></figure>
       <figure class="ph"><img src="images/wenmiao_e27ad89fd5.jpg" alt="现场照"><figcaption>古银杏前现场讲解（2026·10·15 摄）</figcaption></figure>
-      <p class="point">苏州城里最老的银杏群，最年长的"寿杏"约 850 岁；"连理杏"的树怀里还抱着一棵朴树。碑会风化，殿会重修，树是这里唯一从未离开过的见证人。</p>
-      <p class="key">九百年的读书声，树都听见了。</p>
+      <p class="point">苏州城里最老的银杏群：最年长的"寿杏"八百多岁，其余几株都是六百多岁；"连理杏"的树怀里还抱着一棵朴树。碑会风化，殿会重修，树是这里唯一从未离开过的见证人。</p>
+      <p class="key">八百多年的读书声，树都听见了。</p>
     </div>
   </article>
 
@@ -160,7 +163,7 @@
     <div class="body"><div class="no">06</div><h2>大成殿<span>全国唯一的楠木大成殿</span></h2>
       <figure class="ph"><img src="images/wenmiao_318eb8f1ee.jpg" alt="现场照"><figcaption>大成殿 · 古今同机位（老照片与今天同一角度）——找找哪里不一样</figcaption></figure>
       <figure class="ph"><img src="images/wenmiao_4fff393a98.jpg" alt="现场照"><figcaption>孔子像前讲大成殿——背景就是大成殿（2026·10·15 摄）</figcaption></figure>
-      <p class="point">进殿做五件事：<b>闻</b>一下楠木香、<b>数</b>一数柱子、<b>拜</b>孔子、在"十二哲"里<b>找</b>出苏州的"南方学长"言偃、抬头<b>读</b>康熙御匾"万世师表"。</p>
+      <p class="point">进殿做五件事：<b>找</b>一找那棵没涂漆的柱子，看看金丝楠木的纹理；<b>拜</b>一拜孔子像；<b>认</b>一认继孔子之后儒家最有名的几位"圣人"；在"十二哲"里<b>指</b>出苏州的"南方学长"言偃；抬头<b>读</b>康熙御匾"万世师表"。</p>
       <p class="key">七间、十三檩、五十根金丝楠木柱 —— 全国文庙用楠木做大成殿的，仅此一家。</p>
     </div>
   </article>
@@ -168,7 +171,7 @@
   <article class="stop" id="mingluntang">
     <div class="body"><div class="no">07</div><h2>明伦堂<span>先忧后乐</span></h2>
       <figure class="ph"><img src="images/wenmiao_c997d02923.jpg" alt="现场照"><figcaption>明伦堂前合影（2026·10·15 摄）</figcaption></figure>
-      <p class="point">府学的讲堂。"明伦"出自《孟子》——学校教的东西会变，但"明白做人的道理"这一条不变，九百年没改过。堂上是范仲淹彩塑，上悬"一世之师"匾，楹联就是《岳阳楼记》里那两句。</p>
+      <p class="point">府学的讲堂。"明伦"出自《孟子·滕文公上》——"夏曰校，殷曰序，周曰庠；学则三代共之，<b>皆所以明人伦也</b>"：学校的叫法各代不同，教的都是做人的道理。这一条，九百年没改过。堂上是范仲淹彩塑，上悬"一世之师"匾，楹联就是《岳阳楼记》里那两句。</p>
       <p class="key">一家富贵，不如让全城的孩子都在这里读书。</p>
     </div>
   </article>
