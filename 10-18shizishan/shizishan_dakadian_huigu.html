@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>狮子山研学 · 打卡点回顾｜吴地时光机</title>
+<style>
+  :root{
+    --red:#8c2b22; --red-deep:#6d1f18; --gold:#b08442; --gold-l:#e6c98a;
+    --paper:#faf6ee; --card:#fffdf8; --line:#e6dcc8; --ink:#332c26; --ink-l:#6b6157;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-size:22px;line-height:1.75;
+    font-family:"Songti SC","STSong","SimSun",serif;-webkit-text-size-adjust:100%}
+  .wrap{max-width:760px;margin:0 auto;padding:0 14px 56px}
+
+  header{
+    background:linear-gradient(160deg,#8c2b22,#6d1f18 70%,#5a1812);
+    color:#fdf6e6;padding:30px 24px 26px;text-align:center;
+    border-bottom:6px solid var(--gold);
+  }
+  .brand{font-size:19px;letter-spacing:2px;color:var(--gold-l);margin-bottom:12px}
+  header h1{font-family:"Kaiti SC","KaiTi","STKaiti",serif;font-size:42px;line-height:1.25;letter-spacing:3px;font-weight:700;overflow-wrap:anywhere}
+  header h1 small{display:block;font-size:22px;letter-spacing:4px;color:var(--gold-l);font-weight:400;margin-top:6px}
+  .meta{margin-top:12px;font-size:20px;color:#f0dfc0;letter-spacing:1px}
+  .cover{margin:18px -24px -26px}
+  .cover img{width:100%;display:block}
+
+  .route{
+    position:sticky;top:0;z-index:60;
+    margin:0 -14px 6px;padding:8px 10px;
+    background:rgba(250,246,238,.97);
+    -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+    border-bottom:2px solid var(--line);
+    box-shadow:0 3px 10px rgba(60,40,20,.07);
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(64px,1fr));gap:5px;
+  }
+  .route .pill{
+    display:flex;align-items:center;justify-content:center;
+    padding:6px 2px;border-radius:9px;
+    background:var(--red);color:#fdf6e6;font-weight:700;
+    font-size:clamp(12px,3.3vw,15px);line-height:1.25;letter-spacing:0;
+    text-align:center;text-decoration:none;
+    overflow-wrap:anywhere;
+  }
+  .route .pill:active{opacity:.7}
+
+  .stop{
+    display:block;
+    background:var(--card);border:2px solid var(--line);border-radius:16px;
+    padding:20px 16px;margin-top:20px;
+  }
+  .no{
+    display:inline-flex;width:52px;height:52px;border-radius:12px;
+    background:var(--red);color:#fff;font-size:26px;font-weight:700;
+    align-items:center;justify-content:center;letter-spacing:1px;
+    vertical-align:middle;margin-right:12px;
+  }
+  .body{flex:1;min-width:0}
+  h2{display:inline-block;vertical-align:middle;font-size:34px;line-height:1.35;color:var(--red-deep);font-weight:700;letter-spacing:1px}
+  h2 span{display:block;font-size:22px;color:var(--gold);font-weight:400;letter-spacing:2px;margin-top:6px}
+  .point{margin-top:14px;font-size:23px;color:var(--ink);text-align:justify}
+  figure.ph{margin:18px 0 0}
+  figure.ph img{width:100%;display:block;border-radius:12px;border:1px solid var(--line)}
+  figure.ph figcaption{font-size:19px;color:var(--ink-l);margin-top:8px;line-height:1.6;text-align:justify}
+  .phbox{
+    border:2px dashed #d9c7a0;border-radius:12px;background:#fdf8ec;
+    min-height:190px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:8px;text-align:center;padding:18px 14px;
+  }
+  .phbox span{font-size:22px;color:#b09055;letter-spacing:4px;font-weight:700}
+  .phbox em{font-style:normal;font-size:18px;color:#c0ab7f;line-height:1.5}
+  .key{
+    margin-top:16px;padding:14px 18px;border-left:8px solid var(--red);
+    background:#fdf3e6;font-size:24px;color:var(--red-deep);font-weight:700;border-radius:0 10px 10px 0;
+  }
+  .aside{margin-top:14px;font-size:21px;color:var(--ink-l);line-height:1.7;text-align:justify}
+  .aside b{color:var(--red)}
+
+  .take{margin-top:28px;background:var(--red);color:#fdf6e6;border-radius:16px;padding:22px 18px;overflow:hidden}
+  .take h3{font-family:"Kaiti SC","KaiTi","STKaiti",serif;font-size:30px;letter-spacing:2px;margin-bottom:10px;text-align:center;color:#f6e6c4}
+  .take li{list-style:none;font-size:clamp(15px,4.1vw,22px);line-height:1.9;padding-left:0;letter-spacing:0;text-align:justify;word-break:break-word}
+  .take li::before{content:"·";color:var(--gold-l);margin-right:8px;font-weight:700}
+  footer{margin-top:34px;text-align:center;font-size:21px;color:var(--ink-l);line-height:2}
+  footer .seal{display:block;color:var(--red);letter-spacing:4px;font-size:23px;margin-bottom:6px}
+
+  @media (max-width:520px){
+    body{font-size:21px;overflow-x:hidden}
+    header{padding:40px 18px 34px}
+    header h1{font-size:31px;letter-spacing:2px}
+    header h1 small{font-size:17px;letter-spacing:3px}
+    .no{width:44px;height:44px;font-size:22px;border-radius:10px;margin-right:10px}
+    .stop{padding:16px 14px}
+    h2{font-size:27px}
+    h2 span{font-size:19px}
+    .point{font-size:21px}
+    .key{font-size:22px}
+    .aside{font-size:19px}
+    .take{padding:18px 14px;margin-top:22px}
+    .take h3{font-size:26px;margin-bottom:8px}
+    .take li{line-height:1.85;font-size:clamp(15px,4.6vw,21px)}
+    .meta{font-size:18px}
+    .phbox{min-height:150px}
+    .phbox span{font-size:20px}
+    .phbox em{font-size:16px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">姑 苏 漫 游 研 学</div>
+  <h1>狮子山 · 打卡点回顾<small>一页看完今天走过的九站</small></h1>
+  <p class="meta">2026 年 10 月 18 日 · 重阳登高</p>
+  <div class="cover"><img src="images/shizishan_6af2ef3b28.jpg" alt="狮子山航拍"></div>
+</header>
+
+<div class="wrap">
+
+  <div class="route">
+    <a class="pill" href="#shizi_plaza">狮山脚下</a>
+    <a class="pill" href="#shizi_moya">五塔·北寺塔</a>
+    <a class="pill" href="#shizi_lingyan">五塔·多宝佛塔</a>
+    <a class="pill" href="#shizi_siyi">白居易的诗</a>
+    <a class="pill" href="#shizi_dushutai">状元读书台</a>
+    <a class="pill" href="#shizi_heshan">何山望狮</a>
+    <a class="pill" href="#shizi_zhaohun">招国魂</a>
+    <a class="pill" href="#shizi_lengga">五塔·楞伽塔</a>
+    <a class="pill" href="#shizi_shishou">五塔·望虎丘</a>
+    <a class="pill" href="#shizi_wuta">五塔·普明宝塔</a>
+    <a class="pill" href="#shizi_quiz">趣味问答</a>
+  </div>
+
+  <article class="stop" id="shizi_plaza">
+    <div class="body"><div class="no">01</div><h2>狮山脚下<span>一代人的记忆 · 苏州乐园美好回忆</span></h2>
+      <figure class="ph"><img src="images/shizishan_3a1b39b6c2.jpg" alt="现场照"><figcaption>今日 · 天狮湖畔集合（2026·10·18 摄）</figcaption></figure>
+      <figure class="ph"><img src="images/shizishan_a9c6eb3642.jpg" alt="现场照"><figcaption>当年 · 苏州乐园航拍——欧式洋房群与狮子山同框</figcaption></figure>
+      <figure class="ph"><img src="images/shizishan_21a34d0a7b.jpg" alt="现场照"><figcaption>当年 · 园内的欧式洋房</figcaption></figure>
+      <p class="point">集合先看湖：狮子山的倒影卧在水里，一座 114.5 米的小山，是苏州城西最孤零零、也最热闹的一座山。孤零零是地理——明《姑苏志》专门记了一笔：城西这四座小山「与诸山不相连」；热闹是今天——脚下这片广场，二十年前是全苏州小孩最想去的地方：1997 年苏州乐园欢乐世界在这山脚开园，一句「迪士尼太远，去苏州乐园」苏州人都会背，2017 年 10 月 9 日闭园，2023 年建成狮山公园，2024 年 10 月狮子山、天狮湖全面开放登山。老过山车轨道还留着一截，与苏博西馆、狮山大剧院隔水相望。当年园里那些漂亮的欧式洋房，今天翻出老照片再看，还是很漂亮——上面两张旧影，就是一代人的乐园。</p>
+      <p class="key">一代人的旋转木马，换成了博物馆和剧院 —— 这叫还山于民。</p>
+      <p class="aside">狮山文化广场占地约 1213 亩：苏博西馆 2021 年 9 月启用，狮山大剧院 2024 年 8 月 31 日开幕，苏州科技馆在建；「东有金鸡湖，西有狮子山」是官方口径的城市格局语。</p>
+    </div>
+  </article>
+
+  <article class="stop" id="shizi_moya">
+    <div class="body"><div class="no">02</div><h2>一山看五塔第一站<span>北线登山口 · 摩崖石刻群 · 认北寺塔</span></h2>
+      <figure class="ph"><img src="images/shizishan_898347ef0b.jpg" alt="现场照"><figcaption>今日 · 登山口开讲：一山看五塔第一环（2026·10·18 摄）</figcaption></figure>
+      <figure class="ph"><img src="images/shizishan_a35d471d09.jpg" alt="现场照"><figcaption>今日 · 现场拍照北寺塔方向（2026·10·18 摄）</figcaption></figure>
+      <figure class="ph"><img src="images/shizishan_bd833085d4.jpg" alt="现场照"><figcaption>「望远镜」里的北寺塔——五塔第一环（2023·11·30 摄）</figcaption></figure>
+      <p class="point">登山口是今天「一山看五塔」的第一站：东偏北方向，城里那座最高的塔——北寺塔，7.5 公里外，高约 76 米，苏州古塔之最，现存塔身是南宋绍兴二十三年（1153）重建的。认它，认那个「高」字——全城的天际线锚点。我们的五座塔是穿插着讲的：走到哪儿，看得到哪座就讲哪座，其余几座，登了顶再补。顺便说一句，这座山几乎不长树——整块 1.5 亿年前拱出地面的花岗岩，裸岩占六成以上，石头上能干另一件事：刻字。一路石阶旁的题字，就是这座山的「留言墙」。</p>
+      <p class="key">一路走，一路翻这座山的留言墙。</p>
+      <p class="aside">「洗心泉」题者两说并存：景区导览多署康有为，李根源《吴郡西山访古记》记为道光十七年摩崖（僧人所书，道光十九年二月住持等书）——现场看落款自己断案，别替石头做主。摩崖石刻群现存约 7 处，与状元读书台等合称「狮山十八景」（民间汇列，非官方定名）。</p>
+    </div>
+  </article>
+
+  <article class="stop" id="shizi_lingyan">
+    <div class="body"><div class="no">03</div><h2>一山看五塔第二站<span>西南望灵岩 · 多宝佛塔</span></h2>
+      <figure class="ph"><img src="images/shizishan_63345fd303.jpg" alt="现场照"><figcaption>今日 · 调转方向，西南望灵岩（2026·10·18 摄）</figcaption></figure>
+      <figure class="ph"><img src="images/shizishan_2e36fba02e.jpg" alt="现场照"><figcaption>「望远镜」里的灵岩山多宝佛塔（2023·11·30 摄）</figcaption></figure>
+      <p class="point">从北寺塔的方向走两步、调转方向，把视线往狮子山的西南方向看——远处那座山上有一座小塔，就是灵岩山寺多宝佛塔，西南 231°、5.6 公里，木渎灵岩山之巅，现存塔身建于南宋绍兴十七年（1147）。认它，认那个「山」字——塔与山几乎融为一体。当年吴王夫差为西施建的馆娃宫，就在那座山上。</p>
+      <p class="key">认它，认那个「山」字——塔与山融为一体。</p>
+      <p class="aside">一山看五塔是穿插着讲的：第一环北寺塔、第二站灵岩多宝佛塔都在路上讲掉了；楞伽塔、虎丘塔、普明宝塔必须登顶才看得见，放在山顶连讲三站。</p>
+    </div>
+  </article>
+
+  <article class="stop" id="shizi_siyi">
+    <div class="body"><div class="no">04</div><h2>白居易的诗<span>山顶寺遗址 · 一位苏州市长的路线图</span></h2>
+      <figure class="ph"><img src="images/shizishan_215eb79c53.jpg" alt="现场照"><figcaption>白居易《自思益寺次楞伽寺》诗摩崖</figcaption></figure>
+      <figure class="ph"><img src="images/shizishan_53450358d1.jpg" alt="现场照"><figcaption>今日 · 山道上开讲（2026·10·18 摄）</figcaption></figure>
+      <figure class="ph"><img src="images/shizishan_e49c6cbfc1.jpg" alt="现场照"><figcaption>今日 · 遗址平台讲白居易（2026·10·18 摄）</figcaption></figure>
+      <p class="point">现在脚下这一片，1500 年前是一座寺：南朝梁天监二年（503）山顶建寺，初名法音寺，唐代改名思益寺。这一站的主角是白居易——唐敬宗宝历元年（825）他出任苏州刺史，公余爱爬山，专为这座山顶寺写过一首《自思益寺次楞伽寺》——从狮子山的思益寺，一路走到上方山的楞伽寺。寺早没了，诗还在：身旁这块摩崖刻的正是这首诗。一首诗不是写景，是一张路线图——一千二百年后，站在山顶往西南望，那座楞伽塔还在原地。</p>
+      <p class="key">公元九世纪，一位苏州市长，从这座山走到那座山。</p>
+      <p class="aside">楞伽寺即今上方山下治平寺——白居易这条路线，正是我们从狮子山望楞伽塔的那条视线；治平寺也是苏州重阳「牵羊赌彩」奇俗的发生地。</p>
+    </div>
+  </article>
+
+  <article class="stop" id="shizi_dushutai">
+    <div class="body"><div class="no">05</div><h2>状元读书台<span>一块石桌，一个身世之谜</span></h2>
+      <figure class="ph"><img src="images/shizishan_ceffed088f.jpg" alt="现场照"><figcaption>今日 ·「状元台」红字石刻（2026·10·18 摄）</figcaption></figure>
+      <figure class="ph"><img src="images/shizishan_bb343b4f65.jpg" alt="现场照"><figcaption>今日 · 状元读书台开讲（2026·10·18 摄）</figcaption></figure>
+      <p class="point">这块石桌石凳叫状元读书台，主人是明朝苏州人申时行——嘉靖四十一年（1562）状元，后来做到万历朝的内阁首辅。传说他小时候就在狮子山的寺庙里发奋读书。他身上还藏着一个苏州人讲了几百年的身世之谜：有一种流传极广的说法被编成了弹词《玉蜻蜓》——富家公子与尼姑生子、送徐家收养、孩子高中状元持玉蜻蜓入庵认母，「庵堂认母」是评弹越剧的经典，很多人认为原型就是他：他本姓徐，中状元后归宗姓申。</p>
+      <p class="key">一座山出过一位宰相，读书台就是苏州人给孩子立的精神地标。</p>
+      <p class="aside">正史里的申时行另有出处：「幼年读书于狮山寺中」系民间传说，《吴门表隐》记他祖宅在平江路混堂弄、早年读书于卫道观；今读书台石桌椅是原苏州乐园时期修建的。另需辨误：他的墓在石湖吴山，不在天平山——网上游记多写错。</p>
+    </div>
+  </article>
+
+  <article class="stop" id="shizi_heshan">
+    <div class="body"><div class="no">06</div><h2>何山望狮<span>一座孤山，是它最大的本事</span></h2>
+      <figure class="ph"><img src="images/shizishan_cb62736408.jpg" alt="现场照"><figcaption>航拍 · 何山望狮（一）</figcaption></figure>
+      <figure class="ph"><img src="images/shizishan_e822c217e3.jpg" alt="现场照"><figcaption>航拍 · 何山望狮（二）</figcaption></figure>
+      <figure class="ph"><img src="images/shizishan_12598d8045.jpg" alt="现场照"><figcaption>《姑苏繁华图》局部 · 狮子山与何山出镜</figcaption></figure>
+      <figure class="ph"><img src="images/shizishan_5dab3b1477.jpg" alt="现场照"><figcaption>今日 · 团旗合影（2026·10·18 摄）</figcaption></figure>
+      <p class="point">往北看，一公里外那座 63.8 米的小山叫何山，跟狮子山是邻居、不是亲戚。苏州城西本有一条大山系——天平山、灵岩山、支硎山、穹窿山一路排过去，可狮子山不挂在这条山脉上：它和何山、铃山、索山几座小山孤零零立在平地上，明代《姑苏志》把它们列在一起，末了专门加一句「以上四山与诸山不相连」。挂不挂在山系上，跟登山关系大了——挂在山系里，登顶看出去还是山脊；狮子山四面是平地和城区，站上山顶，360 度没有遮拦。</p>
+      <p class="key">一座孤山，是它最大的本事。</p>
+      <p class="aside">何山原名鹤阜山，因南朝齐梁间隐士何求、何点兄弟葬此而改今名，何点被时人称为「通隐」；山顶今存张王庙，祭祀的是张士诚——北寺塔线讲过他，山塘线讲过他，苏州人对他的感念走到哪儿都能撞见。1229 年《平江图》上，城西群山自北向南题着「何山 → 岝崿山 → 高景山……」，岝崿山就是狮子山的宋代名字。</p>
+    </div>
+  </article>
+
+  <article class="stop" id="shizi_zhaohun">
+    <div class="body"><div class="no">07</div><h2>招国魂<span>1903 年，山顶上那面黑幡</span></h2>
+      <figure class="ph"><img src="images/shizishan_cabaa3fb7c.jpg" alt="现场照"><figcaption>今日 ·「招国魂」摩崖石刻 · 123 年前他们站过的地方（2026·10·18 摄）</figcaption></figure>
+      <figure class="ph"><img src="images/shizishan_96747db0c8.jpg" alt="现场照"><figcaption>今日 · 石刻前的游人 · 这块石头把 1903 年留到了今天（2026·10·18 摄）</figcaption></figure>
+      <p class="point">我们脚下站的位置，123 年前站过二十个年轻人。1903 年，光绪二十九年，《辛丑条约》签完第二年，苏州一个二十岁的年轻人叫朱梁任，约了包天笑、苏曼殊等十八个人，雇小船出城登上狮子山。他们带了两面幡：一面黑幡，狭长形、下开两个尖角，中间四个草书大字「魂兮归来」；一面白幡，画一头狰狞的雄狮，落款「黄帝之曾孙小子」。摆祭品、诵诗文、放声痛哭，最后朱梁任掏出一把前膛枪，朝着北方——清政府所在的方向，开了一枪。</p>
+      <p class="key">他们喊的口号是「睡狮醒兮」：中国是一头睡狮，要醒，就得有人先站到狮子头顶上去喊。</p>
+      <p class="aside">史家范烟桥《茶烟歇》记此事：「其事甚密，而当时文人革命思想之活跃，此见其端。」朱梁任（1873—1932），宋大儒朱长文第三十三世孙，同盟会会员、南社发起人之一；回城后把自家门口一条小弄堂改名「醒狮路」，这条路今天还在石路那边。1917 年他与叶德辉一起出资督工，把文庙《平江图》碑深刻了一遍——今天我们看的这座山，和文庙里那块碑，是同一个人的两件作品。</p>
+    </div>
+  </article>
+
+  <article class="stop" id="shizi_lengga">
+    <div class="body"><div class="no">08</div><h2>一山看五塔第三站<span>南望上方山 · 楞伽塔</span></h2>
+      <figure class="ph"><img src="images/shizishan_ace7984f39.jpg" alt="现场照"><figcaption>「望远镜」里的楞伽塔（2023·11·30 摄）</figcaption></figure>
+      <p class="point">上了山顶才好讲这一站：南偏东 149°、6.5 公里，上方山顶那座塔就是楞伽塔——隋大业四年（608）始建，五塔中始建最早，认它，认那个「旧」字。山腰山道上根本看不见它，只有站到这处开阔的山顶，视线才够得着。前面山上那首诗里，白市长写的就是这座山上的楞伽寺——寺的山尖尖站在这儿完全看得到；但今天这座塔是宋代重建的，白市长当年有没有看到塔，我们不确定——看得到寺，不等于看得到塔。</p>
+      <p class="key">认它，认那个「旧」字——五塔中始建最早。</p>
+      <p class="aside">楞伽寺即今上方山下治平寺，白居易诗题里「次」（途中停留）的那一站。山腰望不见、山顶才得见——这也是「一山看五塔」非要登顶的原因之一。</p>
+    </div>
+  </article>
+
+  <article class="stop" id="shizi_shishou">
+    <div class="body"><div class="no">09</div><h2>一山看五塔第四站 · 狮子回头望虎丘<span>一句老话 · 一股冤气</span></h2>
+      <figure class="ph"><img src="images/shizishan_9b217b30f1.jpg" alt="现场照"><figcaption>今日 · 岩顶回望（2026·10·18 摄）</figcaption></figure>
+      <figure class="ph"><img src="images/shizishan_0ce681d44b.jpg" alt="现场照"><figcaption>今日 · 山顶石刻（2026·10·18 摄）</figcaption></figure>
+      <figure class="ph"><img src="images/shizishan_752e76a1f3.jpg" alt="现场照"><figcaption>「望远镜」里的虎丘塔（2023·11·30 摄）</figcaption></figure>
+      <p class="point">登顶先看脚下这块山岩：往东南探出去的那一角像不像一颗狮子头？整个山体就是一头伏在地上的大狮子，山顶刻着苏州人从小听到大的七个字——「狮子回头望虎丘」。问题来了：为什么要回头望五公里半外的虎丘，而不是一公里外的小弟何山？唐代陆广微《吴地记》记了一笔：吴王僚葬于狮子山——没有考古发掘佐证，先当传说听。吴王僚是怎么死的？死于刺客专诸的鱼肠剑；专诸是谁派来的？当年的公子光，也就是后来的吴王阖闾。阖闾葬在哪里？虎丘。假定吴王僚真葬在狮子山，这股冤气，就让狮子回头怒目瞪向埋着阖闾的虎丘——这个推理，站得住。</p>
+      <p class="key">一狮一虎，叔侄对望——狮子的回头，瞪的是篡位者。</p>
+      <p class="aside">狮子山花岗岩山体东西长约 1.2 公里、南北宽约 0.8 公里。明《姑苏志》另记一笔：南顶上有巨石二如楼，「云是狮子两耳」——可惜「自元以来凿石且尽」，至少从元代起这座山就被开采石料，狮子的两只耳朵六百年前就被凿掉了：你们今天看到的，是缺了耳朵的狮子。</p>
+    </div>
+  </article>
+
+  <article class="stop" id="shizi_wuta">
+    <div class="body"><div class="no">10</div><h2>一山看五塔第五站 · 寒山寺普明宝塔<span>隐藏彩蛋 · 只在特定方向看得见</span></h2>
+      <figure class="ph"><img src="images/shizishan_bb1a83302f.jpg" alt="现场照"><figcaption>今日 · 山顶开讲 · 指认寒山寺方向（2026·10·18 摄）</figcaption></figure>
+      <figure class="ph"><img src="images/shizishan_256a6abe10.jpg" alt="现场照"><figcaption>「望远镜」里的寒山寺普明宝塔（2023·11·30 摄）</figcaption></figure>
+      <p class="point">最后一站是个隐藏彩蛋。东北 47°、2.7 公里的寒山寺普明宝塔——它不像别的塔那样一眼就能逮住：藏在楼群里，只有站在这个特定方向、仔细往寒山寺那片看，才认得出那座只有五层的小塔。它 1995 年落成，仿唐木构、四方五层，此前寒山寺六百多年只闻钟声、不见塔影；五塔里唯一的方形唐塔，认那个「方」字。找到了，五座就全齐了：北寺塔「高」、多宝佛塔「山」、楞伽塔「旧」、虎丘塔「斜」、普明宝塔「方」。这五座塔年纪差得离谱：楞伽塔始建 608 年，虎丘塔 959 年，灵岩塔 1147 年，北寺塔现存塔身 1153 年，普明宝塔 1995 年——最老和最新差了一千三百八十七年，全落在一双眼睛里。</p>
+      <p class="key">站在一座 114.5 米的小山上，一眼看一千四百年。</p>
+      <p class="aside">数一数这五座塔的年纪：楞伽塔始建 608 年，虎丘塔 959，灵岩塔 1147，北寺塔现存塔身 1153 年重建，普明宝塔 1995 年落成——最老和最新差了一千三百八十七年。苏州老话重阳登北寺塔、登虎丘、登上方山，今天一座山，把它们全看了一遍。</p>
+    </div>
+  </article>
+
+  <article class="stop" id="shizi_quiz">
+    <div class="body"><div class="no">11</div><h2>趣味问答<span>现场互动 · 收队前</span></h2>
+      <figure class="ph"><img src="images/shizishan_86e0cc8898.jpg" alt="现场照"><figcaption>今日 · 竹林旁 · 有奖问答开讲（2026·10·18 摄）</figcaption></figure>
+      <figure class="ph"><img src="images/shizishan_4aac25d1f1.jpg" alt="现场照"><figcaption>今日 · 答对有奖——《姑苏繁华图》折扇（2026·10·18 摄）</figcaption></figure>
+      <figure class="ph"><img src="images/shizishan_24a45282b8.jpg" alt="现场照"><figcaption>今日 · 赠扇合影（2026·10·18 摄）</figcaption></figure>
+      <figure class="ph"><img src="images/shizishan_050654078e.jpg" alt="现场照"><figcaption>今日 · 问答奖品 · 苏州老照片明信片（2026·10·18 摄）</figcaption></figure>
+      <figure class="ph"><img src="images/shizishan_4a90024fca.jpg" alt="现场照"><figcaption>今日 · 收官合影 ·「吴地时光机」旗帜在山顶（2026·10·18 摄）</figcaption></figure>
+      <p class="point">行程的最后一环是趣味问答：今天一路讲过的山、塔、寺与人，都可能变成问题——题目全部来自今天走过的这几站，认真听过就能答上来。</p>
+      <p class="key">今天讲过的，都还给你。</p>
+    </div>
+  </article>
+
+  <div class="take">
+    <h3>带 走 三 句 话</h3>
+    <ul>
+      <li>一座不与诸山相连的孤山，一口气把苏州的五座塔送到眼前——这是它最大的本事。</li>
+      <li>一座 114.5 米的小山，从头到脚每一层都被历史翻过牌：葬在这里的吴王僚、专程来打卡的白居易、留下「到苏州不游虎丘乃憾事也」的苏东坡、读书成相的明代宰相申时行，还有 1903 年登上山顶唤醒睡狮、振聋发聩的清末进步青年。</li>
+      <li>登高的规矩不是自己站到最高，是把最好看的风景，指给你爱的人看。</li>
+    </ul>
+  </div>
+
+  <footer>
+    <span class="seal">吴地时光机</span>
+    走读姑苏 · 一步一千年<br>
+  </footer>
+
+</div>
+</body>
+</html>
