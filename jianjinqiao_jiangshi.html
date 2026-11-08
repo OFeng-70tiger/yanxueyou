@@ -233,6 +233,33 @@ table td:first-child b{color:var(--ink)}
 <body>
 <div class="wrap">
 <!--BODY-->
+<!-- 手机窄屏：主标题与标语各占一行，其余标题均衡折行、消除孤字（2026-11-08） -->
+<style>
+@media(max-width:640px){
+  .cover .kicker{font-size:clamp(.72rem,3.2vw,.84rem);letter-spacing:.12em;text-indent:.12em;padding:4px 10px;text-wrap:balance}
+  .cover h1{font-size:clamp(1.3rem,6.6vw,1.85rem);letter-spacing:.03em;white-space:nowrap}
+  .cover .sub{font-size:clamp(.76rem,3.1vw,.95rem);letter-spacing:.06em;text-wrap:balance}
+  .cover .sub[style]{font-size:clamp(.74rem,3vw,.9rem)!important;letter-spacing:.08em!important;margin-top:2px!important}
+  .cover .seal{font-size:clamp(.8rem,3.6vw,1rem);letter-spacing:.12em;text-indent:.12em;padding:9px 12px;white-space:nowrap}
+  .part-head h2{font-size:clamp(1.15rem,4.6vw,1.5rem);letter-spacing:.02em;text-wrap:balance}
+  .spot h3{font-size:1.12rem;letter-spacing:0;text-wrap:balance}
+  .spot h4{font-size:.96rem;letter-spacing:.04em;text-wrap:balance}
+  .spot .en,figcaption,.pf-row figcaption,.meta .m span,.quote,.cover .desc,footer .big{text-wrap:balance}
+  .meta .m span{display:block}
+  /* 两组左右并列图：窄屏取消 270px 最小宽，交给 flex-wrap 自动折行 */
+  .fig div[style*="min-width:270px"]{min-width:0!important}
+  /* 表头与首列原本 nowrap，会把整张表撑到 328px；窄屏一律允许换行 */
+  th,table td:first-child{white-space:normal}
+  table,th,td,.wrap,.part,.spot,.cover{overflow-wrap:anywhere}
+  /* 站④桥名沿革三列表：时间／名称收窄，事件描述给足宽度（模板 table.tl 首列 nowrap 优先级更高，需单独压住） */
+  table.tl.tl-qiao{table-layout:fixed}
+  table.tl.tl-qiao th,table.tl.tl-qiao td{white-space:normal;overflow-wrap:anywhere;padding:6px 5px}
+  table.tl.tl-qiao :nth-child(1){width:24%}
+  table.tl.tl-qiao :nth-child(2){width:22%}
+  table.tl.tl-qiao :nth-child(3){width:54%}
+}
+</style>
+
 <!-- ================= 封面 ================= -->
 <header class="cover">
   <div class="kicker">吴地时光机 · 苏州文史研学 · 官署水巷篇</div>
@@ -705,7 +732,7 @@ table td:first-child b{color:var(--ink)}
       <p>「<b>一座桥的四次改名，是这条第二文脉留下的一个门牌。</b>」</p></div>
 
     <h4>桥的正史（据苏州市地方志办公室《苏州老桥记》）</h4>
-    <table class="tl">
+    <table class="tl tl-qiao">
       <tr><th>时间</th><th>名</th><th>事</th></tr>
       <tr><td>明初</td><td><b>青龙桥</b></td><td>始建</td></tr>
       <tr><td>弘治年间</td><td><b>青云桥</b></td><td>知县<b>邝璠</b>移桥于县学学门西，改名</td></tr>
