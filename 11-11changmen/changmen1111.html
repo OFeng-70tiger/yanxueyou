@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>阊门研学 · 今日播报｜吴地时光机</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --red:#8c2b22; --red-deep:#6d1f18; --gold:#b8862b; --gold-l:#e0c98a;
+    --ink:#2b2620; --ink-l:#5c5347; --paper:#faf6ee; --card:#fffdf8; --line:#e8dcc8;
+  }
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:"Songti SC","SimSun","Source Han Serif SC","Noto Serif SC",serif;
+    font-size:23px; line-height:1.75; -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 14px 56px}
+
+  header{
+    background:linear-gradient(160deg,#8c2b22,#6d1f18 70%,#5a1812);
+    color:#fdf6e6;padding:30px 24px 26px;text-align:center;
+    border-bottom:6px solid var(--gold);
+  }
+  .brand{font-size:19px;letter-spacing:2px;color:var(--gold-l);margin-bottom:12px}
+  header h1{font-family:"Kaiti SC","KaiTi","STKaiti",serif;font-size:42px;line-height:1.25;letter-spacing:3px;font-weight:700;overflow-wrap:anywhere}
+  header h1 small{display:block;font-size:22px;letter-spacing:4px;color:var(--gold-l);font-weight:400;margin-top:6px}
+  .meta{margin-top:12px;font-size:20px;color:#f0dfc0;letter-spacing:1px}
+
+  /* 动线胶囊：吸顶（11-10 用户裁定：滚下去也要能随时跳站） */
+  .route{
+    position:sticky;top:0;z-index:30;
+    margin:26px 0 8px;padding:14px 10px;background:var(--card);
+    border:2px solid var(--line);border-radius:14px;
+    font-size:22px;line-height:2;color:var(--ink-l);text-align:center;letter-spacing:1px;
+    box-shadow:0 4px 14px rgba(51,48,42,.10);
+  }
+  .route{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:2px 0}
+  .route .pill{
+    display:inline-block;margin:3px 2px;padding:4px 14px;border-radius:999px;
+    background:var(--red);color:#fdf6e6;font-weight:700;font-size:.92em;
+    text-decoration:none;line-height:1.6;
+  }
+  .route .pill:active{opacity:.7}
+
+  .stop{
+    display:block;
+    background:var(--card);border:2px solid var(--line);border-radius:16px;
+    padding:20px 16px;margin-top:20px;
+  }
+  .no{
+    display:inline-flex;width:52px;height:52px;border-radius:12px;
+    background:var(--red);color:#fff;font-size:26px;font-weight:700;
+    align-items:center;justify-content:center;letter-spacing:1px;
+    vertical-align:middle;margin-right:12px;
+  }
+  .body{flex:1;min-width:0}
+  h2{display:inline-block;vertical-align:middle;font-size:34px;line-height:1.35;color:var(--red-deep);font-weight:700;letter-spacing:1px}
+  h2 span{display:block;font-size:22px;color:var(--gold);font-weight:400;letter-spacing:2px;margin-top:6px}
+  .point{margin-top:14px;font-size:23px;color:var(--ink);text-align:justify}
+  figure.ph{margin:18px 0 0}
+  figure.ph img{width:100%;display:block;border-radius:12px;border:1px solid var(--line)}
+  figure.ph figcaption{font-size:19px;color:var(--ink-l);margin-top:8px;line-height:1.6;text-align:justify}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 0;align-items:start}
+  .duo figure.ph{margin:0}
+  .phbox{
+    border:2px dashed #d9c7a0;border-radius:12px;background:#fdf8ec;
+    min-height:190px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:8px;text-align:center;padding:18px 14px;
+  }
+  .phbox span{font-size:22px;color:#b09055;letter-spacing:4px;font-weight:700}
+  .phbox em{font-style:normal;font-size:18px;color:#c0ab7f;line-height:1.5}
+  .key{
+    margin-top:16px;padding:14px 18px;border-left:8px solid var(--red);
+    background:#fdf3e6;font-size:24px;color:var(--red-deep);font-weight:700;border-radius:0 10px 10px 0;
+  }
+  .aside{margin-top:14px;font-size:21px;color:var(--ink-l);line-height:1.7;text-align:justify}
+  .aside b{color:var(--red)}
+
+  .take{margin-top:28px;background:var(--red);color:#fdf6e6;border-radius:16px;padding:22px 18px;overflow:hidden}
+  .take h3{font-family:"Kaiti SC","KaiTi","STKaiti",serif;font-size:30px;letter-spacing:2px;margin-bottom:10px;text-align:center;color:#f6e6c4}
+  .take li{list-style:none;font-size:clamp(15px,4.1vw,22px);line-height:1.9;padding-left:0;letter-spacing:0;text-align:justify;word-break:break-word}
+  .take li::before{content:"·";color:var(--gold-l);margin-right:8px;font-weight:700}
+  footer{margin-top:34px;text-align:center;font-size:21px;color:var(--ink-l);line-height:2}
+  footer .seal{display:block;color:var(--red);letter-spacing:4px;font-size:23px;margin-bottom:6px}
+
+  @media (max-width:520px){
+    body{font-size:21px}
+    header{padding:40px 18px 34px}
+    header h1{font-size:31px;letter-spacing:2px}
+    header h1 small{font-size:17px;letter-spacing:3px}
+    .no{width:44px;height:44px;font-size:22px;border-radius:10px;margin-right:10px}
+    .stop{padding:16px 14px}
+    h2{font-size:27px}
+    h2 span{font-size:19px}
+    .point{font-size:21px}
+    .key{font-size:22px}
+    .aside{font-size:19px}
+    .take{padding:18px 14px;margin-top:22px}
+    .take h3{font-size:26px;margin-bottom:8px}
+    .take li{line-height:1.85;font-size:clamp(16px,4.6vw,21px)}
+    .route{font-size:16px;padding:10px 6px}
+    .route .pill{padding:3px 8px;margin:2px 0;font-size:16px}
+    .route{line-height:1.6}
+    .meta{font-size:18px}
+    .phbox{min-height:150px}
+    .phbox span{font-size:20px}
+    .phbox em{font-size:16px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">姑 苏 漫 游 研 学</div>
+  <h1>阊门 · 今日播报<small>一页看完今天走过的六站，附一组老照片</small></h1>
+  <p class="meta">2026 年 11 月 11 日 · 阊门</p>
+</header>
+
+<div class="wrap">
+
+  <div class="route">
+    <a class="pill" href="#cm_chenglou">城楼</a> → <a class="pill" href="#cm_wengcheng">瓮城</a> → <a class="pill" href="#cm_beimatou">北码头</a> → <a class="pill" href="#cm_xizhongshi">西中市</a> → <a class="pill" href="#cm_taibomiao">泰伯庙</a> → <a class="pill" href="#cm_wufengyuan">五峰园</a> → <a class="pill" href="#heying">合影</a> → <a class="pill" href="#laozhaopian">老照片</a>
+  </div>
+
+  <article class="stop" id="cm_chenglou">
+    <div class="body"><div class="no">01</div><h2>阊门城楼 · 红尘第一门<span>公元前 514 年 · 八门中唯一「通天」之门</span></h2>
+      <figure class="ph"><img src="images/01_minguo_menlou.jpg" alt="老照片"><figcaption>民国 · 阊门门洞特写（1934 年改建罗马式三拱门之后）</figcaption></figure>
+      <figure class="ph"><img src="images/02_jinri_chenglou.jpg" alt="现场照"><figcaption>今日 · 阊门城楼（2026·11·11 摄）</figcaption></figure>
+      <figure class="ph"><img src="images/03_guangchang.jpg" alt="现场照"><figcaption>今日 · 阊门前广场集合（2026·11·11 摄）</figcaption></figure>
+      <figure class="ph"><img src="images/04_denglou.jpg" alt="现场照"><figcaption>今日 · 登城楼远眺（2026·11·11 摄）</figcaption></figure>
+      <p class="point">公元前 514 年，吴王阖闾命伍子胥「相土尝水，象天法地」筑阖闾大城，阊门即八门之一。《吴越春秋》：「立阊门者，以象天门，通阊阖风也」——「阊」即天门，是八门中唯一以「通天」命名的门；又因伐楚大军由此出征，别名「破楚门」。它是八大城门中水陆并行的双城门。曹雪芹《红楼梦》开篇第一回就把它写进定场：「最是红尘中一二等富贵风流之地。」今天看到的城门是 2006 年依考古与《姑苏繁华图》重建的：主体高 11.6 米、长 60 米，城楼五开间、重檐歇山，参照盘门。</p>
+      <p class="key">别的门多是地名，只有它，还是门。</p>
+      <p class="aside">城门外西南角「阊门遗址」文保碑——碑称「遗址」，就是说现存城门为当代重建；对照不远处金门的文保碑只书「金门」二字，一块碑的措辞之差，就是「遗存」与「重建」的现场读法。斜对面码头区还有阊门寻根纪念地——明初「洪武赶散」，苏北移民后代皆自称「来自苏州阊门」。</p>
+    </div>
+  </article>
+
+  <article class="stop" id="cm_wengcheng">
+    <div class="body"><div class="no">02</div><h2>瓮城遗址 · 嵌套瓮城<span>苏州最大瓮城 · 大瓮城套小瓮城</span></h2>
+      <figure class="ph"><img src="images/05_wengcheng.jpg" alt="现场照"><figcaption>今日 · 瓮城遗址公园听讲（2026·11·11 摄）</figcaption></figure>
+      <figure class="ph"><img src="images/06_chengmenqian.jpg" alt="现场照"><figcaption>今日 · 阊门城门前（2026·11·11 摄）</figcaption></figure>
+      <figure class="ph"><img src="images/07_nianhua.jpg" alt="老照片"><figcaption>桃花坞木刻年画《阊门图》——瓮城入画的雄关雄姿</figcaption></figure>
+      <p class="point">「瓮中捉鳖」怎么捉？——敌军攻破第一道门进了瓮城，四面城墙上箭矢滚石居高临下，这就是瓮城。阊门瓮城基础一直延伸到吊桥，是苏州发掘出的最大瓮城，更是罕见的嵌套瓮城——大瓮城内还套小瓮城，南北各有童梓门。谁建的？同治《苏州府志》：「至张士诚入据，增置月城。」铁证是阊门出土的元代《新建瓮城记铭碑》。瓮城前部毁于太平天国战火，后部 1927 年因开马路拆除；2006 年瓮城遗迹辟为遗址公园，保留原貌展示。</p>
+      <p class="key">二道门不直线贯通——「错位」，本身就是防御。</p>
+      <p class="aside">张士诚在六城门外普遍加筑瓮城（现存盘门瓮城亦为同期增建），以糯米石灰浆砌筑、号称「天下第一坚城」——这条线索直通上个月北寺塔那块张士诚记功碑。</p>
+    </div>
+  </article>
+
+  <article class="stop" id="cm_beimatou">
+    <div class="body"><div class="no">03</div><h2>北码头 · 五龙汇阊<span>聚龙桥上数五水 · 山塘河与白居易码头</span></h2>
+      <figure class="ph"><img src="images/08_hangpai.jpg" alt="老照片"><figcaption>航拍 ·「五龙汇阊」——五水汇聚，上天上看才一目了然（2025 航拍）</figcaption></figure>
+      <figure class="ph"><img src="images/09_diaoqiao.jpg" alt="现场照"><figcaption>今日 · 吊桥上看五龙汇阊（2026·11·11 摄）</figcaption></figure>
+      <figure class="ph"><img src="images/10_wulongqiao.jpg" alt="现场照"><figcaption>今日 · 吊桥上看远处五龙桥（2026·11·11 摄）</figcaption></figure>
+      <p class="point">眼前水面古称沙盆潭。五条水系如五条龙在此汇聚，是为「五龙汇阊」：西来的上塘河、西北的山塘河、东入城的中市河，加上南北两道护城河。护城河以脚下阊门吊桥为界：往北叫北濠，往南叫南濠——南浩街的本名就是「南濠」。上塘河是春秋攻楚伐齐的水道，隋以后成为大运河入城故道；山塘河是唐宝历元年（825）白居易任苏州刺史时开河筑街的「七里山塘」。</p>
+      <p class="key">讲繁华，别停在繁华——落点在水。</p>
+      <p class="aside">两句话记住五龙：东一条（中市河），西两条（正西上塘河、往西北山塘河），南濠北濠把城绕。五龙汇阊、水陆转运之便，让阊门成为当年的物流转运中心——《姑苏繁华图》上的一切，都是这个「水运物流枢纽」的缩影。</p>
+    </div>
+  </article>
+
+  <article class="stop" id="cm_xizhongshi">
+    <div class="body"><div class="no">04</div><h2>西中市 · 民国金融街<span>曾经的苏州「陆家嘴」</span></h2>
+      <figure class="ph"><img src="images/11_yanglou.jpg" alt="现场照"><figcaption>今日 · 民国洋楼前（2026·11·11 摄）</figcaption></figure>
+      <figure class="ph"><img src="images/12_xizhongshi.jpg" alt="现场照"><figcaption>今日 · 西中市街景（2026·11·11 摄）</figcaption></figure>
+      <p class="point">西中市东起皋桥、西至阊门，全长 453 米。名字一路变：宋元「皋桥西巷」→ 清代「阊门大街」→ 1935 年拓建后定名「西中市」→ 1966 年「井岗山西路」→ 1980 年恢复——一条街的名字史，就是半部苏州近代史。清末民初，这里是苏州的金融中心：1903 年两江总督张之洞奏设裕苏官银钱局于德馨里；1908 年苏州 24 家钱庄中 20 家在这条街；1914 年中国银行苏州分行在德馨里开业，是中国银行全国最早的分支机构之一。</p>
+      <p class="key">一条街的名字史，就是半部苏州近代史。</p>
+      <p class="aside">街口皋桥因汉皋伯通居此得名——成语「举案齐眉」的现场就藏在这里：梁鸿东逃至吴，在皋伯通家庑下舂米，孟光备好饭食「举案齐眉」，皋伯通因此看出「彼佣能使其妻敬之如此，非凡人也」。1935 年拓建后沿街翻建成二三层带外廊洋楼，就是今天民国风街区的直接来源。</p>
+    </div>
+  </article>
+
+  <article class="stop" id="cm_taibomiao">
+    <div class="body"><div class="no">05</div><h2>泰伯庙 · 三让至德<span>三吴首祠 · 吴文化寻根</span></h2>
+      <figure class="ph"><img src="images/13_taibomiao_qian.jpg" alt="现场照"><figcaption>今日 · 泰伯庙前（2026·11·11 摄）</figcaption></figure>
+      <figure class="ph"><img src="images/14_taibomiao_nei.jpg" alt="现场照"><figcaption>今日 · 庙内听讲（2026·11·11 摄）</figcaption></figure>
+      <figure class="ph"><img src="images/15_taibo_tupu.jpg" alt="老照片"><figcaption>泰伯让位 · 人物关系图谱——一张图理清「让位」两头：周室传位与句吴立国</figcaption></figure>
+      <p class="point">从西中市拐进阊门内下塘街，就是「三吴首祠」泰伯庙。孔子评他：「泰伯，其可谓至德也已矣！三以天下让，民无得而称焉。」商末，周太王想把位子传给三子季历——看中的其实是孙子姬昌（后来的周文王）；长子泰伯以采药为名出走，父亲去世也不回去奔丧，索性断发文身，从体貌上自绝于继承礼制——让得毫无痕迹。到了江南他没有隐居，而是入乡随俗、筑城立国，《史记·吴太伯世家》：「泰伯奔荆蛮，自号句吴。」</p>
+      <p class="key">没有泰伯下江南，就没有后来这扇阊门。</p>
+      <p class="aside">苏州人祀他，祀的不是某个王，而是吴文化的人格源头：让得彻底，干得认真。几百年后，伍子胥才在这片土地上筑起阖闾大城。</p>
+    </div>
+  </article>
+
+  <article class="stop" id="cm_wufengyuan">
+    <div class="body"><div class="no">06</div><h2>五峰园 · 太湖石五老峰<span>花石纲遗存 · 园是新的，石是真的</span></h2>
+      <figure class="ph"><img src="images/16_wufengyuan_tingyuan.jpg" alt="现场照"><figcaption>今日 · 五峰园庭院（2026·11·11 摄）</figcaption></figure>
+      <figure class="ph"><img src="images/17_wufengyuan_shitou.jpg" alt="现场照"><figcaption>今日 · 五峰园太湖石前（2026·11·11 摄）</figcaption></figure>
+      <p class="point">五峰园，明代嘉靖年间宅园，占地仅 1453 平方米，是古城区少见的免费省级文保园林。园中五峰——丈人峰、观音峰、三老峰、庆云峰、擎云峰，各高约两丈，「皱瘦漏透」，形似五位老者，又名「五老峰」。来历两说：北宋花石纲遗物，朱勔事败后「仅存二丈大石六七方，偃仰柳毅桥畔」，明代移入园中；一说北宋梅宣义「五亩园」石峰移置——无论哪说，都是太湖石中的佼佼者，可与留园冠云峰媲美。</p>
+      <p class="key">园是新的（1998 年整修后建筑多为重建），石是真的。</p>
+      <p class="aside">园西南角土墩俗传为唐柳毅墓——《柳毅传书》本是传奇小说，但《吴县志》确称柳毅为吴县人、住阊门下塘：小说人物对方志记载，虚实分明的好例子。收官聚新春面馆（西中市 44 号）——非遗紧酵馒头，头汤面：苏州的繁华，最后都落回市井烟火。</p>
+    </div>
+  </article>
+
+  <article class="stop" id="heying">
+    <div class="body"><div class="no">07</div><h2>收官合影<span>吴地时光机 · 姑苏探秘 Citywalk</span></h2>
+            <figure class="ph"><img src="images/18_shouguan_heying.jpg" alt="现场照"><figcaption>今日 · 收官合影 —— 至德殿前举「吴地时光机·文之初心探古城」横幅（2026·11·11 摄）</figcaption></figure>
+      <p class="key">门—水—街—庙—园，六站走完；苏州的繁华，最后都落回市井烟火。</p>
+    </div>
+  </article>
+
+  <article class="stop" id="huaxu">
+    <div class="body"><div class="no">08</div><h2>今日花絮<span>幸运学员 · 吴地时光机</span></h2>
+            <figure class="ph"><img src="images/19_huaxu.jpg" alt="现场照"><figcaption>今日 · 研学花絮 —— 幸运学员（2026·11·11 摄）</figcaption></figure>
+    </div>
+  </article>
+
+  <article class="stop" id="laozhaopian">
+    <div class="body"><div class="no">附</div><h2>老照片<span>一座门的毁与建 · 从《姑苏繁华图》到 2006 年重建</span></h2>
+      <figure class="ph"><img src="images/20_gufutu.jpg" alt="老照片"><figcaption>清 · 徐扬《盛世滋生图》（即《姑苏繁华图》）阊门段——城墙、瓮城、门额、吊桥皆入画，2006 年重建阊门的第一个「样本」</figcaption></figure>
+      <div class="duo">
+      <figure class="ph"><img src="images/21_wanrenmatou.jpg" alt="老照片"><figcaption>民国 ·「万人码头」明信片——唯一一张能远远望见阊门城楼的民国影像</figcaption></figure>
+      <figure class="ph"><img src="images/22_nanxinqiao.jpg" alt="老照片"><figcaption>今日 · 南新桥同机位翻拍——城门还在，水还是那些水</figcaption></figure>
+      </div>
+      <p class="point" style="margin-top:18px">往下这张图不是跑错片场——2006 年重建阊门时，曾有一份连瓮城一并复建的「修复方案二」，最终未照此全建。它是最直观的想象底稿：对照示意图与古画，就能还原「金城汤池」的雄关雄姿。</p>
+      <figure class="ph"><img src="images/23_fangantu.jpg" alt="老照片"><figcaption>2006 年 ·「阊门修复方案二」示意图（施小平《苏州城门城墙那些事》）——那座「差一点回来的瓮城」</figcaption></figure>
+      <p class="point">2006 年重建的阊门，照着三个样本建：《姑苏繁华图》里的阊门段——盛世图景中的城门形态；民国老照片——能远远看到阊门城楼的仅「万人码头」明信片一张；再就是眼前现在的阊门。三方一比，重建的取舍与想象就都看得见了。1927 年拆旧城门、1958 年城门拆除、1966 年后续拆城墙，2006 年依考古与《姑苏繁华图》重建——一座门在八十年里，从拆到建。</p>
+      <p class="key">三张图比一比，重建的取舍与想象，就都看得见了。</p>
+    </div>
+  </article>
+
+  <div class="take">
+    <h3>带 走 三 句 话</h3>
+    <ul>
+      <li>阊阖即天门——八门中唯一以「通天」命名的门；别的门多是地名，只有它，还是门。</li>
+      <li>五龙汇阊：东一条、西两条，南濠北濠把城绕——阊门的繁华，底牌是水。</li>
+      <li>没有泰伯奔吴，就没有后来江南吴文化的底蕴。</li>
+    </ul>
+  </div>
+
+  <footer>
+    <span class="seal">吴地时光机</span>
+    走读姑苏 · 一步一千年<br>
+  </footer>
+
+</div>
+</body>
+</html>
