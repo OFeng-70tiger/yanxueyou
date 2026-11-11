@@ -149,8 +149,11 @@
     .phbox em{font-size:16px}
   }
 
+  /* 吸顶动线：滚到页面下方也能随时点站跳转 */
+  .route{position:sticky;top:0;z-index:30;box-shadow:0 6px 16px rgba(90,60,30,.22)}
   /* 手机可读性微调（社区版专用） */
   @media (max-width:520px){
+    body{overflow-x:visible}   /* 源页的 overflow-x:hidden 会让 sticky 失效，这里覆盖掉 */
     .intro p b{white-space:nowrap}
     .route .pill{font-size:16px}
     .partners .pnote{font-size:17px}
