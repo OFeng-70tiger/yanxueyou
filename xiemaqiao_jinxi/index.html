@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歇马桥·锦溪古镇 · 研学游攻略</title>
+<style>
+  :root{
+    --bg:#f5f1e8; --card:#fffdf8; --ink:#2b2a26; --sub:#6b675e;
+    --line:#e5ddcd; --accent:#9a6b3f; --accent2:#3f6b5a;
+    --tag:#eef3ef; --warm:#f9f3e6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:0 18px 60px}
+  header.hero{
+    background:linear-gradient(135deg,#3f6b5a 0%,#2f5548 55%,#24433a 100%);
+    color:#f7f3e9; padding:44px 22px 40px; text-align:center;
+  }
+  header.hero .kicker{font-size:14px;letter-spacing:4px;opacity:.8}
+  header.hero h1{font-size:32px;letter-spacing:2px;margin:10px 0 8px;font-weight:700}
+  header.hero .sub{font-size:15px;opacity:.92;letter-spacing:1px}
+  header.hero .meta{font-size:12px;opacity:.7;margin-top:14px}
+  html{scroll-behavior:smooth}
+  .nav-wrap{
+    position:sticky;top:0;z-index:10;background:rgba(245,241,232,.97);
+    backdrop-filter:blur(6px);border-bottom:1px solid var(--line);
+  }
+  .site-tabs{display:flex;justify-content:center;gap:10px;padding:10px 12px 2px}
+  .site-tab{
+    border:1px solid var(--line);background:#fffdf8;color:var(--sub);
+    padding:8px 20px;border-radius:22px;font-size:15px;font-weight:600;
+    cursor:pointer;transition:.18s;white-space:nowrap;
+  }
+  .site-tab:hover{border-color:var(--accent);color:var(--accent)}
+  .site-tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .nav{display:flex;justify-content:center;flex-wrap:wrap;gap:2px;padding:6px 10px 10px}
+  .nav-group{display:none}
+  .nav-group.active{display:flex}
+  .nav a{color:var(--sub);text-decoration:none;font-size:13px;padding:5px 12px;border-radius:16px}
+  .nav a:hover{color:var(--accent);background:#efe8da}
+  section{margin-top:36px;scroll-margin-top:112px}
+  h3[id],h2[id]{scroll-margin-top:120px}
+  h2{
+    font-size:22px;color:var(--accent);letter-spacing:1px;
+    padding-bottom:10px;border-bottom:2px solid var(--line);margin-bottom:20px;
+  }
+  h2 .en{font-size:13px;color:var(--sub);letter-spacing:2px;margin-left:8px;font-weight:400}
+  /* 站点大标题：两站间明显分界线；字号/字体一致，颜色区分两站 */
+  .station-head{
+    font-size:27px;font-weight:700;letter-spacing:1px;
+    color:var(--accent);border-top:3px solid var(--accent);
+    padding-top:16px;margin:52px 0 6px;
+  }
+  .station-head .en{font-size:13px;color:var(--sub);letter-spacing:2px;margin-left:8px;font-weight:400}
+  #xmaqiao .station-head{color:var(--accent2);border-top-color:var(--accent2)}
+  #xmaqiao h2{color:var(--accent2)}
+  h3{font-size:17px;margin:22px 0 10px;color:var(--ink)}
+  p{font-size:15px;margin:10px 0;color:var(--ink)}
+  .lead{font-size:16px;color:var(--sub)}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:20px;margin:16px 0;box-shadow:0 1px 3px rgba(0,0,0,.04);
+  }
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:640px){.grid{grid-template-columns:1fr}}
+  .tag{
+    display:inline-block;font-size:12px;padding:2px 10px;border-radius:12px;
+    background:var(--tag);color:var(--accent2);margin-right:6px;margin-bottom:4px;
+  }
+  .tag.warm{background:var(--warm);color:var(--accent)}
+  .hl{background:linear-gradient(transparent 60%,#f4dfae 60%);font-weight:600}
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;background:var(--card)}
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+  th{background:var(--warm);color:var(--accent);font-weight:600;white-space:nowrap}
+  td{color:var(--ink)}
+  .spot{margin:26px 0 34px}
+  .spot .cap{font-size:14px;color:var(--sub);margin:12px 0 8px}
+  .fig{
+    position:relative;border-radius:12px;overflow:hidden;
+    border:1px solid var(--line);background:#eee8da;margin:10px 0 4px;
+  }
+  .fig img{display:block;width:100%;height:auto}
+  .fig .credit{
+    position:absolute;left:0;right:0;bottom:0;padding:6px 12px;font-size:11px;
+    color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.55));line-height:1.4;
+  }
+  .step{
+    display:flex;gap:14px;margin:14px 0;padding:14px;border-left:3px solid var(--accent2);
+    background:var(--card);border-radius:0 10px 10px 0;
+  }
+  .step .time{
+    flex-shrink:0;font-weight:700;color:var(--accent2);font-size:14px;width:52px;padding-top:1px;
+  }
+  .step .d{font-size:14px}
+  .step .d b{color:var(--ink)}
+  .note{
+    background:var(--warm);border-left:4px solid var(--accent);border-radius:8px;
+    padding:14px 16px;margin:16px 0;font-size:14px;color:#5a4a2f;
+  }
+  .note b{color:var(--accent)}
+  .src{font-size:12px;color:var(--sub);margin-top:6px}
+  footer{
+    margin-top:48px;padding-top:20px;border-top:1px solid var(--line);
+    font-size:12px;color:var(--sub);text-align:center;line-height:1.9;
+  }
+  .toc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  .toc a{color:var(--ink);text-decoration:none;display:block;padding:4px 0;font-size:14px;border-bottom:1px dashed #eee}
+  .toc a:last-child{border-bottom:none}
+  .toc a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">江 南 水 乡 · 研 学 游</div>
+  <h1>歇马桥 · 锦溪古镇研学游攻略</h1>
+  <div class="sub">第 1 站 歇马桥（古村 + 红色） → 第 2 站 锦溪（千年水乡 + 崇文重教）</div>
+  <div class="meta">苏州 · 昆山 | 一天两镇 · 一文一武 | 图文实拍 + 真实地图动线</div>
+</header>
+
+<div class="nav-wrap">
+  <div class="site-tabs">
+    <button class="site-tab active" data-site="xmq" type="button">歇马桥 · 第 1 站</button>
+    <button class="site-tab" data-site="jx" type="button">锦溪古镇 · 第 2 站</button>
+  </div>
+  <div class="nav nav-group active" id="nav-xmq">
+    <a href="#xmaqiao">站点概览</a>
+    <a href="#xmq-yange">历史沿革</a>
+    <a href="#xmq-wenbao">文保级别</a>
+    <a href="#xmq-detail">核心景点</a>
+    <a href="#xmq-route">研学行程</a>
+    <a href="#xmq-jiwei">拍照机位</a>
+    <a href="#xmq-meishi">美食打卡</a>
+    <a href="#xmq-jieji">行程衔接</a>
+    <a href="#xmq-xinyuan">信源说明</a>
+  </div>
+  <div class="nav nav-group" id="nav-jx">
+    <a href="#gaikuang">古镇概况</a>
+    <a href="#yange">历史沿革</a>
+    <a href="#jx-wenbao">文保级别</a>
+    <a href="#jingdian">核心景点</a>
+    <a href="#xingcheng">研学行程</a>
+    <a href="#jiwei">拍照机位</a>
+    <a href="#meishi">美食打卡</a>
+    <a href="#shiyong">实用贴士</a>
+    <a href="#jx-xinyuan">信源说明</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- 歇马桥（当天第1站） -->
+  <section id="xmaqiao">
+    <div class="station-head">第 1 站 · 歇马桥古村<span class="en">XIEMAQIAO</span></div>
+    <p class="lead">当天先游歇马桥，再驱车约 <b>23 公里 / 33 分钟</b>前往锦溪。歇马桥在昆山市千灯镇石浦南郊、苏沪交界处，是<b>昆山唯一的国家级传统村落</b>——一条 500 米古石板街串起南宋抗金名将韩世忠的传说、红色抗战史和百年老屋里的新业态，被称为"<b>古村 + 红学</b>"。免费开放。</p>
+
+    <h2>一、古村概况（官方口径）<span class="en">OVERVIEW</span></h2>
+    <table>
+      <tr><th>项目</th><th>内容</th></tr>
+      <tr><td>地理</td><td>千灯镇石浦南郊，东邻上海青浦，处苏沪昆三地交界；一条"龙形水系"贯穿南北，村落沿河呈带状分布，"水街相依、窄巷深弄"</td></tr>
+      <tr><td>规模</td><td>村域 3.62 km²；保留 <b>500 米古石板街</b>、约 <b>5000 m² 明清建筑</b>、传统建筑 46 处</td></tr>
+      <tr><td>荣誉</td><td><b>2014 年第三批中国传统村落</b>（昆山首家国字号传统村落）、国家森林乡村、中国美丽宜居村庄、2020 江苏省特色田园乡村、<b>2025 第七届全国文明村</b></td></tr>
+      <tr><td>定位</td><td>新四军淞沪抗日（千灯）县委中心地；昆山非遗"<b>石浦白切羊肉</b>"发祥地</td></tr>
+    </table>
+
+    <h2 id="xmq-yange">二、历史沿革（名称由来）<span class="en">HISTORY</span></h2>
+    <p>村以桥名。据《淞南志》《昆山县志》，歇马桥集镇<b>始建于南宋嘉定年间</b>（1208—1224），至今近千年；原为桥名、镇名，解放后成村名。得名有三说：</p>
+    <div class="note">
+      <b>① 官方主推（最有画面）：</b>南宋抗金名将<b>韩世忠</b>驻兵青龙镇备战金兀术，月夜单骑来到小镇，把战马歇在石拱桥头，独自上桥眺望察看金营、决策战事，后人遂称此桥"歇马桥"；另说韩世忠部在此水草丰茂处歇马养憩、为便利石浦江两岸往来而筑桥。<br>
+      <b>② 方志另说：</b>《淞南志》载驾桥时"驱石计工立马而成，故曰歇马"。<br>
+      <b>③ 讲解提醒：</b>三种说法并存，带团讲 ① 即可（有故事、有画面），但宜说"相传"，不要讲成定论。
+    </div>
+    <p><b>由盛而衰、由衰而兴：</b>清中期漕运便利、商贾云集，是沪苏昆三地交界商贸重镇，最盛时老街有商户 80 余家（茶馆、布庄、药店、铁行等）；近代因交通改道渐趋冷落、90 年代建制变村。2014 年入选中国传统村落，此后修复古街、引入一尺花园等 17 个文旅项目，近 40 家品牌店"藏"进老屋，形成"<b>一街三桥五组团</b>"格局。</p>
+
+    <h2 id="xmq-wenbao">三、歇马桥 · 文物保护单位级别<span class="en">HERITAGE STATUS</span></h2>
+    <p class="lead">以<b>昆山市人民政府官方不可移动文物名录</b>（《关于推进考古前置工作的实施意见》附件，2023）为准。</p>
+    <table>
+      <tr><th>级别</th><th>对象</th><th>讲解要点</th></tr>
+      <tr><td><b>昆山市文物保护单位</b></td><td><b>歇马桥石板街</b>（2013 年列保）</td><td>全长约 500 米、两侧约 5000 m² 明清建筑，是歇马桥唯一市级文保，也是古村"脊柱"</td></tr>
+      <tr><td>不可移动文物（已登记 / 未定级）</td><td>歇马双桥（南、北歇马桥）、众善桥、毕宅（毕厅）、节孝坊</td><td>"歇马双桥""毕宅"已登记为不可移动文物；众善桥清康熙建、乾隆重修；节孝坊清嘉庆建、2023 保护性修复</td></tr>
+      <tr><td>荣誉称号（非文保单位）</td><td>中国传统村落（2014 第三批）、江苏省特色田园乡村（2020）、全国文明村（2025）</td><td>"中国传统村落"是住建系统名录，<b>不等于</b>文物保护单位，别混讲</td></tr>
+    </table>
+    <div class="note"><b>一句话讲解：</b>歇马桥"千年古村"的身份来自<b>中国传统村落</b>称号，真正的文物身份是<b>一条市级文保石板街 + 一批登记在册的古桥古宅</b>，目前<b>没有省级以上文保单位</b>。</div>
+
+    <h2 id="xmq-detail">四、核心景点<span class="en">HIGHLIGHTS</span></h2>
+    <div class="card">
+      <h3>① 古石板街 —— 村子的主轴</h3>
+      <p>全长约 <b>500 米</b>、宽 2—2.15 米的古石板路，两侧是青砖小瓦马头墙、回廊挂落花格窗的明清老屋。<b>2013 年列为昆山市文保单位</b>。窄巷深弄、木门白墙斑驳，是最出片的一条街。</p>
+    </div>
+    <div class="card">
+      <h3>② 三座古桥 —— "歇马桥"村名的来历</h3>
+      <p><b>歇马桥</b>（传韩世忠歇马处）、<b>定胜桥</b>（原名北石桥，寓韩世忠凯旋得胜）、<b>众善桥</b>（清康熙年间建，原名葛家巷桥）。"歇马双桥"与"毕宅"已登记为不可移动文物。</p>
+    </div>
+    <div class="card">
+      <h3>③ 红色双馆 —— "古村 + 红学"的核心</h3>
+      <p><b>韩世忠纪念馆</b>（抗金名将、古代军事文化）+ <b>新四军淞沪抗日史迹陈列馆暨周达明烈士纪念馆</b>（2015 年由旧居改建，苏州市爱国主义教育基地）。两馆免费开放，是党员干部、青年学子主题党日与研学课堂的重要点位。</p>
+    </div>
+    <div class="card">
+      <h3>④ 毕厅 · 节孝坊 · 百年古树</h3>
+      <p>百年<b>毕厅（毕宅）</b>、明清<b>节孝坊</b>，另有近 300 年<b>黄杨</b>、百年<b>桂花</b>、古井——都是沿石板街步行可达的历史遗存。</p>
+    </div>
+    <div class="card">
+      <h3>⑤ 老屋里的新业态 —— 出片又出圈</h3>
+      <p><b>一尺花园、半山诗雨、园林书局·茶咖、对印茶局、老茶馆、奈也木工坊</b>等，把咖啡、茶、古琴、汉服、陶艺、剪纸、植物拓染装进老屋。非遗体验丰富：太湖窑陶瓷、昆曲赏析、中国剪纸、植物拓染；特色美食<b>石浦白切羊肉、定胜糕、跳板茶</b>。</p>
+    </div>
+
+    <h2 id="xmq-route">五、研学行程（腾讯地图实景 + 顺序编号）<span class="en">ITINERARY</span></h2>
+    <p class="lead">下图为<b>腾讯地图真实截图</b>，叠加 ①—⑥ 为建议游览顺序。歇马桥核心区很小（石板街仅 500 米），全程步行约 1 小时即可走完，从北侧村口进、沿街向南、以韩世忠纪念馆收尾，单向不折返。</p>
+    <div class="card" style="padding:8px">
+      <svg viewBox="0 0 1280 900" width="100%" role="img" aria-label="歇马桥古村研学动线图">
+        <defs>
+          <marker id="arr3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="#9a6b3f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+        <image href="img/map_xmq.png" x="0" y="0" width="1280" height="900"/>
+        <polyline points="527,147 634,257 648,371 652,449 695,511 671,627" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.75"/>
+        <polyline points="527,147 634,257 648,371 652,449 695,511 671,627" fill="none" stroke="#9a6b3f" stroke-width="2.6" stroke-dasharray="7 4" marker-end="url(#arr3)"/>
+        <g font-family="sans-serif" text-anchor="middle">
+          <circle cx="527" cy="147" r="19" fill="#5f5e5a" stroke="#fff" stroke-width="2.5"/><text x="527" y="153" fill="#fff" font-size="18" font-weight="700">1</text>
+          <circle cx="634" cy="257" r="19" fill="#9a6b3f" stroke="#fff" stroke-width="2.5"/><text x="634" y="263" fill="#fff" font-size="18" font-weight="700">2</text>
+          <circle cx="648" cy="371" r="19" fill="#9a6b3f" stroke="#fff" stroke-width="2.5"/><text x="648" y="377" fill="#fff" font-size="18" font-weight="700">3</text>
+          <circle cx="652" cy="449" r="19" fill="#9a6b3f" stroke="#fff" stroke-width="2.5"/><text x="652" y="455" fill="#fff" font-size="18" font-weight="700">4</text>
+          <circle cx="695" cy="511" r="19" fill="#9a6b3f" stroke="#fff" stroke-width="2.5"/><text x="695" y="517" fill="#fff" font-size="18" font-weight="700">5</text>
+          <circle cx="671" cy="627" r="19" fill="#9a6b3f" stroke="#fff" stroke-width="2.5"/><text x="671" y="633" fill="#fff" font-size="18" font-weight="700">6</text>
+        </g>
+      </svg>
+    </div>
+    <div class="note">
+      <b>顺序对照：</b>①村口牌坊 / 游客中心 → ②歇马桥古村 → ③歇马桥古镇（石板街）→ ④新四军淞沪抗日史迹陈列馆（周达明纪念馆）→ ⑤歇马桥老茶馆 → ⑥韩世忠纪念馆。棕色＝游览点，虚线＝建议行进方向。编号按各点位真实经纬度投影定位，可能因地图标注文字有十几像素误差，落在正确街巷范围即可。
+    </div>
+
+    <h2 id="xmq-jiwei">六、拍照机位与成像效果<span class="en">PHOTO SPOTS</span></h2>
+    <p class="lead">图片直接嵌入，所见即所得。<b>歇马桥素材来自网络游记实拍（微信公众号"烟雨游"等）</b>，版权归原作者所有，仅供研学参考。</p>
+
+    <div class="spot">
+      <h3>机位 1 · 水巷摇橹船 + 木栈桥（封面机位）</h3>
+      <p>村中水巷：河道、手摇船、岸边木栈桥与白墙老屋一镜收进。船过桥洞时连拍，绿荫与睡莲作前景最出片。</p>
+      <div class="cap">▼ 成像效果 —— 摇橹船行于水巷，两岸民居，右侧木栈桥</div>
+      <div class="fig"><img src="img/xmq_shuixiang.jpg" alt="歇马桥水巷摇橹船"><div class="credit">来源：歇马桥游记实拍 · 水巷与木栈桥</div></div>
+    </div>
+
+    <div class="spot">
+      <h3>机位 2 · 皮划艇水上运动（动感新玩法）</h3>
+      <p>村南水面上有皮划艇俱乐部，彩色艇 + 老屋倒影 + 垂柳，适合拍活泼的团建/亲子照，与古镇静谧感形成反差。</p>
+      <div class="cap">▼ 成像效果 —— 彩色皮划艇泊于水上，背景白墙民居</div>
+      <div class="fig"><img src="img/xmq_shuishang.jpg" alt="歇马桥水上皮划艇"><div class="credit">来源：歇马桥游记实拍 · 水上运动俱乐部</div></div>
+    </div>
+
+    <div class="spot">
+      <h3>机位 3 · 临水民居 + 藤蔓墙（文艺出片）</h3>
+      <p>沿石板街走，临河一侧的木楼爬满藤蔓，倒影入水，有小船划过时按快门。适合人像与"江南慢生活"氛围照。</p>
+      <div class="cap">▼ 成像效果 —— 藤蔓覆盖的临水木楼，河道倒影清晰</div>
+      <div class="fig"><img src="img/xmq_minju.jpg" alt="歇马桥临水民居"><div class="credit">来源：歇马桥游记实拍 · 临水民居与藤蔓墙</div></div>
+    </div>
+
+    <div class="spot">
+      <h3>机位 4 · 网红店庭院（枯山水 + 红枫）</h3>
+      <p>改造后的老屋庭院，白墙、卵石水景、红枫与遮阳伞构成小而精的日式庭院感，适合拍人像与静物。</p>
+      <div class="cap">▼ 成像效果 —— 白墙围合的小庭院，红枫、水景、遮阳伞</div>
+      <div class="fig"><img src="img/xmq_tingyuan.jpg" alt="歇马桥网红店庭院"><div class="credit">来源：歇马桥游记实拍 · 老屋改造庭院</div></div>
+    </div>
+
+    <div class="spot">
+      <h3>机位 5 · 对印茶局（老街门面）</h3>
+      <p>老街上的木构门面与白墙招牌，是"老屋里的新业态"代表构图，适合拍街景与打卡照。</p>
+      <div class="cap">▼ 成像效果 —— 木构老屋门面，悬挂"对印茶局"招牌</div>
+      <div class="fig"><img src="img/xmq_chaju.jpg" alt="歇马桥对印茶局"><div class="credit">来源：歇马桥游记实拍 · 老街新业态门店</div></div>
+    </div>
+
+    <div class="spot">
+      <h3>机位 6 · 红色研学（周达明纪念馆）</h3>
+      <p>木构老宅门面上悬挂"新四军淞沪抗日史迹陈列馆""周达明烈士纪念馆"牌匾，是"古村 + 红学"研学的标志画面。</p>
+      <div class="cap">▼ 成像效果 —— 木门老宅与红色纪念馆牌匾</div>
+      <div class="fig"><img src="img/xmq_hongse.jpg" alt="歇马桥周达明纪念馆"><div class="credit">来源：歇马桥游记实拍 · 苏州市爱国主义教育基地</div></div>
+    </div>
+
+    <div class="note">
+      <b>拍摄时间总纲：</b>歇马桥上午光线柔和、人少，建议 9:00—11:00 拍摄；石板街窄巷正午顶光偏硬，可躲在屋檐与咖啡馆廊下拍。穿浅色或棉麻素衣与白墙黛瓦最搭。
+    </div>
+
+    <h2 id="xmq-meishi">七、美食打卡（网红店 + 面馆）<span class="en">FOOD</span></h2>
+    <p class="lead">歇马桥是昆山非遗"<b>石浦白切羊肉</b>"发祥地，古村里还藏着多家网红新业态。午餐若在歇马桥解决，重点盯羊肉、苏帮菜与一家开在<b>民国老建筑里的创意面馆</b>。评分/人均取自<b>腾讯地图、大众点评</b>公开页面，会变动、以 App 实时为准。</p>
+    <table>
+      <tr><th>店名 / 类型</th><th>招牌特色</th><th>参考人均</th><th>评分 / 口碑</th><th>所在位置</th></tr>
+      <tr><td><b>歇马面庐</b>（创意面馆·新发现）</td><td>由<b>民国老建筑改造的创意面馆</b>，主打奥灶面等苏式汤面；村口附近、老屋出片</td><td>约 <b>57 元</b></td><td>腾讯地图 <b>4.3</b>；营业 10:00–20:00，电话 13776303047</td><td><b>歇马桥村 20 组 10 号 -1</b>（村口附近）</td></tr>
+      <tr><td><b>百盛人家</b>（黑珍珠餐厅）</td><td>昆山首家黑珍珠<b>鼎膳·匠宴</b>分店，不设菜牌、应季而做；镇店网红"<b>歇马桥五虾面</b>"（虾仁/虾脑/虾油/虾籽/虾汤配苏式面）</td><td>偏高（未公开）</td><td>黑珍珠品牌店 · 昆山市政府官网力荐</td><td>歇马桥村内</td></tr>
+      <tr><td><b>老饭店农家菜</b>（本地老店）</td><td>招牌<b>红烧河鳗</b>（网友称"专业级"）、白切羊肉、红烧土鸡、盐水虾</td><td>约 <b>128 元</b></td><td>大众点评口味/服务"很好～非常好"</td><td>歇马桥市场西首（村内）</td></tr>
+      <tr><td><b>旭马楼</b>（新派苏帮菜）</td><td>石浦醉仙楼分号，松鼠鳜鱼、响油鳝糊、石浦羊肉、春日腌笃鲜；宋式包厢以词牌命名</td><td>未公开</td><td>昆山市政府官网推荐新店</td><td>歇马桥村内</td></tr>
+      <tr><td><b>南街小馆</b>（本帮家常）</td><td>经典本帮菜、江南村宴，适合家庭小聚</td><td>未公开</td><td>政府官网推荐新店</td><td>歇马桥村内</td></tr>
+      <tr><td><b>一尺花园</b> / 园林书局 / 对印茶局（咖啡茶饮·打卡）</td><td>一尺花园招牌"<b>歇马桥大战斧</b>"、园林书局书咖、河畔咖啡；马儿榴榴榴莲甜品</td><td>未公开</td><td>网红打卡 · 政府官网推荐</td><td>散落古村老屋，拍照出片</td></tr>
+    </table>
+    <div class="note"><b>午餐建议：</b>想吃一碗面 → <b>歇马面庐</b>（村口、民国老屋改造，人均57、评分4.3）；想吃非遗硬菜 → <b>老饭店</b>（白切羊肉、红烧河鳗）；想吃精致苏帮菜+打卡 → <b>百盛人家五虾面</b>、旭马楼；只喝茶歇脚 → 一尺花园、园林书局。<br><b>考据提醒：</b>原列入的"陆氏羊肉馆（兴浦街718号）"经核实<b>腾讯/高德地图均查无此店，且兴浦街在石浦镇区、距歇马桥约 3.7 公里</b>，不在村里，已撤出村内推荐，请勿按此找店。</div>
+
+
+    <h2 id="xmq-jieji">八、与锦溪的行程衔接<span class="en">TRANSFER</span></h2>
+    <div class="note">
+      <b>时间线：</b><b>8:30 从苏州市区出发 → 约 9:30 抵达歇马桥</b>；步行游览核心区约 <b>1.5—2 小时</b>（石板街、三座古桥、红色双馆、老屋新业态，含茶歇拍照），<b>约 11:30 在村里吃午饭</b>——正好接上上一节美食打卡。<br>
+      <b>前往锦溪：</b>午饭后再出发，<b>驾车约 33 分钟 / 23 公里</b>到锦溪，接上锦溪的下午行程。两地都在昆山、同属一条官方推荐的乡村游线路，串联顺路不绕道。<br>
+      <b>研学主题衔接：</b>歇马桥＝<b>抗金名将 + 红色抗战 + 传统村落保护利用</b>（家国情怀、乡村振兴）；锦溪＝<b>南宋皇妃传说 + 崇文重教 + 民间博物馆</b>（文脉传承）。一站"武"一站"文"，一天里形成完整对照。
+    </div>
+
+    <h2 id="xmq-xinyuan">九、信源说明（歇马桥）<span class="en">SOURCES</span></h2>
+    <div class="card">
+      <p><b>官方信源：</b></p>
+      <p class="src">· <b>昆山市人民政府《关于推进考古前置工作的实施意见》（2023）附件《全市不可移动文物名录》</b>——歇马桥文保级别（市保 / 未定级）权威依据<br>· 昆山市人民政府《千灯镇歇马桥村入选江苏省乡村建设用地保障第一批典型案例》——荣誉、面积人口、"一街三桥五组团"、韩世忠得名<br>· 昆山市人民政府《昆山千灯歇马桥：获评全国文明村》——红色双馆、非遗、荣誉<br>· 苏州市人民政府《昆山市千灯镇歇马桥村》——文保单位、景点、非遗（市农业农村局）<br>· 昆山市融媒体中心"第一昆山"《探访昆山传统村落·歇马桥村》——始建年代、得名三说、清代商贸史<br>· 《淞南志》《昆山县志》、百度百科"歇马桥"词条——三座古桥、石板街形制</p>
+      <p style="margin-top:12px"><b>美食信源：</b></p>
+      <p class="src">· 大众点评公开页面——老饭店农家菜（歇马桥市场西，人均 128 元）<br>· <b>腾讯地图 POI——歇马面庐（歇马桥店）：歇马桥村 20 组 10 号 -1，评分 4.3、人均 57 元、营业 10:00–20:00</b>（民国老建筑改造的创意面馆）<br>· 昆山市人民政府《来歇马桥，邂逅慢生活》《新年赴千灯，邂逅古镇新趣》——百盛人家（黑珍珠鼎膳·匠宴）、五虾面、一尺花园大战斧、旭马楼、南街小馆等网红店<br>· <b>纠错记录：</b>"陆氏羊肉馆（兴浦街 718 号）"经腾讯 / 高德地图核实查无此店，且兴浦街在石浦镇区、距歇马桥约 3.7 公里，已从村内推荐撤除</p>
+      <p style="margin-top:12px;color:#a04a3a"><b>图片 / 动线图说明：</b>歇马桥配图来自网络游记实拍（微信公众号"烟雨游"等），版权归原作者所有；动线图为<b>腾讯地图真实截图</b>叠加顺序编号，点位按真实经纬度投影。仅供个人研学参考，如需商用或传播请自行取得授权。</p>
+    </div>
+  </section>
+
+  <!-- 概览 -->
+  <section id="gaikuang">
+    <div class="station-head">第 2 站 · 锦溪古镇<span class="en">JINXI</span></div>
+    <h2>一、古镇概况<span class="en">OVERVIEW</span></h2>
+    <p class="lead">锦溪古镇，位于江苏省苏州市昆山市西南，地处江苏、浙江、上海三省市交界处，距周庄仅 8 公里、上海约 1 小时车程。它没有周庄、乌镇的喧嚣，是"活着的江南"——原住民还在河边洗衣、阿婆摇着蒲扇，商业味恰到好处。</p>
+    <div class="card">
+      <table>
+        <tr><th>级别</th><td>国家 AAAA 级旅游景区、中国历史文化名镇（2008 年）、中国民间文化艺术之乡</td></tr>
+        <tr><th>历史</th><td>五千余年文明史、两千余年发展史（良渚文化时期已有人类活动）</td></tr>
+        <tr><th>别称</th><td>曾用名"陈墓"沿用 800 余年；"中国民间博物馆之乡"</td></tr>
+        <tr><th>规模</th><td>政区面积 92.43 km²；内河道长约 6 公里，"丰"字形河网</td></tr>
+        <tr><th>古桥</th><td>36 座（民谣"三十六座桥，七十二只窑"）</td></tr>
+        <tr><th>古建</th><td>明、清及民国建筑 8.7 万 m²，古巷古弄砖门楼 30 余处</td></tr>
+        <tr><th>名人评价</th><td>沈从文"睡梦中的少女"；刘海粟"江南之最"；冯英子"淡妆浓抹总相宜"</td></tr>
+      </table>
+    </div>
+    <p><span class="hl">一句话记住锦溪：</span>一溪穿镇、夹岸桃李、满溪跃金——因水得名，又因一段南宋帝妃爱情而更名八百年。</p>
+  </section>
+
+  <!-- 沿革 -->
+  <section id="yange">
+    <h2>二、历史沿革<span class="en">HISTORY</span></h2>
+    <p class="lead">锦溪的名字本身，就是一部帝王爱情的注脚。</p>
+
+    <h3>① 名称由来</h3>
+    <p>志载：一溪穿镇而过，夹岸桃李纷披，晨霞夕辉尽洒江面，满溪跃金、灿若锦带，故曰"<b>锦溪</b>"。北宋时正式定名。</p>
+
+    <h3>② 千年沿革时间线</h3>
+    <table>
+      <tr><th>时期</th><th>沿革</th></tr>
+      <tr><td>5000 多年前</td><td>良渚文化时期已有人类繁衍生息</td></tr>
+      <tr><td>春秋</td><td>聚为集镇，地属会稽郡</td></tr>
+      <tr><td>三国—唐</td><td>地属吴郡</td></tr>
+      <tr><td>五代</td><td>属苏州</td></tr>
+      <tr><td>北宋</td><td>定名"锦溪"</td></tr>
+      <tr><td>南宋绍兴元年（1131）</td><td>御名"陈墓"后，以南北市河为界分县而治</td></tr>
+      <tr><td>1952 年 9 月</td><td>昆、吴两县陈墓镇合并，升为昆山县直属镇</td></tr>
+      <tr><td>1992 年 10 月</td><td>恢复旧名"锦溪镇"（"陈墓"一名沿用约 860 年）</td></tr>
+    </table>
+
+    <div class="note">
+      <b>核心故事线 —— 陈妃水冢与"陈墓"之名：</b><br>
+      南宋靖康之变后，宋孝宗南渡途经锦溪，随行的陈妃病逝，被<b>水葬于五保湖</b>。孝宗悲恸，降旨将锦溪更名"<b>陈墓</b>"，并在水冢对岸建<b>莲池禅院</b>，命僧超度守墓。"陈墓"一名沿用 800 余年，直到 1992 年才恢复"锦溪"之名。这条"陈妃水冢 + 陈墓改名 + 莲池禅院"的故事线，正是锦溪区别于周庄、乌镇的灵魂所在。
+    </div>
+
+    <div class="note">
+      <b>陈妃故事里的皇帝——宋孝宗是谁？（讲解高频疑问）</b><br>
+      很多人纳闷：靖康之变后南逃的不是宋高宗赵构吗，怎么陈妃故事里是宋孝宗？答案是——<b>孝宗是高宗抱养的养子，两人没有血缘关系，跟宋徽宗更无直接血缘</b>。<br>
+      · 宋孝宗<b>赵昚（shèn）</b>，原名赵伯琮（1127—1194），南宋第二位皇帝（1162—1189 在位），开创"乾淳之治"，为岳飞平反、削秦桧官号，是南宋最有作为的皇帝之一。<br>
+      · <b>血脉</b>：他是<b>宋太祖赵匡胤七世孙</b>、秦王赵德芳六世孙，生父为秀安僖王赵子偁。北宋皇位自"烛影斧声"后一直在太宗赵光义一脉，到高宗绝嗣，皇位<b>转回太祖一脉</b>——所以对徽宗、高宗这一支来说，孝宗其实是"外姓宗亲"。<br>
+      · <b>为何被选中</b>：高宗赵构（徽宗之子）唯一的儿子赵旉 3 岁夭折，他逃难时又受惊丧失生育能力，只好从宗室中选继承人，挑中 6 岁的赵伯琮入宫抚养。传说高宗还用"赐 10 名宫女考验定力"的办法，在两名养子中最终选定了他。<br>
+      · <b>为何故事用孝宗年号</b>：陈妃水冢、莲池禅院的确切记载在<b>隆兴元年（1163）</b>，正是孝宗刚即位之时——故事线记的是孝宗一朝的事，而非高宗南渡当年。<b>讲解时不要说成"高宗南渡时陈妃随行病殁"，这是常见口误。</b>
+    </div>
+
+    <div class="note">
+      <b>研学重点（讲解时可拆开讲）：</b><br>
+      ① 寺、桥、冢三者<b>分属不同年代与主体</b>，切勿混为一谈——莲池禅院是孝宗为陈妃所建（南宋）；古莲桥为<b>现代新建景观廊桥</b>（中国日报报道称"始建于建炎三年1129、重建于乾隆十二年1747"，与多处实地资料"新置景观桥"说法不一，两说并存）；陈妃水冢为陈妃墓葬。三者共同构成"古莲景区"。
+    </div>
+
+    <h3>③ 崇文重教与人才（有文昌阁，更有实打实的功名）</h3>
+    <p>镇南有<b>文昌阁（文星阁）</b>供奉文曲星，正是锦溪"崇文重教、耕读传家"的象征。这份学风不是空话——科举时代锦溪实打实出过功名：</p>
+    <table>
+      <tr><th>功名</th><th>人数</th><th>代表 / 说明</th></tr>
+      <tr><td>进士</td><td><b>5 名</b></td><td>陈景琇、盛符升等</td></tr>
+      <tr><td>举人</td><td><b>11 名</b></td><td>据《（乾隆）陈墓镇志》不完全记载</td></tr>
+      <tr><td>贡生</td><td><b>5 名</b></td><td>同上</td></tr>
+      <tr><td>状元</td><td>科举时代<b>无</b></td><td>南宋卫泾是"昆山第一位状元"，但为昆山籍，非锦溪本土，讲解时勿混</td></tr>
+    </table>
+    <div class="note">
+      <b>"民国状元"朱雷章——科举废除后的状元：</b><br>
+      <b>朱雷章</b>（1905—1995），字震初，生于陈墓镇（今锦溪）<b>普庆桥西堍</b>书香世家，父朱文焯是留日同盟会员、法学家。<b>1931 年 7 月</b>南京国民政府举办<b>首届高等考试</b>（官方称"国家第一次抡才大典"，戴季陶主考），1167 人报考仅录 43 人，他以总平均 82.3 分、中国近代政治史满分拿下<b>第一名</b>，时称"<b>民国状元</b>"。28 岁破格任国民政府监察院监察委员，后任中国考政学会理事长。锦溪杰出人物馆将其列在显要位置。<b>讲解口径："科举时代无状元，但民国首届高等考试出了一个'状元'朱雷章"——这句话最抓人。</b>
+    </div>
+    <p>延伸数据：清末新学之后，锦溪又走出 <b>2 位院士</b>（陈华癸、秦国刚）、<b>2 位共和国将军</b>、<b>200—300 多位教授</b>、<b>120 多位留学生</b>，故有"<b>教授之乡</b>""<b>留学生之乡</b>"之称。锦溪杰出人物馆门联为张元济所题——"<b>数百年旧家无非积德，第一件好事还是读书</b>"，正是这条文脉最好的注脚。</p>
+
+    <h3>④ 历代名人（攻略里最容易漏掉的一块）</h3>
+    <table>
+      <tr><th>类别</th><th>人物</th></tr>
+      <tr><td>隐居 / 墓葬</td><td>三国<b>张昭</b>（墓）、东晋<b>顾恺之</b>、唐<b>陆龟蒙</b></td></tr>
+      <tr><td>留下诗文</td><td>南宋吴文英，元马致远，明代<b>高启、沈周、文徵明、祝枝山、唐伯虎</b>、仇英、陈淳</td></tr>
+      <tr><td>近现当代</td><td>沈从文誉为"睡梦中的少女"；刘海粟称"江南之最"；<b>陈逸飞 1985 年在南塘桥写生</b>，作品《晨》登上联合国首日封</td></tr>
+      <tr><td>锦溪本土</td><td><b>张省</b>（刘海粟关门弟子、国礼画家）、<b>陆曙轮</b>（柿园主人）、<b>朱雷章</b>（民国状元）</td></tr>
+      <tr><td>当代 "教授之乡"</td><td>天文学家朱文鑫、院士陈华癸 / 秦国刚、"普通话之父"朱文熊等</td></tr>
+    </table>
+    <div class="note">
+      <b>考据提醒：</b>① 顾恺之是<b>东晋</b>人，部分官方旅游网页误写"西晋"，讲解以《晋书》为准；② 网传"马援在此练兵"来源不硬，不建议写进讲解词；③ 与锦溪渊源最硬、最好讲的是<b>陈逸飞南塘桥写生</b>与<b>朱雷章民国状元</b>两条，有画面、有故事。
+    </div>
+
+    <h3>⑤ 讲解专题：文徵明与锦溪 —— "女婿"身份与文昌阁唱和考据</h3>
+    <p>文徵明（1470—1559），"吴门四家""吴中四才子"之一。他与锦溪最硬的一件实证，是这首<b>《陈妃水冢》</b>诗：</p>
+    <div class="note">
+      <b>"谁见金凫水底坟，空怀香玉闭佳人。君王情爱随流水，赢得寒溪尚姓陈。"</b>——借凭吊陈妃点出古镇"陈墓"之名的由来，是历代咏锦溪诗中流传最广的一首，可作"明代文人与锦溪"的最佳切入点（末句另有"随流尽"版本）。
+    </div>
+    <p><b>"锦溪女婿"要讲准：</b>方志江苏（澎湃新闻 2020）称"明中叶文徵明娶陈墓吴氏为妻，成为陈墓女婿"。但文徵明<b>亲撰的岳父《吴愈墓志铭》</b>（收入《吴都文粹续集》《国朝献征录》）明载：吴氏是<b>"昆山吴愈第三女"</b>，吴愈"世家苏之昆山"、官至河南参政。<b>一手史料只证明他娶的是昆山吴氏，"陈墓人"缺乏原始依据</b>。稳妥口径："文徵明娶昆山吴氏，方志称其与陈墓（锦溪）有姻亲渊源"——不要把"锦溪女婿"当铁证讲。</p>
+    <p><b>"文昌阁登高唱和"的时间矛盾——最容易讲错处：</b></p>
+    <div class="note">
+      文徵明卒于<b>1559 年</b>，而今天莲池禅院这座文昌阁是<b>清乾隆三十八年（1773）才移建来的</b>，晚了他 200 多年，<b>他不可能登上"现存这座"阁</b>。<br>
+      真相：张圻《文星阁"片云"额跋》碑文明言"<b>向有镇西通神院之偏有文星阁……乾隆八年（1743）大颓……乾隆三十八年移建</b>"——明代文徵明他们登临的是<b>镇西通神道院的旧文星阁</b>，旧阁乾隆八年倒塌、三十八年才移建今址。<b>同一"文昌阁"文脉，建筑与位置都换过</b>：明人唱和于旧阁，今人看到的是清阁，并不矛盾。<br>
+      <b>旧阁始建年代无定论：</b>一手碑文只说"向有"、未载创建人与年代；方志另有"唐末为纪念陆龟蒙而建""始建于宋"等说，均无一手确证。讲"旧阁明代已存在、今阁清乾隆移建"最稳妥。
+    </div>
+    <div class="note">
+      <b>另一处要避开的坑：</b>方志江苏原文写"文徵明与老师沈周、好友祝允明、<b>归昌世</b>等"，但<b>归昌世（1573—1644）是明末人，比文徵明小 100 多岁</b>，不可能是其唱和好友，属该文笔误。明代与文徵明在陈墓雅集的同道，讲<b>沈周（老师）、祝允明、唐寅</b>即可——这三位才是同时代人，也是"吴中四才子"的成员。
+    </div>
+  </section>
+
+  <!-- 文保级别 -->
+  <section id="jx-wenbao">
+    <h2>三、锦溪镇 · 文物保护单位级别<span class="en">HERITAGE STATUS</span></h2>
+    <p class="lead">以<b>昆山市人民政府官方不可移动文物名录</b>（《关于推进考古前置工作的实施意见》附件，2023）为准。文保分<b>全国重点 → 省级 → 市级 → 未定级</b>四级；另有一批"荣誉称号"（中国历史文化名镇等）不属于文物保护单位，讲解时务必分开。（歇马桥的文保见第 1 站内"文物保护单位级别"。）</p>
+    <table>
+      <tr><th>级别</th><th>对象</th><th>讲解要点</th></tr>
+      <tr><td><b>江苏省级文物保护单位</b></td><td><b>祝甸窑址</b>、<b>陈墓区公所旧址</b></td><td>锦溪级别最高的两处。祝甸窑址即"七十二只窑"实证；陈墓区公所旧址为省级，见证"陈墓"地名史</td></tr>
+      <tr><td><b>昆山市文物保护单位</b>（约 15 处）</td><td>文星阁、十眼桥、陈妃水冢、通神道院、锦溪镇古内河水道、天水桥、里和桥、锦溪普庆桥、溥济桥、丁宅、夏太昌、陈三才故居、朝阳桥、锦溪杨宅、锦溪王宅</td><td>当天要讲的<b>文星阁（1991 首批）、十眼桥、陈妃水冢</b>都在这一级；陈妃水冢、十眼桥均 1997 年列保</td></tr>
+      <tr><td>未定级 / 登记文物</td><td>莲池禅院、朱雷章故居、柿园、葛墓遗址、中和桥、众安桥等</td><td><b>注意：</b>莲池禅院在市政府 2023 名录中为"未定级"（旧资料曾称昆山市文保，以最新名录为准）</td></tr>
+      <tr><td>荣誉称号（非文保单位）</td><td>中国历史文化名镇、国家 AAAA 级景区、中国民间博物馆之乡</td><td>称号与文保单位体系不同</td></tr>
+    </table>
+    <div class="note"><b>考据提醒：</b>① <b>古莲桥不在任何一级文保名录中</b>——它是现代景观廊桥，不是文物，切勿当作文保单位讲解；② 陈妃水冢是<b>昆山市文保</b>（1997 第二批），"江苏省不可移动文物"是宽泛表述，精确级别以市保为准；③ 全市名录中锦溪还有多处未列级古桥民居（东永济桥、隆福桥、上塘街蔡宅等），带团可按兴趣补充。</div>
+  </section>
+  <!-- 景点 -->
+  <section id="jingdian">
+    <h2>四、核心景点<span class="en">HIGHLIGHTS</span></h2>
+
+    <div class="card">
+      <h3>① 古莲桥 —— 封面地标（廊桥）</h3>
+      <span class="tag">地标</span><span class="tag warm">必打卡</span>
+      <p>锦溪的标志性建筑，<b>系现代新建的景观廊桥</b>（当地人也称"长龙桥""三亭桥"），独立于五保湖中央，把菱塘湾与五保湖分隔开来，西侧连通莲池禅院。桥以古典飞檐亭阁连接两侧长廊，造型如展翅凤凰，朱红廊桥倒映湖面，是古镇"封面"。</p>
+      <div class="note"><b>⚠ 始建年代两说并存（考据提示）：</b>中国日报网 2026 年报道称古莲桥"始建于建炎三年（1129 年）、重建于清乾隆十二年（1747 年）"；但《上海铁道报》及多篇实地游记明确指出，现存古莲桥是<b>"新置的景观桥"</b>、需凭票过桥，并非文物古桥。两说来源不同，本攻略按更审慎的口径表述为"现代景观廊桥"；带团讲解时可如实说明这一分歧。曾闭关近 10 年，<b>已于 2026 年 3 月 25 日恢复开放</b>。</div>
+      <div class="note"><b>注意区分：</b>古莲桥（<b>现代</b>景观廊桥、朱红飞檐三亭、独立于五保湖中央、需购票）与十眼桥（<b>文物古桥</b>、花岗石平板梁桥、1163 年始建、1997 年昆山市文保、免费）是<b>两座不同的桥</b>。两桥都长 52 米、九墩/九柱十孔，且都被叫过"小宝带桥"，极易混淆——记住一句话：<b>有廊有亭要买票的是古莲桥，平板无亭免费走的是十眼桥</b>。</div>
+    </div>
+
+    <div class="card">
+      <h3>② 十眼桥（小宝带桥）—— 九墩十孔平板石桥</h3>
+      <span class="tag">古桥</span><span class="tag warm">观月佳处</span>
+      <p>始建于<b>南宋隆兴元年（1163）</b>，重建于清乾隆三十八年（1773），横架于坟塘港与五保湖口，南北走向。九墩十孔、全长 52 米、宽 2.7 米，南端第一孔为主孔（高 3 米、跨 3.5 米）便行舟，其余八孔低平（高 2.2 米）利泄洪。远望如长龙卧波、形似彩带，故称"小宝带桥"。1997 年列为昆山市文物保护单位。中秋月夜"十孔映月"，是观湖赏月绝佳处。</p>
+    </div>
+
+    <div class="card">
+      <h3>③ 陈妃水冢 —— 灵魂地标</h3>
+      <span class="tag">历史</span><span class="tag warm">传奇</span>
+      <p>五保湖中的湖心孤冢（独圩墩），四面环水，离岸约 50 米。南宋隆兴年间，宋孝宗宠妃陈妃病殁水葬于此。奇特之处在于：<b>无论水位如何涨落，水冢始终露出水面</b>，至今未经考古发掘，成因仍是谜。<b>重要提示：水冢为昆山市文物保护单位（1997 年第二批），严禁登岛、不可坐船靠近，也禁止近距离拍摄；原有栈桥已毁，出于安全与文物保护不会再复建——只能在莲池禅院一侧岸边或十眼桥上隔水远眺，用长焦取景。</b></p>
+    </div>
+
+    <div class="card">
+      <h3>④ 莲池禅院 —— "水乡佛国"</h3>
+      <span class="tag">古建</span>
+      <p>位于镇南五保湖畔，始建于南宋，为宋孝宗超度陈妃所敕建，又称"水乡佛国"，已有 800 多年历史。据乾隆《陈墓镇志》载："宋孝宗南巡葬陈妃于此，构是院，命僧守之。"庙门朝北，全国罕见。寺前是菱塘湾，寺后是五保湖。</p>
+    </div>
+
+    <div class="card">
+      <h3>⑤ 文昌阁（文星阁）—— 登高俯瞰 · 崇文重教的象征</h3>
+      <span class="tag">古建</span><span class="tag warm">昆山市文保</span>
+      <p>俗名<b>文星阁</b>、又名<b>片云阁</b>，四面三层楼阁式建筑，飞檐翘角，高 15.6 米，位于古莲池畔，供奉文昌帝君。它是锦溪"崇文重教"的象征，与镇上历代 5 名进士、11 名举人、"民国状元"朱雷章组成一条完整的文脉讲解线。登阁可俯瞰古镇全貌。</p>
+      <div class="note"><b>文物价值考据：</b>文星阁<b>1991 年列为昆山市第一批文物保护单位</b>。现存主体为<b>清乾隆三十八年（1773 年）移建</b>至今的建筑，移建时立"重建文昌阁记"碑嵌于内墙，是实打实的<b>250 多年清代文保建筑，不是现代仿建</b>。<br><b>始建与唱和时间线（务必讲清）：</b>张圻《文星阁"片云"额跋》碑文载"向有镇西通神院之偏有文星阁……乾隆八年（1743）大颓……三十八年移建"——即<b>旧阁原在镇西通神道院，明代已存在</b>，文徵明（卒于 1559）与沈周、祝允明、唐寅登高唱和登的是<b>那座旧阁</b>；旧阁 1743 年倒塌，1773 年才移建到今莲池禅院址。旧阁创建人与确切始建年代史料无定论（唐末为纪念陆龟蒙而建 / 始建于宋 / 明说并存）。稳妥讲法："<b>旧阁明代已有，今阁为清乾隆三十八年移建的文保建筑</b>"——详见"文徵明与锦溪"专题。</div>
+    </div>
+
+    <div class="card">
+      <h3>⑥ 民间博物馆群 —— "中国民间博物馆之乡"</h3>
+      <span class="tag">研学重点</span>
+      <p>2000 年起，锦溪广泛引入民间力量开设收藏博物馆，形成十余家的博物馆群：<b>中国古砖瓦博物馆</b>（国内唯一砖瓦专题馆，藏瓦当、滴水、屋脊构件等 2300 余件）、古董博物馆、宜兴紫砂博物馆、金石人家（篆刻）、柿园（画家陆曙轮故居）、张省美术馆、锦溪杰出人物馆等。联票 65 元可逛 6 馆，是"历史控"研学必到之处。</p>
+    </div>
+
+    <div class="card">
+      <h3>⑦ 其他古桥与节点</h3>
+      <p>里和桥（南塘桥，南宋，"锦溪八景"之"古井风亭"所在地）、普庆桥（清，桥联"两岸烟飞通海市，一溪浪涌接澄湖"）、天水桥（明）、烟雨长廊、节寿桥、祝甸古窑遗址等。老街上还有"陈墓邮局"旧址、中西合璧小楼等生活化场景。</p>
+    </div>
+  </section>
+
+
+  <!-- 行程 -->
+  <section id="xingcheng">
+    <h2>五、研学行程<span class="en">ITINERARY</span></h2>
+    <p class="lead">核心动线：<b>南门进 → 南部湖区绕一圈（古莲桥、十眼桥、陈妃水冢、莲池禅院、文昌阁、游船码头）→ 一路向北走老街与博物馆群</b>，全程单向前进、不走回头路。下图为<b>腾讯地图实景截图</b>（真实电子地图），图上叠加的 ①—⑨ 编号即游览先后顺序。</p>
+
+    <div class="card" style="padding:8px">
+      <svg viewBox="0 0 1280 720" width="100%" role="img" aria-label="锦溪古镇研学动线（真实地图）">
+        <defs>
+          <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="#e0553a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+        <image href="img/map_jinxi.png" x="0" y="0" width="1280" height="720"/>
+        <polyline points="750,330 766,425 540,440 650,525 640,390 690,360 700,320 585,280 600,110" fill="none" stroke="#e0553a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="9 6" opacity="0.9" marker-end="url(#arr2)"/>
+        <g font-family="sans-serif" text-anchor="middle">
+          <circle cx="750" cy="330" r="17" fill="#e0553a" stroke="#fff" stroke-width="3"/><text x="750" y="336" fill="#fff" font-size="17" font-weight="700">1</text>
+          <circle cx="766" cy="425" r="17" fill="#e0553a" stroke="#fff" stroke-width="3"/><text x="766" y="431" fill="#fff" font-size="17" font-weight="700">2</text>
+          <circle cx="540" cy="440" r="17" fill="#e0553a" stroke="#fff" stroke-width="3"/><text x="540" y="446" fill="#fff" font-size="17" font-weight="700">3</text>
+          <circle cx="650" cy="525" r="17" fill="#e0553a" stroke="#fff" stroke-width="3"/><text x="650" y="531" fill="#fff" font-size="17" font-weight="700">4</text>
+          <circle cx="640" cy="390" r="17" fill="#e0553a" stroke="#fff" stroke-width="3"/><text x="640" y="396" fill="#fff" font-size="17" font-weight="700">5</text>
+          <circle cx="690" cy="360" r="17" fill="#e0553a" stroke="#fff" stroke-width="3"/><text x="690" y="366" fill="#fff" font-size="17" font-weight="700">6</text>
+          <circle cx="700" cy="320" r="17" fill="#e0553a" stroke="#fff" stroke-width="3"/><text x="700" y="326" fill="#fff" font-size="17" font-weight="700">7</text>
+          <circle cx="585" cy="280" r="17" fill="#2e7d5b" stroke="#fff" stroke-width="3"/><text x="585" y="286" fill="#fff" font-size="17" font-weight="700">8</text>
+          <circle cx="600" cy="110" r="17" fill="#2e7d5b" stroke="#fff" stroke-width="3"/><text x="600" y="116" fill="#fff" font-size="17" font-weight="700">9</text>
+        </g>
+      </svg>
+      <div style="padding:10px 14px;font-size:13px;color:#6b675e;line-height:2">
+        <b style="color:#2b2a26">点位对照：</b>
+        <span style="color:#e0553a;font-weight:700">①</span>南门　
+        <span style="color:#e0553a;font-weight:700">②</span>古莲桥　
+        <span style="color:#e0553a;font-weight:700">③</span>十眼桥　
+        <span style="color:#e0553a;font-weight:700">④</span>陈妃水冢　
+        <span style="color:#e0553a;font-weight:700">⑤</span>莲池禅院　
+        <span style="color:#e0553a;font-weight:700">⑥</span>文昌阁　
+        <span style="color:#e0553a;font-weight:700">⑦</span>游船码头　<br>
+        <span style="color:#2e7d5b;font-weight:700">⑧</span>上塘街·老邮局　
+        <span style="color:#2e7d5b;font-weight:700">⑨</span>古砖瓦博物馆
+        <span style="color:#888">（红=湖区景点，绿=老街/博物馆，虚线=建议行进方向）</span>
+      </div>
+    </div>
+
+    <div class="step"><div class="time">09:00</div><div class="d"><b>① 南门入园 · ② 古莲桥</b><br>古镇免费进入。早上人少光线好，直奔古莲桥拍"桥洞与倒影拼成满月"的明信片机位。</div></div>
+    <div class="step"><div class="time">09:40</div><div class="d"><b>③ 十眼桥（小宝带桥）</b><br>向西寻访镇南平板石桥，看九墩十孔"长龙卧波"，正侧位或远处拍十孔映水。</div></div>
+    <div class="step"><div class="time">10:10</div><div class="d"><b>④ 陈妃水冢</b><br>在莲池禅院一侧岸边或十眼桥上<b>隔水远观</b>湖心孤冢，讲南宋帝妃凄美故事。<b>注意：严禁登岛、不可坐船靠近，也禁止近距离拍摄</b>，原栈桥已毁且不再复建，只能用长焦在岸上取景。</div></div>
+    <div class="step"><div class="time">10:40</div><div class="d"><b>⑤ 莲池禅院 · ⑥ 文昌阁（文星阁）</b><br>看庙门朝北的罕见格局，登文昌阁俯瞰古镇全景与十眼桥。<b>讲解点：</b>文星阁是清乾隆三十八年移建的昆山市文保，由此引出锦溪"崇文重教"——5 名进士、11 名举人、民国首届高等考试"状元"朱雷章。</div></div>
+    <div class="step"><div class="time">11:30</div><div class="d"><b>⑦ 游船码头坐船</b><br>从水上回望白墙石桥，听船娘唱吴语小调（约 30 分钟，可拼船）。</div></div>
+    <div class="step"><div class="time">12:30</div><div class="d"><b>⑧ 上塘街午餐</b><br>奥灶面、袜底酥、阿婆菜炒毛豆；街口"陈墓邮局"旧址顺路打卡。</div></div>
+    <div class="step"><div class="time">13:30</div><div class="d"><b>⑨ 民间博物馆研学</b><br>古砖瓦博物馆（国内唯一砖瓦专题馆）→ 古董馆 / 紫砂馆 / 金石人家，串馆读"江南匠人史"。</div></div>
+    <div class="step"><div class="time">16:00</div><div class="d"><b>折返南部湖区 · 看日落收尾</b><br>步行折返南门一带（约 10 分钟），在五保湖边看夕阳洒满湖面，蓝调时刻拍古莲桥飞檐剪影、亮灯后拍倒影，是当天最好的一张。</div></div>
+
+    <div class="note">
+      <b>动线说明：</b>①—⑨ 为单向前进不折返的主线（南部湖区绕一圈后一路向北）。仅最后"看日落"需从北端博物馆折返南部湖区，因为日落最佳点在水边——如不追日落，可直接从北门离镇。<br>
+      <b>路线依据：</b>本动线的方向（南门进—南部湖区—向北老街）参考了多份公开攻略的共识走法（携程 Trip.com 半日精华版、什么值得买"免费区这样玩"、今日头条"36 座桥 72 个窑"环线攻略等），再结合各点位<b>腾讯地图真实经纬度</b>按最短不折返顺序编排；具体编号顺序为研学实测设计，非照搬某单篇攻略。<br>
+      <b>两日游加餐：</b>住一晚临水民宿，次日清晨 6 点去<b>菱荡湾</b>拍薄雾白墙倒影，或去<b>祝甸古窑遗址</b>（省级文保，19 座清代古窑）看"七十二只窑"实证。
+    </div>
+  </section>
+
+  <!-- 机位 -->
+  <section id="jiwei">
+    <h2>六、拍照机位与成像效果<span class="en">PHOTO SPOTS</span></h2>
+    <p class="lead">每个机位直接配<b>实拍图</b>，所见即所得。图片来自央广网记者及摄影师郁永龙（笔名苏龙）实拍，版权归原作者所有，仅供学习参考。</p>
+
+    <div class="spot">
+      <h3>机位 1 · 古莲桥全景（封面机位）</h3>
+      <p>站五保湖入口或湖岸侧面，把"廊桥 + 湖面倒影 + 莲池"一镜收进。桥洞与倒影恰好拼成满月，晨雾一起就是标准明信片。</p>
+      <div class="cap">▼ 成像效果 —— 蓝天绿柳下廊桥卧波，前有荷花荷叶，后有开阔湖面</div>
+      <div class="fig"><img src="img/02_gulianqiao.png" alt="锦溪古莲桥"><div class="credit">央广网记者 顾炀威 摄 · 锦溪古镇内的古莲桥</div></div>
+    </div>
+
+    <div class="spot">
+      <h3>机位 2 · 十眼桥（小宝带桥）—— 九墩十孔长龙卧波</h3>
+      <p>十眼桥始建于南宋隆兴元年（1163），重建于清乾隆三十八年（1773），九墩十孔、全长 52 米，横架于坟塘港与五保湖口，俗称"小宝带桥"。站在桥的<b>正侧位或远处</b>，最能拍出"长龙卧波"、十孔映水的效果。中秋月夜，月光穿十孔洒湖面，形成"十孔映月"奇景。</p>
+      <div class="cap">▼ 成像效果 —— 桥身横卧水面，多个桥墩桥孔依次排开</div>
+      <div class="fig"><img src="img/shiyanqiao_shen_tu.jpg" alt="锦溪十眼桥桥身"><div class="credit">摄影：郁永龙（笔名苏龙）· 十眼桥多孔桥身</div></div>
+      <div class="cap">▼ 景点标识 —— "十眼桥"碑刻（锦溪镇地名文化遗产保护）</div>
+      <div class="fig"><img src="img/shiyanqiao_beike.jpg" alt="十眼桥碑刻"><div class="credit">摄影：郁永龙 · 十眼桥介绍碑（九墩十孔、小宝带桥）</div></div>
+      <div class="note"><b>拍摄提示：</b>地面平视受透视遮挡，数不满十个孔。想拍全十孔，需<b>无人机正侧位或高空俯拍</b>，或退到湖对岸远处取景。</div>
+    </div>
+
+    <div class="spot">
+      <h3>机位 3 · 水巷摇橹船 / 廊窗框景</h3>
+      <p>登古莲桥或桥畔，用廊窗作前景框住湖景；或坐手摇船从水上回望白墙石桥。傍晚 4–5 点光线最柔，穿旗袍或汉服拍人像氛围感拉满。</p>
+      <div class="cap">▼ 成像效果 —— 摇橹船穿行水巷，两岸石桥驳岸、白墙民居</div>
+      <div class="fig"><img src="img/01_chuanniang.png" alt="锦溪水巷摇橹船"><div class="credit">央广网记者 顾炀威 摄 · 河中船娘摇橹而过</div></div>
+    </div>
+
+    <div class="spot">
+      <h3>机位 4 · 水巷 / 临水民居（烟火气）</h3>
+      <p>别只盯主街，钻进两侧窄巷，白墙水渍青苔、晾衣养花，人少极易出空镜大片；临河码头泊船、石阶直达水面满是生活气。</p>
+      <div class="cap">▼ 成像效果 —— 游船泊岸，临水白墙黛瓦，前景绿枝作框</div>
+      <div class="fig"><img src="img/03_guzhen.png" alt="锦溪水巷游船"><div class="credit">央广网记者 顾炀威 摄 · 古朴静谧的锦溪古镇</div></div>
+    </div>
+
+    <div class="spot">
+      <h3>机位 5 · 碧波楼 / 临水楼阁</h3>
+      <p>白墙黛瓦、飞檐翘角的临水楼阁与古镇融为一体，是拍建筑层次与倒影的好点位。</p>
+      <div class="cap">▼ 成像效果 —— 两层中式楼阁，飞檐翘角挂红灯笼</div>
+      <div class="fig"><img src="img/05_bibolu.png" alt="锦溪碧波楼"><div class="credit">央广网记者 王姝姝 摄 · 碧波楼与水乡古镇融为一体</div></div>
+    </div>
+
+    <div class="spot">
+      <h3>机位 6 · 夜景 / 蓝调时刻（镇区倒影）</h3>
+      <p>亮灯后拍临水建筑倒影；天色靛蓝的"蓝调时刻"拍古桥飞檐剪影，鱼灯、孔明灯倒映湖心如"无数个月亮坠进湖心"。</p>
+      <div class="cap">▼ 成像效果 —— 夜幕下飞檐轮廓分明，暖光与倒影波光粼粼</div>
+      <div class="fig"><img src="img/06_yejing.png" alt="锦溪古镇夜景"><div class="credit">央广网记者 王姝姝 摄 · 夜幕下的古镇流光溢彩</div></div>
+    </div>
+
+    <div class="spot">
+      <h3>机位 7 · 古莲桥夜景（廊桥亮灯）</h3>
+      <p>古莲桥轮廓灯亮起后，廊桥如一条玉带横卧水面，倒影入古莲池，是当天收尾最好的一张。</p>
+      <div class="cap">▼ 成像效果 —— 金灯勾勒廊桥飞檐，桥身倒映水面</div>
+      <div class="fig"><img src="img/07_yeyou.png" alt="古莲桥夜景亮灯"><div class="credit">央广网记者 王姝姝 摄 · 游客打卡古镇夜色之美（背景为亮灯古莲桥）</div></div>
+    </div>
+
+    <div class="note">
+      <b>拍摄时间总纲：</b>8:00–10:00 拍安静街巷；16:00–17:30 湖边光线最柔拍人像；蓝调时刻 + 亮灯后拍倒影收尾。<b>穿搭：</b>浅色系连衣裙 / 新中式汉服 / 棉麻素衣，与白墙黑瓦适配度高；石板路多，穿平底鞋。
+    </div>
+  </section>
+
+  <!-- 美食 -->
+  <section id="meishi">
+    <h2>七、美食打卡（网红店 + 面馆）<span class="en">FOOD</span></h2>
+    <p class="lead">锦溪午饭首选"<b>奥灶面</b>"——本地面馆密集、价格实在，是大众点评上锦溪餐饮的高频好评项。以下店铺与评分取自<b>大众点评</b>公开页面及游客实拍攻略，星级/人均会变动、以 App 实时为准，方便当天按口味自选。</p>
+
+    <h3>★ 网红 / 高分店（大众点评）</h3>
+    <table>
+      <tr><th>店名</th><th>招牌特色</th><th>参考人均</th><th>评分 / 口碑</th><th>所在位置</th></tr>
+      <tr><td><b>韩记奥灶面</b>（面馆）</td><td><b>鳝丝面（约25元）、焖肉面（约15元）、爆鱼面</b>；红汤地道、浇头多，本地人也常去，去晚鳝丝售罄</td><td>约 <b>15 元</b></td><td><span style="color:#c07a2c">★★★★</span> 游客推荐（非点评官方）</td><td>长寿路圣荡浜 12 号（停车场旁）</td></tr>
+      <tr><td><b>小毛糕饼店</b>（糕点）</td><td><b>袜底酥</b>（椒盐黑芝麻、葱油花生咸口，10 只约16元）、酒酿饼、鲜肉月饼；百年老店、现做现烤</td><td>约 <b>15 元</b></td><td><span style="color:#c07a2c">★★★★★</span> 游客推荐（非点评官方）</td><td>上塘街 41 号</td></tr>
+      <tr><td><b>外婆家面馆</b>（面馆）</td><td><b>爆鱼/鸭肉奥灶面</b>、熏鱼面、万三面；古镇人气面馆，292 条点评</td><td>约 <b>14 元</b></td><td>大众点评口味 7.4 / 环境 7.3 / 服务 7.4<br><span style="font-size:12px;color:var(--sub)">（口味/环境/服务为单项分，满分 10 分）</span></td><td>下塘街 10 号</td></tr>
+      <tr><td><b>蒋小厨农家菜</b>（农家菜）</td><td><b>爆鱼奥灶面</b>、昂刺鱼、水芹炒香干；河边长桌、临窗看船娘</td><td>20–70 元</td><td>大众点评 4.5 星<br><span style="font-size:12px;color:var(--sub)">（门店星级，满分 5 分）</span></td><td>古镇河边（中心必经之路）</td></tr>
+      <tr><td><b>香酥鸡小吃店</b>（小吃）</td><td>香酥鸡（微辣，粉薄肉嫩）</td><td>10/15/20 元</td><td>游客攻略推荐</td><td>下塘街 56 号</td></tr>
+      <tr><td><b>阿婆菜馆 / 侬乡园</b>（农家菜）</td><td>清蒸白水鱼、腌萝卜、土菜；本地阿姨掌勺</td><td>未公开</td><td>河岸边多家，按点评评分自选</td><td>古镇河岸边</td></tr>
+    </table>
+    <div class="note"><b>评分口径说明：</b>大众点评有<b>两套独立的分</b>——<b>口味/环境/服务单项分是 10 分制</b>（如外婆家 7.4，按"差0分、一般1、好2、很好3、非常好4"平均后×10 得出），<b>门店星级是 5 分制</b>（如蒋小厨 4.5 星）。两者各算各的，"7.4 分"不等于"7.4 星"。另"★★★★/★★★★★"是十六番游客实拍攻略的推荐星级，非大众点评官方评分。三种口径已分开标注，讲解时不要混为一谈。</div>
+
+    <h3>必吃小吃与河鲜</h3>
+    <div class="grid">
+      <div class="card">
+        <h3>必吃小吃</h3>
+        <p>· <b>袜底酥</b>——锦溪头号特产，据传仿宋孝宗宫廷茶点，形如袜底、油酥薄如蝉翼，现烤的才香<br>· <b>奥灶面</b>——昆山招牌，红汤爆鱼面，午餐首选<br>· <b>海棠糕 / 梅花糕</b>——焦糖脆壳 + 豆沙流心<br>· <b>香酥鸡、臭豆腐、芡实糕、青团、水红菱</b></p>
+      </div>
+      <div class="card">
+        <h3>河鲜与家常菜</h3>
+        <p>· 清蒸白水鱼（鲜掉眉毛）<br>· 酱爆螺蛳 / 盐水虾<br>· 腌笃鲜<br>· 阿婆菜炒毛豆<br>· 桂花糕、酱猪蹄</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 实用 -->
+  <section id="shiyong">
+    <h2>八、实用贴士<span class="en">TIPS</span></h2>
+    <div class="card">
+      <table>
+        <tr><th>地址</th><td>江苏省苏州市昆山市锦溪镇邵甸港路 18 号</td></tr>
+        <tr><th>门票</th><td>古镇<b>免费进入</b>；小景点联票约 40–65 元（可逛 4–6 馆）；登古莲桥含联票；70 岁以上免票</td></tr>
+        <tr><th>开放时间</th><td>4–10 月 08:00–17:00；11 月–次年 3 月 08:00–16:30</td></tr>
+        <tr><th>手摇船</th><td>约 60 元/船（可坐 4–6 人，可拼船），船娘唱吴语小调</td></tr>
+        <tr><th>交通</th><td>昆山南站打车约 30 元；昆山汽车南站乘 130 路直达；上海自驾约 1 小时</td></tr>
+        <tr><th>最佳季节</th><td>3–5 月春柳烟雨、9–11 月秋高气爽；夏季荷花满池</td></tr>
+        <tr><th>住宿</th><td>古镇内临河民宿 150–200 元/晚（推窗见河，拍清晨首选）</td></tr>
+      </table>
+    </div>
+    <div class="note">
+      <b>避坑提醒：</b>① 船工大姐唱完小调可能索要小费（通常一船 10 元）；② 古镇不大，步行即可，不必买联票也能逛透；③ 想拍晨昏两种模样，务必住一晚；④ 手摇船拼船更划算。
+    </div>
+  </section>
+
+
+
+  <section id="jx-xinyuan">
+    <h2>九、信源说明（锦溪）<span class="en">SOURCES</span></h2>
+    <p class="lead">本攻略史实数据均以官方信源为准，重点沿革已逐条核对；两站信源已分开列示，歇马桥信源见第 1 站末尾。</p>
+    <div class="card">
+      <p><b>官方信源：</b></p>
+      <p class="src">· <b>昆山市人民政府《关于推进考古前置工作的实施意见》（2023）附件《全市不可移动文物名录》</b>——锦溪文保级别（省保 / 市保 / 未定级）权威依据<br>· 苏州市地方志编纂委员会办公室《申遗九镇（七）锦溪》——桥、阁、博物馆群数据<br>· 科普中国《昆山锦溪镇：吴韵越风最江南》——沿革、建筑布局<br>· 苏州市地方志办公室"方志苏州"公众号《古镇古村系列——昆山市锦溪镇》——沿革时间线、名人<br>· 中国日报网《江苏苏州：古莲桥恢复开放引客来》——古莲桥始建 / 重建年代、恢复开放信息<br>· 百度百科"十眼桥"词条 + 郁永龙《苏州百桥（93）寻拍昆山锦溪"十眼桥"》——十眼桥始建 / 重建年代、九墩十孔形制<br>· 央广网（记者王姝姝、顾炀威）——锦溪实拍图组</p>
+      <p style="margin-top:12px"><b>美食信源：</b></p>
+      <p class="src">· 大众点评公开页面——外婆家面馆（下塘街 10 号，口味 7.4 / 环境 7.3 / 服务 7.4，单项分满分 10 分）、蒋小厨农家菜（门店 4.5 星，满分 5 分）<br>· 十六番《锦溪古镇美食攻略自驾一日游》——韩记奥灶面、小毛糕饼店、香酥鸡小吃店（游客推荐星级，非大众点评官方星级）</p>
+      <p style="margin-top:12px"><b>辅助参考：</b>携程社区 / 攻略、凤凰网、网易、搜狐（图虫 / 摄影部落等实拍图）、苏州新闻网、引力播、微信公众号乡村游游记。</p>
+      <p style="margin-top:12px;color:#a04a3a"><b>图片 / 动线图说明：</b>锦溪配图为<b>央广网记者（王姝姝、顾炀威）</b>与<b>摄影师郁永龙（笔名苏龙）</b>实拍；动线图为<b>腾讯地图真实截图</b>叠加顺序编号，点位按真实经纬度投影。版权归原作者及原发布平台所有，仅供个人研学参考，如需商用或传播请自行取得授权。史实如有错漏，以官方最新口径为准。</p>
+    </div>
+  </section>
+
+  <footer>
+    歇马桥 · 锦溪古镇研学游攻略<br>
+    整理时间：2026 年 11 月 21 日<br>
+    史实信源：苏州市/昆山市人民政府 · 苏州市地方志办公室 · 中国日报网 · 央广网 · 第一昆山
+  </footer>
+
+</div>
+<script>
+(function(){
+  var tabs = document.querySelectorAll('.site-tab');
+  var groups = document.querySelectorAll('.nav-group');
+  var anchors = { xmq:'xmaqiao', jx:'gaikuang' };
+  var lockUntil = 0;
+  function paint(site){
+    tabs.forEach(function(t){ t.classList.toggle('active', t.getAttribute('data-site')===site); });
+    groups.forEach(function(g){ g.classList.toggle('active', g.id==='nav-'+site); });
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      var site = t.getAttribute('data-site');
+      paint(site);
+      lockUntil = Date.now() + 900; // 平滑滚动期间锁定，避免被 scroll 监听切回
+      var el = document.getElementById(anchors[site]);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+  // 滚动时根据当前所在站点自动高亮 Tab（纯页内辅助，不改变锚点）
+  var jxSec = document.getElementById('gaikuang');
+  window.addEventListener('scroll', function(){
+    if(Date.now() < lockUntil) return;
+    var y = window.scrollY + 140;
+    var site = (jxSec && y >= jxSec.offsetTop) ? 'jx' : 'xmq';
+    paint(site);
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>
