@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>歇马桥 · 锦溪古镇｜游客游玩攻略</title>
+<style>
+  :root{
+    --bg:#f6f2e9; --card:#fffdf8; --ink:#2b2a26; --sub:#6b675e;
+    --line:#e5ddcd; --xmq:#3f6b5a; --jx:#9a6b3f; --warm:#f9f3e6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.7;font-size:16px;
+    -webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom);
+  }
+  .hero{
+    background:linear-gradient(135deg,#3f6b5a 0%,#2f5548 55%,#24433a 100%);
+    color:#f7f3e9;padding:30px 18px 26px;text-align:center;
+  }
+  .hero .kicker{font-size:12px;letter-spacing:4px;opacity:.82}
+  .hero h1{font-size:26px;letter-spacing:1px;margin:8px 0 6px;font-weight:700}
+  .hero .sub{font-size:14px;opacity:.94}
+  .hero .meta{font-size:12px;opacity:.72;margin-top:10px}
+
+  .nav-wrap{
+    position:sticky;top:0;z-index:20;background:rgba(246,242,233,.97);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+  }
+  .site-tabs{display:flex;gap:8px;padding:9px 12px 5px}
+  .site-tab{
+    flex:1;min-height:44px;border:1px solid var(--line);background:#fffdf8;
+    color:var(--sub);border-radius:24px;font-size:15px;font-weight:700;
+    cursor:pointer;transition:.18s;
+  }
+  .site-tab.active{color:#fff;border-color:transparent}
+  .site-tab[data-site="xmq"].active{background:var(--xmq)}
+  .site-tab[data-site="jx"].active{background:var(--jx)}
+  .nav{display:none;gap:6px;padding:0 12px 9px;overflow-x:auto}
+  .nav.active{display:flex}
+  .nav a{
+    flex:0 0 auto;min-height:38px;display:flex;align-items:center;
+    padding:0 15px;border-radius:20px;background:#fffdf8;border:1px solid var(--line);
+    color:var(--sub);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap;
+  }
+  .nav a.visited{background:#f0e8d8;color:var(--ink)}
+  #nav-xmq a.visited{border-color:var(--xmq)}
+  #nav-jx a.visited{border-color:var(--jx)}
+
+  main{max-width:720px;margin:0 auto;padding:0 14px 46px}
+  .site-block{padding-top:6px}
+  .station-head{
+    font-size:22px;font-weight:800;letter-spacing:.5px;margin:20px 2px 4px;
+    border-top:3px solid var(--line);padding-top:16px;
+  }
+  #xmq .station-head{color:var(--xmq);border-top-color:var(--xmq)}
+  #jx .station-head{color:var(--jx);border-top-color:var(--jx)}
+  .station-head .en{font-size:11px;color:var(--sub);letter-spacing:2px;margin-left:7px;font-weight:400}
+
+  section{padding-top:20px;scroll-margin-top:118px}
+  h2{
+    font-size:19px;letter-spacing:.5px;margin-bottom:12px;padding-left:11px;
+    border-left:4px solid var(--line);
+  }
+  #xmq h2{border-left-color:var(--xmq)}
+  #jx h2{border-left-color:var(--jx)}
+  h2 .en{font-size:11px;color:var(--sub);letter-spacing:1.5px;margin-left:7px;font-weight:400}
+  h3{font-size:17px;margin:16px 0 6px;font-weight:700}
+  p{font-size:15px;margin:8px 0}
+  .lead{font-size:15px;color:var(--sub)}
+  b{color:var(--ink)}
+
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:14px 15px;margin:12px 0;
+  }
+  .facts{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .fact{display:flex;gap:10px;padding:11px 14px;border-bottom:1px solid var(--line);font-size:14px}
+  .fact:last-child{border-bottom:none}
+  .fact .k{
+    flex:0 0 62px;color:var(--sub);font-weight:700;
+  }
+  .fact .v{flex:1;min-width:0}
+  .oneline{background:var(--warm);border-radius:12px;padding:12px 14px;margin-top:12px;font-size:15px}
+
+  .spot{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin:14px 0}
+  .spot h3{margin-top:0;font-size:16px}
+  .spot .cap{font-size:13px;color:var(--sub);margin:9px 0 6px}
+  .fig{margin:6px 0}
+  .fig img{
+    display:block;width:100%;height:auto;border-radius:10px;
+    background:#eee8da;border:1px solid var(--line);
+  }
+  .credit{font-size:12px;color:var(--sub);margin-top:5px;text-align:right}
+
+  .note{
+    background:var(--warm);border-left:4px solid var(--jx);
+    border-radius:0 10px 10px 0;padding:11px 13px;margin:12px 0;font-size:14px;
+  }
+  #xmq .note{border-left-color:var(--xmq)}
+
+  .shop{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 14px;margin:12px 0}
+  .shop .name{font-size:16px;font-weight:800;margin-bottom:8px}
+  .shop .row{display:flex;gap:10px;font-size:14px;padding:5px 0;border-top:1px dashed var(--line)}
+  .shop .row:first-of-type{border-top:none}
+  .shop .row .k{flex:0 0 52px;color:var(--sub);font-weight:700}
+  .shop .row .v{flex:1;min-width:0}
+  .tag{font-size:12px;color:var(--sub);font-weight:400;margin-left:5px}
+
+  footer{
+    max-width:720px;margin:8px auto 0;padding:18px 16px 30px;
+    border-top:1px solid var(--line);font-size:12px;color:var(--sub);text-align:center;line-height:1.8;
+  }
+  @media(min-width:600px){
+    .hero h1{font-size:32px}
+    h2{font-size:21px}
+    .fact,.shop .row,.note,.lead,p{font-size:15px}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">江 南 水 乡 · 游 客 攻 略</div>
+  <h1>歇马桥 · 锦溪古镇</h1>
+  <div class="sub">第 1 站 歇马桥古村 → 第 2 站 锦溪古镇</div>
+  <div class="meta">苏州 · 昆山｜一张图看懂怎么拍、吃什么</div>
+</header>
+
+<div class="nav-wrap">
+  <div class="site-tabs">
+    <button class="site-tab active" data-site="xmq" type="button">歇马桥 · 第1站</button>
+    <button class="site-tab" data-site="jx" type="button">锦溪古镇 · 第2站</button>
+  </div>
+  <div class="nav active" id="nav-xmq">
+    <a href="#xmq-gaikuang">古村概况</a>
+    <a href="#xmq-jiwei">拍照机位</a>
+    <a href="#xmq-meishi">美食打卡</a>
+  </div>
+  <div class="nav" id="nav-jx">
+    <a href="#jx-gaikuang">古镇概况</a>
+    <a href="#jx-jiwei">拍照机位</a>
+    <a href="#jx-meishi">美食打卡</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- ============ 第 1 站 歇马桥 ============ -->
+  <div class="site-block active" id="xmq">
+    <div class="station-head">第 1 站 · 歇马桥古村<span class="en">XIEMAQIAO</span></div>
+
+    <section id="xmq-gaikuang">
+      <h2>一、古村概况<span class="en">OVERVIEW</span></h2>
+      <p class="lead">歇马桥在昆山市千灯镇石浦南郊、苏沪交界处，是<b>昆山唯一的国家级传统村落</b>——一条 500 米古石板街串起南宋抗金名将韩世忠的传说、红色抗战史和百年老屋里的新业态，被称为"古村 + 红学"。免费开放。</p>
+      <div class="facts">
+        <div class="fact"><span class="k">地理</span><span class="v">千灯镇石浦南郊，东邻上海青浦，处苏沪昆三地交界；一条"龙形水系"贯穿南北，村落沿河呈带状分布，"水街相依、窄巷深弄"</span></div>
+        <div class="fact"><span class="k">规模</span><span class="v">村域 3.62 km²；保留 <b>500 米古石板街</b>、约 <b>5000 m² 明清建筑</b>、传统建筑 46 处</span></div>
+        <div class="fact"><span class="k">荣誉</span><span class="v"><b>2014 年第三批中国传统村落</b>（昆山首家国字号传统村落）、国家森林乡村、中国美丽宜居村庄、2020 江苏省特色田园乡村、<b>2025 第七届全国文明村</b></span></div>
+        <div class="fact"><span class="k">定位</span><span class="v">新四军淞沪抗日（千灯）县委中心地；昆山非遗"<b>石浦白切羊肉</b>"发祥地</span></div>
+      </div>
+    </section>
+
+    <section id="xmq-jiwei">
+      <h2>二、拍照机位<span class="en">PHOTO SPOTS</span></h2>
+      <p class="lead">每个机位都配实拍图，所见即所得。歇马桥素材来自网络游记实拍，版权归原作者所有。</p>
+
+      <div class="spot">
+        <h3>机位 1 · 水巷摇橹船 + 木栈桥（封面机位）</h3>
+        <p>村中水巷：河道、手摇船、岸边木栈桥与白墙老屋一镜收进。船过桥洞时连拍，绿荫与睡莲作前景最出片。</p>
+        <div class="cap">▼ 成像效果 —— 摇橹船行于水巷，两岸民居，右侧木栈桥</div>
+        <div class="fig"><img src="img/xmq_shuixiang.jpg" alt="歇马桥水巷摇橹船"><div class="credit">歇马桥游记实拍 · 水巷与木栈桥</div></div>
+      </div>
+
+      <div class="spot">
+        <h3>机位 2 · 皮划艇水上运动（动感新玩法）</h3>
+        <p>村南水面上有皮划艇俱乐部，彩色艇 + 老屋倒影 + 垂柳，适合拍活泼的团建/亲子照，与古镇静谧感形成反差。</p>
+        <div class="cap">▼ 成像效果 —— 彩色皮划艇泊于水上，背景白墙民居</div>
+        <div class="fig"><img src="img/xmq_shuishang.jpg" alt="歇马桥水上皮划艇"><div class="credit">歇马桥游记实拍 · 水上运动俱乐部</div></div>
+      </div>
+
+      <div class="spot">
+        <h3>机位 3 · 临水民居 + 藤蔓墙（文艺出片）</h3>
+        <p>沿石板街走，临河一侧的木楼爬满藤蔓，倒影入水，有小船划过时按快门。适合人像与"江南慢生活"氛围照。</p>
+        <div class="cap">▼ 成像效果 —— 藤蔓覆盖的临水木楼，河道倒影清晰</div>
+        <div class="fig"><img src="img/xmq_minju.jpg" alt="歇马桥临水民居"><div class="credit">歇马桥游记实拍 · 临水民居与藤蔓墙</div></div>
+      </div>
+
+      <div class="spot">
+        <h3>机位 4 · 网红店庭院（枯山水 + 红枫）</h3>
+        <p>改造后的老屋庭院，白墙、卵石水景、红枫与遮阳伞构成小而精的日式庭院感，适合拍人像与静物。</p>
+        <div class="cap">▼ 成像效果 —— 白墙围合的小庭院，红枫、水景、遮阳伞</div>
+        <div class="fig"><img src="img/xmq_tingyuan.jpg" alt="歇马桥网红店庭院"><div class="credit">歇马桥游记实拍 · 老屋改造庭院</div></div>
+      </div>
+
+      <div class="spot">
+        <h3>机位 5 · 对印茶局（老街门面）</h3>
+        <p>老街上的木构门面与白墙招牌，是"老屋里的新业态"代表构图，适合拍街景与打卡照。</p>
+        <div class="cap">▼ 成像效果 —— 木构老屋门面，悬挂"对印茶局"招牌</div>
+        <div class="fig"><img src="img/xmq_chaju.jpg" alt="歇马桥对印茶局"><div class="credit">歇马桥游记实拍 · 老街新业态门店</div></div>
+      </div>
+
+      <div class="spot">
+        <h3>机位 6 · 红色研学（周达明纪念馆）</h3>
+        <p>木构老宅门面上悬挂"新四军淞沪抗日史迹陈列馆""周达明烈士纪念馆"牌匾，是"古村 + 红学"的标志画面。</p>
+        <div class="cap">▼ 成像效果 —— 木门老宅与红色纪念馆牌匾</div>
+        <div class="fig"><img src="img/xmq_hongse.jpg" alt="歇马桥周达明纪念馆"><div class="credit">歇马桥游记实拍 · 苏州市爱国主义教育基地</div></div>
+      </div>
+
+      <div class="note"><b>拍摄时间：</b>上午光线柔和、人少，建议 9:00—11:00 拍摄；石板街窄巷正午顶光偏硬，可躲在屋檐与咖啡馆廊下拍。穿浅色或棉麻素衣与白墙黛瓦最搭。</div>
+    </section>
+
+    <section id="xmq-meishi">
+      <h2>三、美食打卡<span class="en">FOOD</span></h2>
+      <p class="lead">歇马桥是昆山非遗"<b>石浦白切羊肉</b>"发祥地，古村里还藏着多家网红新业态。重点盯羊肉、苏帮菜与一家开在<b>民国老建筑里的创意面馆</b>。评分/人均取自腾讯地图、大众点评公开页面，会变动、以 App 实时为准。</p>
+
+      <div class="shop">
+        <div class="name">歇马面庐<span class="tag">创意面馆</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v">由<b>民国老建筑改造的创意面馆</b>，主打奥灶面等苏式汤面；村口附近、老屋出片</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">约 <b>57 元</b></span></div>
+        <div class="row"><span class="k">评分</span><span class="v">腾讯地图 <b>4.3</b>（满分 5 分）；营业 10:00–20:00，电话 13776303047</span></div>
+        <div class="row"><span class="k">位置</span><span class="v"><b>歇马桥村 20 组 10 号 -1</b>（村口附近）</span></div>
+      </div>
+
+      <div class="shop">
+        <div class="name">百盛人家<span class="tag">黑珍珠餐厅</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v">昆山首家黑珍珠<b>鼎膳·匠宴</b>分店，不设菜牌、应季而做；镇店网红"<b>歇马桥五虾面</b>"</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">偏高（未公开）</span></div>
+        <div class="row"><span class="k">口碑</span><span class="v">黑珍珠品牌店 · 昆山市政府官网力荐</span></div>
+        <div class="row"><span class="k">位置</span><span class="v">歇马桥村内</span></div>
+      </div>
+
+      <div class="shop">
+        <div class="name">老饭店农家菜<span class="tag">本地老店</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v">招牌<b>红烧河鳗</b>、白切羊肉、红烧土鸡、盐水虾</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">约 <b>128 元</b></span></div>
+        <div class="row"><span class="k">口碑</span><span class="v">大众点评口味/服务"很好～非常好"</span></div>
+        <div class="row"><span class="k">位置</span><span class="v">歇马桥市场西首（村内）</span></div>
+      </div>
+
+      <div class="shop">
+        <div class="name">旭马楼<span class="tag">新派苏帮菜</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v">石浦醉仙楼分号，松鼠鳜鱼、响油鳝糊、石浦羊肉、春日腌笃鲜；宋式包厢以词牌命名</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">未公开</span></div>
+        <div class="row"><span class="k">口碑</span><span class="v">昆山市政府官网推荐新店</span></div>
+        <div class="row"><span class="k">位置</span><span class="v">歇马桥村内</span></div>
+      </div>
+
+      <div class="shop">
+        <div class="name">南街小馆<span class="tag">本帮家常</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v">经典本帮菜、江南村宴，适合家庭小聚</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">未公开</span></div>
+        <div class="row"><span class="k">口碑</span><span class="v">政府官网推荐新店</span></div>
+        <div class="row"><span class="k">位置</span><span class="v">歇马桥村内</span></div>
+      </div>
+
+      <div class="shop">
+        <div class="name">一尺花园 / 园林书局 / 对印茶局<span class="tag">咖啡茶饮·打卡</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v">一尺花园招牌"<b>歇马桥大战斧</b>"、园林书局书咖、河畔咖啡；马儿榴榴榴莲甜品</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">未公开</span></div>
+        <div class="row"><span class="k">口碑</span><span class="v">网红打卡 · 政府官网推荐</span></div>
+        <div class="row"><span class="k">位置</span><span class="v">散落古村老屋，拍照出片</span></div>
+      </div>
+
+      <div class="note"><b>午餐怎么选：</b>想吃一碗面 → 歇马面庐；想吃非遗硬菜 → 老饭店（白切羊肉、红烧河鳗）；想吃精致苏帮菜+打卡 → 百盛人家五虾面、旭马楼；只喝茶歇脚 → 一尺花园、园林书局。</div>
+    </section>
+  </div>
+
+  <!-- ============ 第 2 站 锦溪古镇 ============ -->
+  <div class="site-block" id="jx">
+    <div class="station-head">第 2 站 · 锦溪古镇<span class="en">JINXI</span></div>
+
+    <section id="jx-gaikuang">
+      <h2>一、古镇概况<span class="en">OVERVIEW</span></h2>
+      <p class="lead">锦溪古镇，位于江苏省苏州市昆山市西南，地处江苏、浙江、上海三省市交界处，距周庄仅 8 公里、上海约 1 小时车程。它没有周庄、乌镇的喧嚣，是"活着的江南"——原住民还在河边洗衣、阿婆摇着蒲扇，商业味恰到好处。</p>
+      <div class="facts">
+        <div class="fact"><span class="k">级别</span><span class="v">国家 AAAA 级旅游景区、中国历史文化名镇（2008 年）、中国民间文化艺术之乡</span></div>
+        <div class="fact"><span class="k">历史</span><span class="v">五千余年文明史、两千余年发展史（良渚文化时期已有人类活动）</span></div>
+        <div class="fact"><span class="k">别称</span><span class="v">曾用名"陈墓"沿用 800 余年；"中国民间博物馆之乡"</span></div>
+        <div class="fact"><span class="k">规模</span><span class="v">政区面积 92.43 km²；内河道长约 6 公里，"丰"字形河网</span></div>
+        <div class="fact"><span class="k">古桥</span><span class="v">36 座（民谣"三十六座桥，七十二只窑"）</span></div>
+        <div class="fact"><span class="k">古建</span><span class="v">明、清及民国建筑 8.7 万 m²，古巷古弄砖门楼 30 余处</span></div>
+        <div class="fact"><span class="k">名人评价</span><span class="v">沈从文"睡梦中的少女"；刘海粟"江南之最"；冯英子"淡妆浓抹总相宜"</span></div>
+      </div>
+      <div class="oneline"><b>一句话记住锦溪：</b>一溪穿镇、夹岸桃李、满溪跃金——因水得名，又因一段南宋帝妃爱情而更名八百年。</div>
+    </section>
+
+    <section id="jx-jiwei">
+      <h2>二、拍照机位<span class="en">PHOTO SPOTS</span></h2>
+      <p class="lead">每个机位都配实拍图，所见即所得。图片来自央广网记者及摄影师郁永龙（笔名苏龙）实拍，版权归原作者所有。</p>
+
+      <div class="spot">
+        <h3>机位 1 · 古莲桥全景（封面机位）</h3>
+        <p>站五保湖入口或湖岸侧面，把"廊桥 + 湖面倒影 + 莲池"一镜收进。桥洞与倒影恰好拼成满月，晨雾一起就是标准明信片。</p>
+        <div class="cap">▼ 成像效果 —— 蓝天绿柳下廊桥卧波，前有荷花荷叶，后有开阔湖面</div>
+        <div class="fig"><img src="img/02_gulianqiao.png" alt="锦溪古莲桥"><div class="credit">央广网记者 顾炀威 摄 · 锦溪古镇内的古莲桥</div></div>
+      </div>
+
+      <div class="spot">
+        <h3>机位 2 · 十眼桥（小宝带桥）—— 九墩十孔长龙卧波</h3>
+        <p>十眼桥始建于南宋隆兴元年（1163），重建于清乾隆三十八年（1773），九墩十孔、全长 52 米，横架于坟塘港与五保湖口，俗称"小宝带桥"。站在桥的<b>正侧位或远处</b>，最能拍出"长龙卧波"、十孔映水的效果。中秋月夜，月光穿十孔洒湖面，形成"十孔映月"奇景。</p>
+        <div class="cap">▼ 成像效果 —— 桥身横卧水面，多个桥墩桥孔依次排开</div>
+        <div class="fig"><img src="img/shiyanqiao_shen_tu.jpg" alt="锦溪十眼桥桥身"><div class="credit">摄影：郁永龙（笔名苏龙）· 十眼桥多孔桥身</div></div>
+        <div class="cap">▼ 景点标识 —— "十眼桥"碑刻</div>
+        <div class="fig"><img src="img/shiyanqiao_beike.jpg" alt="十眼桥碑刻"><div class="credit">摄影：郁永龙 · 十眼桥介绍碑（九墩十孔、小宝带桥）</div></div>
+        <div class="note"><b>拍摄提示：</b>地面平视受透视遮挡，数不满十个孔。想拍全十孔，需<b>无人机正侧位或高空俯拍</b>，或退到湖对岸远处取景。</div>
+      </div>
+
+      <div class="spot">
+        <h3>机位 3 · 水巷摇橹船 / 廊窗框景</h3>
+        <p>登古莲桥或桥畔，用廊窗作前景框住湖景；或坐手摇船从水上回望白墙石桥。傍晚 4–5 点光线最柔，穿旗袍或汉服拍人像氛围感拉满。</p>
+        <div class="cap">▼ 成像效果 —— 摇橹船穿行水巷，两岸石桥驳岸、白墙民居</div>
+        <div class="fig"><img src="img/01_chuanniang.png" alt="锦溪水巷摇橹船"><div class="credit">央广网记者 顾炀威 摄 · 河中船娘摇橹而过</div></div>
+      </div>
+
+      <div class="spot">
+        <h3>机位 4 · 水巷 / 临水民居（烟火气）</h3>
+        <p>别只盯主街，钻进两侧窄巷，白墙水渍青苔、晾衣养花，人少极易出空镜大片；临河码头泊船、石阶直达水面满是生活气。</p>
+        <div class="cap">▼ 成像效果 —— 游船泊岸，临水白墙黛瓦，前景绿枝作框</div>
+        <div class="fig"><img src="img/03_guzhen.png" alt="锦溪水巷游船"><div class="credit">央广网记者 顾炀威 摄 · 古朴静谧的锦溪古镇</div></div>
+      </div>
+
+      <div class="spot">
+        <h3>机位 5 · 碧波楼 / 临水楼阁</h3>
+        <p>白墙黛瓦、飞檐翘角的临水楼阁与古镇融为一体，是拍建筑层次与倒影的好点位。</p>
+        <div class="cap">▼ 成像效果 —— 两层中式楼阁，飞檐翘角挂红灯笼</div>
+        <div class="fig"><img src="img/05_bibolu.png" alt="锦溪碧波楼"><div class="credit">央广网记者 王姝姝 摄 · 碧波楼与水乡古镇融为一体</div></div>
+      </div>
+
+      <div class="spot">
+        <h3>机位 6 · 夜景 / 蓝调时刻（镇区倒影）</h3>
+        <p>亮灯后拍临水建筑倒影；天色靛蓝的"蓝调时刻"拍古桥飞檐剪影，鱼灯、孔明灯倒映湖心如"无数个月亮坠进湖心"。</p>
+        <div class="cap">▼ 成像效果 —— 夜幕下飞檐轮廓分明，暖光与倒影波光粼粼</div>
+        <div class="fig"><img src="img/06_yejing.png" alt="锦溪古镇夜景"><div class="credit">央广网记者 王姝姝 摄 · 夜幕下的古镇流光溢彩</div></div>
+      </div>
+
+      <div class="spot">
+        <h3>机位 7 · 古莲桥夜景（廊桥亮灯）</h3>
+        <p>古莲桥轮廓灯亮起后，廊桥如一条玉带横卧水面，倒影入古莲池，是当天收尾最好的一张。</p>
+        <div class="cap">▼ 成像效果 —— 金灯勾勒廊桥飞檐，桥身倒映水面</div>
+        <div class="fig"><img src="img/07_yeyou.png" alt="古莲桥夜景亮灯"><div class="credit">央广网记者 王姝姝 摄 · 游客打卡古镇夜色之美</div></div>
+      </div>
+
+      <div class="note"><b>拍摄时间：</b>8:00–10:00 拍安静街巷；16:00–17:30 湖边光线最柔拍人像；蓝调时刻 + 亮灯后拍倒影收尾。<b>穿搭：</b>浅色系连衣裙 / 新中式汉服 / 棉麻素衣；石板路多，穿平底鞋。</div>
+    </section>
+
+    <section id="jx-meishi">
+      <h2>三、美食打卡<span class="en">FOOD</span></h2>
+      <p class="lead">锦溪午饭首选"<b>奥灶面</b>"——本地面馆密集、价格实在。以下店铺与评分取自大众点评公开页面及游客实拍攻略，会变动、以 App 实时为准。</p>
+
+      <div class="shop">
+        <div class="name">韩记奥灶面<span class="tag">面馆</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v"><b>鳝丝面（约25元）、焖肉面（约15元）、爆鱼面</b>；红汤地道、浇头多，本地人也常去，去晚鳝丝售罄</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">约 <b>15 元</b></span></div>
+        <div class="row"><span class="k">口碑</span><span class="v">★★★★ 游客推荐（非大众点评官方）</span></div>
+        <div class="row"><span class="k">位置</span><span class="v">长寿路圣荡浜 12 号（停车场旁）</span></div>
+      </div>
+
+      <div class="shop">
+        <div class="name">小毛糕饼店<span class="tag">糕点</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v"><b>袜底酥</b>（椒盐黑芝麻、葱油花生咸口，10 只约16元）、酒酿饼、鲜肉月饼；百年老店、现做现烤</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">约 <b>15 元</b></span></div>
+        <div class="row"><span class="k">口碑</span><span class="v">★★★★★ 游客推荐（非大众点评官方）</span></div>
+        <div class="row"><span class="k">位置</span><span class="v">上塘街 41 号</span></div>
+      </div>
+
+      <div class="shop">
+        <div class="name">外婆家面馆<span class="tag">面馆</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v"><b>爆鱼/鸭肉奥灶面</b>、熏鱼面、万三面；古镇人气面馆，292 条点评</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">约 <b>14 元</b></span></div>
+        <div class="row"><span class="k">评分</span><span class="v">大众点评口味 7.4 / 环境 7.3 / 服务 7.4（单项分，<b>满分 10 分</b>）</span></div>
+        <div class="row"><span class="k">位置</span><span class="v">下塘街 10 号</span></div>
+      </div>
+
+      <div class="shop">
+        <div class="name">蒋小厨农家菜<span class="tag">农家菜</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v"><b>爆鱼奥灶面</b>、昂刺鱼、水芹炒香干；河边长桌、临窗看船娘</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">20–70 元</span></div>
+        <div class="row"><span class="k">评分</span><span class="v">大众点评 4.5 星（门店星级，<b>满分 5 分</b>）</span></div>
+        <div class="row"><span class="k">位置</span><span class="v">古镇河边（中心必经之路）</span></div>
+      </div>
+
+      <div class="shop">
+        <div class="name">香酥鸡小吃店<span class="tag">小吃</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v">香酥鸡（微辣，粉薄肉嫩）</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">10 / 15 / 20 元</span></div>
+        <div class="row"><span class="k">口碑</span><span class="v">游客攻略推荐</span></div>
+        <div class="row"><span class="k">位置</span><span class="v">下塘街 56 号</span></div>
+      </div>
+
+      <div class="shop">
+        <div class="name">阿婆菜馆 / 侬乡园<span class="tag">农家菜</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v">清蒸白水鱼、腌萝卜、土菜；本地阿姨掌勺</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">未公开</span></div>
+        <div class="row"><span class="k">口碑</span><span class="v">河岸边多家，按点评评分自选</span></div>
+        <div class="row"><span class="k">位置</span><span class="v">古镇河岸边</span></div>
+      </div>
+
+      <h3>必吃小吃与河鲜</h3>
+      <div class="card">
+        <p><b>必吃小吃：</b>袜底酥（锦溪头号特产现烤才香）、奥灶面（红汤爆鱼面）、海棠糕 / 梅花糕、香酥鸡、臭豆腐、芡实糕、青团、水红菱</p>
+        <p><b>河鲜与家常菜：</b>清蒸白水鱼、酱爆螺蛳 / 盐水虾、腌笃鲜、阿婆菜炒毛豆、桂花糕、酱猪蹄</p>
+      </div>
+
+      <div class="note"><b>评分怎么看：</b>大众点评口味/环境/服务单项分是 <b>10 分制</b>（如外婆家 7.4），门店星级是 <b>5 分制</b>（如蒋小厨 4.5 星），两者各算各的。"★★★★"是游客攻略推荐星级，不是大众点评官方评分。</div>
+    </section>
+  </div>
+
+</main>
+
+<footer>
+  歇马桥 · 锦溪古镇游客游玩攻略<br>
+  图片版权归原作者所有，仅供个人游玩参考。评分、人均、营业时间会变动，出行前请以 App 实时页面为准。
+</footer>
+
+<script>
+(function(){
+  var tabs = document.querySelectorAll('.site-tab');
+  var blocks = document.querySelectorAll('.site-block');
+  var groups = document.querySelectorAll('.nav');
+  var anchors = { xmq:'xmq-gaikuang', jx:'jx-gaikuang' };
+  var lockUntil = 0;
+  function paint(site){
+    tabs.forEach(function(t){ t.classList.toggle('active', t.getAttribute('data-site')===site); });
+    groups.forEach(function(g){ g.classList.toggle('active', g.id==='nav-'+site); });
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      var site = t.getAttribute('data-site');
+      pinned = site;
+      paint(site);
+      lockUntil = Date.now() + 1800;
+      var el = document.getElementById(anchors[site]);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+  document.querySelectorAll('.nav a').forEach(function(a){
+    a.addEventListener('click', function(){
+      a.parentNode.querySelectorAll('a').forEach(function(x){ x.classList.remove('visited'); });
+      a.classList.add('visited');
+    });
+  });
+  var pinned = null; // 点过 Tab 后先锁定，等用户手动滚动再交还给位置判断
+  var jxTop = document.getElementById('jx');
+  function paintByPosition(){
+    var y = window.scrollY + 150;
+    paint(jxTop && y >= jxTop.offsetTop ? 'jx' : 'xmq');
+  }
+  window.addEventListener('scroll', function(){
+    if(pinned || Date.now() < lockUntil) return;
+    paintByPosition();
+  }, {passive:true});
+  ['wheel','touchstart','keydown'].forEach(function(ev){
+    window.addEventListener(ev, function(){
+      if(!pinned) return;
+      pinned = null;
+      setTimeout(paintByPosition, 60);
+    }, {passive:true});
+  });
+  paint('xmq');
+})();
+</script>
+</body>
+</html>
