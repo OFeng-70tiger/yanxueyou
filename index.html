@@ -1,336 +1,452 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-page-node-id="IHBbpuePSQ9TULeFIX07yl">
-<head data-page-node-id="ktot1a2oX6KwVMAO6PBHuu">
-<meta charset="UTF-8" data-page-node-id="JtJHm7njSUi0H5zVVvbtGD">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" data-page-node-id="MdEMouvN7Hgx7pGF1l6svJ">
-<title>苏州文史研学 · Citywalk 双线图志</title>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>歇马桥 · 锦溪古镇｜游客游玩攻略</title>
 <style>
-:root{
-  --bg:#0e0c09; --bg2:#14110c; --card:#1c1711; --card2:#221b12;
-  --line:#33291b; --line-soft:#251f15;
-  --gold:#c8a96a; --gold-hi:#efdcab; --gold-dim:#967e50;
-  --ink:#efe5d1; --ink-soft:#b9a98a; --ink-dim:#8a7a5e;
-  --red:#c04532; --red-deep:#8f2d1e;
-  --serif:"Songti SC","STSong","SimSun",serif;
-  --kai:"KaiTi","STKaiti","楷体",var(--serif);
-  --sans:"Microsoft YaHei","PingFang SC",var(--serif);
-}
-*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.9;
-  background-image:radial-gradient(900px 380px at 85% -120px, rgba(200,169,106,.07), transparent 60%),
-                   radial-gradient(700px 420px at -10% 30%, rgba(192,69,50,.05), transparent 60%);
-  font-size:17px}
-.wrap{max-width:880px;margin:0 auto;padding:0 18px 90px}
-a{color:var(--gold-hi);text-decoration:none}
+  :root{
+    --bg:#f6f2e9; --card:#fffdf8; --ink:#2b2a26; --sub:#6b675e;
+    --line:#e5ddcd; --xmq:#3f6b5a; --jx:#9a6b3f; --warm:#f9f3e6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.7;font-size:16px;
+    -webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom);
+  }
+  .hero{
+    background:linear-gradient(135deg,#3f6b5a 0%,#2f5548 55%,#24433a 100%);
+    color:#f7f3e9;padding:30px 18px 26px;text-align:center;
+  }
+  .hero .kicker{font-size:12px;letter-spacing:4px;opacity:.82}
+  .hero h1{font-size:26px;letter-spacing:1px;margin:8px 0 6px;font-weight:700}
+  .hero .sub{font-size:14px;opacity:.94}
+  .hero .meta{font-size:12px;opacity:.72;margin-top:10px}
 
-/* ===== 顶部进度条 ===== */
-#topbar{position:fixed;top:0;left:0;right:0;height:3px;background:transparent;z-index:99}
-#topbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--red),var(--gold-hi));}
+  .nav-wrap{
+    position:sticky;top:0;z-index:20;background:rgba(246,242,233,.97);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+  }
+  .site-tabs{display:flex;gap:8px;padding:9px 12px 5px}
+  .site-tab{
+    flex:1;min-height:44px;border:1px solid var(--line);background:#fffdf8;
+    color:var(--sub);border-radius:24px;font-size:15px;font-weight:700;
+    cursor:pointer;transition:.18s;
+  }
+  .site-tab.active{color:#fff;border-color:transparent}
+  .site-tab[data-site="xmq"].active{background:var(--xmq)}
+  .site-tab[data-site="jx"].active{background:var(--jx)}
+  .nav{display:none;gap:6px;padding:0 12px 9px;overflow-x:auto}
+  .nav.active{display:flex}
+  .nav a{
+    flex:0 0 auto;min-height:38px;display:flex;align-items:center;
+    padding:0 15px;border-radius:20px;background:#fffdf8;border:1px solid var(--line);
+    color:var(--sub);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap;
+  }
+  .nav a.visited{background:#f0e8d8;color:var(--ink)}
+  #nav-xmq a.visited{border-color:var(--xmq)}
+  #nav-jx a.visited{border-color:var(--jx)}
 
-/* ===== Hero ===== */
-.hero{position:relative;height:min(88vh,640px);min-height:480px;display:flex;align-items:center;justify-content:center;
-  text-align:center;overflow:hidden;border-bottom:1px solid var(--line)}
-.hero-bg{position:absolute;inset:-6% 0;background:url('images/t3_paint_a.jpg') center 22%/cover no-repeat;filter:blur(1px)}
-.hero-bg::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg, rgba(14,12,9,.78) 0%, rgba(14,12,9,.55) 45%, var(--bg) 100%)}
-.hero-inner{position:relative;z-index:2;padding:0 24px;max-width:760px}
-.brand{font-family:var(--kai);font-size:clamp(1.5rem,4.6vw,2.15rem);font-weight:700;letter-spacing:.4em;
-  color:var(--gold-hi);text-shadow:0 2px 20px rgba(0,0,0,.6);margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:16px}
-.brand i{font-style:normal;font-size:.55em;color:var(--gold);opacity:.85}
-.eyebrow{display:inline-block;letter-spacing:.5em;font-size:.85rem;color:var(--gold);padding-left:.5em;
-  border:1px solid var(--line);border-radius:40px;padding:6px 22px 6px calc(22px + .5em);margin-bottom:26px;
-  background:rgba(14,12,9,.5)}
-.hero h1{font-size:clamp(2.1rem,6.4vw,3.4rem);letter-spacing:.12em;font-weight:700;margin-bottom:18px;color:#fff}
-.hero h1 b{color:var(--gold-hi);font-weight:700}
-.hero-div{width:70px;height:2px;margin:0 auto 22px;background:linear-gradient(90deg,transparent,var(--gold-hi),transparent)}
-.hero p{color:var(--ink-soft);font-size:clamp(.95rem,2.6vw,1.06rem);letter-spacing:.08em;max-width:600px;margin:0 auto}
-.hero-meta{margin-top:26px;font-family:var(--kai);color:var(--gold);font-size:.95rem;letter-spacing:.18em}
-.hero-meta span{margin:0 14px;color:var(--red)}
+  main{max-width:720px;margin:0 auto;padding:0 14px 46px}
+  .site-block{padding-top:6px}
+  .station-head{
+    font-size:22px;font-weight:800;letter-spacing:.5px;margin:20px 2px 4px;
+    border-top:3px solid var(--line);padding-top:16px;
+  }
+  #xmq .station-head{color:var(--xmq);border-top-color:var(--xmq)}
+  #jx .station-head{color:var(--jx);border-top-color:var(--jx)}
+  .station-head .en{font-size:11px;color:var(--sub);letter-spacing:2px;margin-left:7px;font-weight:400}
 
-/* ===== 双线 Tab ===== */
-.tabbar{position:sticky;top:0;z-index:50;background:rgba(14,12,9,.94);backdrop-filter:blur(8px);
-  border-bottom:1px solid var(--line);margin:0 -18px;padding:12px 18px;display:flex;gap:10px}
-.tab{flex:1;text-align:center;padding:14px 6px;border-radius:12px;cursor:pointer;color:var(--ink-soft);
-  font-size:clamp(.98rem,3vw,1.12rem);letter-spacing:.06em;font-family:var(--kai);border:1px solid var(--line-soft);
-  transition:.3s;user-select:none;background:var(--bg2)}
-.tab small{display:block;font-size:.72rem;letter-spacing:.14em;color:var(--ink-dim);font-family:var(--sans);margin-top:2px}
-.tab:hover{border-color:var(--gold-dim)}
-.tab.on{background:linear-gradient(135deg,rgba(200,169,106,.16),rgba(200,169,106,.04));border-color:var(--gold);
-  color:var(--gold-hi);box-shadow:inset 0 0 0 1px rgba(200,169,106,.35)}
-.tab.on small{color:var(--gold)}
+  section{padding-top:20px;scroll-margin-top:118px}
+  h2{
+    font-size:19px;letter-spacing:.5px;margin-bottom:12px;padding-left:11px;
+    border-left:4px solid var(--line);
+  }
+  #xmq h2{border-left-color:var(--xmq)}
+  #jx h2{border-left-color:var(--jx)}
+  h2 .en{font-size:11px;color:var(--sub);letter-spacing:1.5px;margin-left:7px;font-weight:400}
+  h3{font-size:17px;margin:16px 0 6px;font-weight:700}
+  p{font-size:15px;margin:8px 0}
+  .lead{font-size:15px;color:var(--sub)}
+  b{color:var(--ink)}
 
-/* ===== 区块 ===== */
-.sec-head{margin:56px 0 8px;display:flex;align-items:center;gap:16px}
-.sec-no{flex:none;width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;
-  font-size:1.25rem;color:#151006;font-weight:700;background:linear-gradient(140deg,var(--gold-hi),var(--gold))}
-.sec-head h2{font-size:clamp(1.3rem,4.4vw,1.7rem);letter-spacing:.08em}
-.sec-head .en{font-size:.8rem;color:var(--ink-dim);letter-spacing:.3em;margin-top:2px}
-.sec-sub{color:var(--ink-soft);font-size:.98rem;margin:4px 0 0 62px;font-family:var(--kai)}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:14px 15px;margin:12px 0;
+  }
+  .facts{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .fact{display:flex;gap:10px;padding:11px 14px;border-bottom:1px solid var(--line);font-size:14px}
+  .fact:last-child{border-bottom:none}
+  .fact .k{
+    flex:0 0 62px;color:var(--sub);font-weight:700;
+  }
+  .fact .v{flex:1;min-width:0}
+  .oneline{background:var(--warm);border-radius:12px;padding:12px 14px;margin-top:12px;font-size:15px}
 
-/* 卡片 */
-.card{background:linear-gradient(160deg,var(--card),var(--bg2));border:1px solid var(--line-soft);
-  border-radius:18px;padding:26px 22px 24px;margin-top:26px;position:relative;overflow:hidden;transition:transform .35s,border-color .35s}
-.card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,transparent 5%,rgba(200,169,106,.65) 50%,transparent 95%);
-  opacity:0;transition:opacity .5s}
-.card:hover{transform:translateY(-3px);border-color:var(--gold-dim)}
-.card:hover::before{opacity:1}
-.sn{position:absolute;top:18px;right:20px;font-family:var(--kai);font-size:2.1rem;color:rgba(200,169,106,.16);font-weight:700}
-.card h3{font-size:clamp(1.12rem,3.8vw,1.32rem);letter-spacing:.06em;margin:0 54px 6px 0;color:var(--gold-hi)}
-.card h3 em{font-style:normal;color:var(--red);font-size:.82em;letter-spacing:.2em;margin-right:10px;font-family:var(--kai)}
-.card .tag{display:inline-block;font-size:.78rem;color:var(--gold);border:1px solid var(--line);
-  border-radius:30px;padding:1px 12px;margin:2px 6px 10px 0;letter-spacing:.1em}
-.card p{color:var(--ink-soft);margin:8px 0;font-size:.99rem}
-.card p b{color:var(--ink)}
-.hl{color:var(--gold-hi)}
-.key{background:linear-gradient(90deg,rgba(200,169,106,.1),transparent);border-left:3px solid var(--gold);
-  padding:8px 14px;border-radius:0 10px 10px 0;color:var(--ink-soft);font-size:.93rem;margin-top:12px;font-family:var(--kai)}
-.key b{color:var(--gold-hi)}
+  .spot{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin:14px 0}
+  .spot h3{margin-top:0;font-size:16px}
+  .spot .cap{font-size:13px;color:var(--sub);margin:9px 0 6px}
+  .fig{margin:6px 0}
+  .fig img{
+    display:block;width:100%;height:auto;border-radius:10px;
+    background:#eee8da;border:1px solid var(--line);
+  }
+  .credit{font-size:12px;color:var(--sub);margin-top:5px;text-align:right}
 
-/* 图片区 */
-.media{margin:16px -4px 4px;border-radius:14px;overflow:hidden;border:1px solid var(--line-soft);
-  background:#000;position:relative}
-.media img{display:block;width:100%;height:clamp(210px,40vw,320px);object-fit:cover;transition:transform .6s}
-.card:hover .media img{transform:scale(1.015)}
-.media .cap{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 8px;font-size:.8rem;color:#e8dcc0;
-  background:linear-gradient(transparent,rgba(0,0,0,.72));letter-spacing:.1em;font-family:var(--kai)}
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.g2 .media,.g3 .media{margin:0}
-.g2 img,.g3 img{height:clamp(150px,26vw,210px)}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.g3 .cap,.g2 .cap{font-size:.68rem;padding-top:16px}
-.vid video{display:block;width:100%;max-height:460px;background:#000}
-.vid .cap{position:absolute;top:10px;bottom:auto;padding:4px 12px;font-size:.76rem;background:rgba(0,0,0,.55);
-  border:1px solid rgba(200,169,106,.4);border-radius:30px;left:12px;color:var(--gold-hi);backdrop-filter:blur(4px)}
+  .note{
+    background:var(--warm);border-left:4px solid var(--jx);
+    border-radius:0 10px 10px 0;padding:11px 13px;margin:12px 0;font-size:14px;
+  }
+  #xmq .note{border-left-color:var(--xmq)}
 
-/* 提示条 */
-.tip{margin-top:34px;border:1px dashed var(--gold-dim);border-radius:16px;padding:18px 22px;
-  background:linear-gradient(160deg,rgba(200,169,106,.07),transparent);color:var(--ink-soft);font-size:.95rem;display:flex;gap:12px;align-items:flex-start}
-.tip b{color:var(--gold-hi);flex:none;font-family:var(--kai);letter-spacing:.1em}
-.tip .seal{margin-left:auto;flex:none;color:var(--red);border:2px solid var(--red);border-radius:8px;padding:2px 10px;
-  font-size:.95rem;letter-spacing:.2em;transform:rotate(-4deg);font-family:var(--kai)}
+  .shop{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 14px;margin:12px 0}
+  .shop .name{font-size:16px;font-weight:800;margin-bottom:8px}
+  .shop .row{display:flex;gap:10px;font-size:14px;padding:5px 0;border-top:1px dashed var(--line)}
+  .shop .row:first-of-type{border-top:none}
+  .shop .row .k{flex:0 0 52px;color:var(--sub);font-weight:700}
+  .shop .row .v{flex:1;min-width:0}
+  .tag{font-size:12px;color:var(--sub);font-weight:400;margin-left:5px}
 
-/* 底部 */
-footer{margin-top:70px;text-align:center;color:var(--ink-dim);font-size:.85rem;letter-spacing:.12em}
-footer .rule{width:150px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent);margin:0 auto 18px}
-
-/* 动画 */
-@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-.fade{opacity:0;animation:fadeUp .9s cubic-bezier(.2,.7,.2,1) forwards}
-.hero h1{animation-delay:.05s}.hero p{animation-delay:.25s}.hero-div{animation-delay:.15s}.hero-meta{animation-delay:.4s}.eyebrow{animation-delay:0s}
-
-.route{display:none}
-.route.on{display:block;animation:panelIn .5s ease}
-@keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-
-/* 响应式 */
-@media(max-width:640px){
-  body{font-size:16px}
-  .card{padding:20px 16px 18px}
-  .g3{grid-template-columns:1fr 1fr}
-  .g3 img{height:150px}
-  .sec-sub{margin-left:0}
-  .hero{min-height:440px}
-  .tip{flex-wrap:wrap}
-}
-@media(min-width:641px){
-  .spots{display:grid;grid-template-columns:1fr 1fr;gap:0 22px;align-items:start}
-  .card-big{grid-column:1/-1}
-}
+  footer{
+    max-width:720px;margin:8px auto 0;padding:18px 16px 30px;
+    border-top:1px solid var(--line);font-size:12px;color:var(--sub);text-align:center;line-height:1.8;
+  }
+  @media(min-width:600px){
+    .hero h1{font-size:32px}
+    h2{font-size:21px}
+    .fact,.shop .row,.note,.lead,p{font-size:15px}
+  }
 </style>
 </head>
-<body data-page-node-id="XgERd2zjeeHCymEaaWKPIG">
-<div id="topbar" data-page-node-id="vOJmVQJv52Xehu5bV0h5h8"><i id="pb" data-page-node-id="FPyfmBpKgJPkFb8FPw3mWO"></i></div>
+<body>
 
-<!-- ================= HERO ================= -->
-<header class="hero" data-page-node-id="TyAVyy324hwLamzlDmsChz">
-  <div class="hero-bg" data-page-node-id="FPqL4LpwmTQFl8D1MyY6KZ"></div>
-  <div class="hero-inner" data-page-node-id="FAHQroKr8NdCMYUnwW8eEG">
-    <div class="brand fade" data-page-node-id="BRANDWDSGJ01"><i>✦</i>吴地时光机<i>✦</i></div>
-    <div class="eyebrow fade" data-page-node-id="OEDoJ7dJDK5SR3Cp4b0JYH">姑苏城 · 走读千年</div>
-    <h1 class="fade" data-page-node-id="hAeIk7Q2Ca7c8I8cjs0DpJ">文史研学 <b data-page-node-id="Ca9eCfzwVRerObT2CT9A6T">Citywalk</b></h1>
-    <div class="hero-div fade" data-page-node-id="BPRMZ1NK6BjrBmofC1GCh0"></div>
-    <p class="fade" data-page-node-id="GLdbXMb89oqPkiu8tPmYGy">一条自府学文脉走来，一条沿胥江古水寻源。<br data-page-node-id="WR1Jbd7n0B0ZS8xAZv06yY">双脚丈量，看见苏州两千五百年的来处。</p>
-    <div class="hero-meta fade" data-page-node-id="CnS3QNlDpCQbT6DSwnwBDY"><span data-page-node-id="OFkeBgxKA1WujUxW7y1oI4">◆</span>线路一 · 苏州文庙深度文史探秘游<span data-page-node-id="SCFQJCofruKpXfp4mrRtcK">◆</span><br data-page-node-id="vLzWQA6hU2qr8VLjBTkj1L">线路二 · 胥江胥门深度探秘游</div>
-  </div>
+<header class="hero">
+  <div class="kicker">江 南 水 乡 · 游 客 攻 略</div>
+  <h1>歇马桥 · 锦溪古镇</h1>
+  <div class="sub">第 1 站 歇马桥古村 → 第 2 站 锦溪古镇</div>
+  <div class="meta">苏州 · 昆山｜一张图看懂怎么拍、吃什么</div>
 </header>
 
-<div class="wrap" data-page-node-id="zbkAqC03fVcrx3SoSJjzlx">
-
-  <!-- ===== Tab ===== -->
-  <div class="tabbar" data-page-node-id="nIPw7n5MdHSkcG4hyOjMLj">
-    <div class="tab on" data-r="r1" data-page-node-id="jHFjF06o8h5meHhY2UwtGz">线路一<small data-page-node-id="VAhf2yOgE8Cm5wHvW7S15H">文庙 · 府学文脉</small></div>
-    <div class="tab" data-r="r2" data-page-node-id="jdXH1g87Su3DlXi5Pm0iJ9">线路二<small data-page-node-id="Asx160wdl4bBe6M7420n8n">胥江胥门 · 古城起源</small></div>
+<div class="nav-wrap">
+  <div class="site-tabs">
+    <button class="site-tab active" data-site="xmq" type="button">歇马桥 · 第1站</button>
+    <button class="site-tab" data-site="jx" type="button">锦溪古镇 · 第2站</button>
   </div>
-
-  <!-- ============================================================ -->
-  <!-- 线路一 文庙 -->
-  <!-- ============================================================ -->
-  <div class="route on" id="r1" data-page-node-id="O2S48XPmwR2KxEtGaB4JMY">
-    <div class="sec-head" data-page-node-id="fylW1O608tujg3INGk1lHF">
-      <div class="sec-no" data-page-node-id="ifudz9TV2ZQvhiD5TBivjY">壹</div>
-      <div data-page-node-id="XIWVzfmSmCpgPXFDnrrnzs"><h2 data-page-node-id="NmzKZ9lOGakM0HTyk0Pv8z">苏州文庙 · 深度文史探秘</h2><div class="en" data-page-node-id="C3pxPHL4idZ0Oc07Bsh5w4">SUZHOU CONFUCIAN TEMPLE</div></div>
-    </div>
-    <p class="sec-sub" data-page-node-id="AMuyOd1OLU9DHtDrszSqov">主题：府学文脉 · 范仲淹创办苏州府学，读懂宋代碑刻与千年文庙。全程步行，半日可游。</p>
-
-    <div class="spots" data-page-node-id="0RmOaNhLFbLnqMT4ZTr0gU">
-
-    <div class="card card-big" data-page-node-id="SGZGc1wI6hsD3T7FefMn8q">
-      <div class="sn" data-page-node-id="DWBJ0oGjGH96q20H6cltMh">一</div>
-      <h3 data-page-node-id="kKqUQykDtRGwa6kF6TPjwJ"><em data-page-node-id="A8VVw1wsmp59ZyOFGGcOjg">第一站</em>宋代四大宋碑 · 重点研读《平江图》</h3>
-      <span class="tag" data-page-node-id="mQ0Spg3AXlIlX4J4qSUDBp">镇馆之宝</span><span class="tag" data-page-node-id="MwU4UdEdSaj3mFdoGFG6Hi">中国最早城市地图</span>
-      <div class="media" data-page-node-id="cvPxo8aTlH2rZX4j8t8Doh"><img src="images/s1_pingjiangtu.jpg" alt="平江图碑拓" loading="lazy" data-page-node-id="bZYpw4NGMjsEHwwaS04VBB"><div class="cap" data-page-node-id="1W2BTBK7BDpuFJx0WAPv5F">《平江图》碑拓 —— 南宋 · 中国现存最完整的古代城市石刻地图</div></div>
-      <p data-page-node-id="Z8FZI7cOCtBva1nQiHVbed">苏州文庙保存国内罕见的<b data-page-node-id="xSBq0ph53ODLfNm672YHU0">宋代四大碑刻</b>：平江图、天文图、地理图、帝王绍运图。其中《平江图》刻于南宋，是中国现存最完整的古代城市石刻地图，完整还原宋代苏州古城的河道、街巷、桥梁、官署、寺庙布局。</p>
-      <div class="key" data-page-node-id="o1ZDKovDMqrdTR8LDrbhbr"><b data-page-node-id="MAAOXvCqnM2YAUn7DNGK9B">研学要点｜</b>看懂宋代苏州“水陆并行、河街相邻”的双棋盘格局，对比今天苏州古城——很多街巷名称延续至今；再到线路二的规划展览馆看它的立体版。</div>
-    </div>
-
-    <div class="card" data-page-node-id="NRgnTdELxhQ900ZFpt556f">
-      <div class="sn" data-page-node-id="lDO9rK7QjJ4yD3g9hY9H8g">二</div>
-      <h3 data-page-node-id="q2WG464kxqmBFIZJUxVGeH"><em data-page-node-id="RqdF5r7p22MMSgpRbGtIU3">第二站</em>楠木大成殿</h3>
-      <span class="tag" data-page-node-id="OmHs9gikZoPHH93vxURmNZ">庙学合一</span>
-      <div class="media" data-page-node-id="xNnCnq5UCyHxkBi2ebvisS"><img src="images/s2_dachengdian.jpg" alt="大成殿与孔子像" loading="lazy" data-page-node-id="zCCJ5dIVhcr1icsGUTpaEZ"><div class="cap" data-page-node-id="EXUoFJ7Q239o4Y76WtZUnj">楠木大成殿 —— 供奉孔子的文庙主体建筑</div></div>
-      <p data-page-node-id="bjbbImGTdp7YDErLHwA8C2">大成殿为文庙主体建筑，供奉孔子，保留珍贵<b data-page-node-id="H9lAO53Dw7PZY5aPhA5QQh">楠木构件</b>，体量宏大。苏州府学开“<span class="hl" data-page-node-id="NvsQ2lLgED8CRePAY57wfW">庙学合一</span>”之先河——祭祀圣贤与地方教育合二为一，是江南府学的典范。</p>
-      <div class="key" data-page-node-id="mVnSEQmTDFQYwPb0Jd01Hd"><b data-page-node-id="DtCmAAi1LgNXvgCXz3fRb2">研学要点｜</b>讲解宋代府学规制：前庙后学、左庙右学，读懂古人“敬教劝学”的用心。</div>
-    </div>
-
-    <div class="card" data-page-node-id="aHClAqVqDK8VR6QfXgLCma">
-      <div class="sn" data-page-node-id="nF62jurNWYdGdrKBToJa76">三</div>
-      <h3 data-page-node-id="XRdgACPQv2DeDAoJDs4AZ8"><em data-page-node-id="EGA1EXEfYeKGhADOAqMBeW">第三站</em>四大古银杏</h3>
-      <span class="tag" data-page-node-id="ikeQjO1rB5rl2AfnxIJVxL">文脉活见证</span>
-      <div class="g2" data-page-node-id="B2pTdUnfej9ruLb0RLmpFM">
-        <div class="media" data-page-node-id="RiXBdzxGsBJbOGiSowmqk6"><img src="images/s3_ginkgo1.jpg" alt="文庙古银杏金黄" loading="lazy" data-page-node-id="NlesgvplmsiwzEHYsammDN"><div class="cap" data-page-node-id="s1XYzRjwhrDYO9Mqz7jyQ1">古银杏 · 秋日满树金黄</div></div>
-        <div class="media" data-page-node-id="ozd0LjQzAfb1mGxfHUuOfM"><img src="images/s3_ginkgo2.jpg" alt="文庙银杏庭院全景" loading="lazy" data-page-node-id="my1jjWpOANtGZYlOnj50sT"><div class="cap" data-page-node-id="CIStnWZ3w7WauEYayTPYJq">庭院银杏 · 红墙金叶</div></div>
-      </div>
-      <p data-page-node-id="N8ASIoUYOdptiyHDFFR1Ui">文庙院内古银杏树龄数百年，是文庙<b data-page-node-id="ExK4YJJMEP8CIYAuewOcsp">活着的历史见证</b>。秋冬之际满树金黄，红墙金叶，氛围极浓。</p>
-      <div class="key" data-page-node-id="XO4HLuruBKRcUaBFlqC1KX"><b data-page-node-id="zurhIMVI7XLG3K7WgBX1BX">研学要点｜</b>古人常在书院、文庙栽种银杏——果实累累如文脉绵延；古树旁合影，正是一堂“行走的植物课”。</div>
-    </div>
-
-    <div class="card" data-page-node-id="sHvOpbHmDVkh4ozvM1Ukn2">
-      <div class="sn" data-page-node-id="zVSkZOk5KAQroQ8HM4bnqi">四</div>
-      <h3 data-page-node-id="yPOWE5k9Y5z2ipD9Mz0Zdw"><em data-page-node-id="vTEs5e93EdnMlximWpeLEy">第四站</em>府学奠基人 · 范仲淹</h3>
-      <span class="tag" data-page-node-id="HAcSAdtYtL1zFIrhisGbDc">先忧后乐</span>
-      <div class="media" data-page-node-id="trr4GQQocuqhYEpHEQoAVi"><img src="images/s4_fanzhongyan.jpg" alt="文庙内范仲淹塑像" loading="lazy" data-page-node-id="4O5OLWoruvCUkzPr5bVckD"><div class="cap" data-page-node-id="3gBKktEnHT3eFP5YNoOJf9">文庙内范仲淹塑像 —— “一世之师”</div></div>
-      <p data-page-node-id="NeSlStpY1RfFdJAf9qukb4">北宋景祐二年（1035），<b data-page-node-id="q7q9k5yyf6PXDLNCBV1L4o">范仲淹</b>知苏州，舍宅建学，创办苏州府学，是全国最早的地方官办学校之一。此后苏州文教兴盛、状元辈出，源头便在这座府学文庙。</p>
-      <div class="key" data-page-node-id="S8t8V8dgQg1ghVRqfUq6bi"><b data-page-node-id="Z4sChwJp71W4aCTEmlve4C">研学要点｜</b>“先天下之忧而忧”——范仲淹一生三起三落不改兴学之志；苏州人对教育的看重，自此而始。</div>
-    </div>
-
-    </div>
-
-    <div class="tip" data-page-node-id="qfY6lLr3vvauhwAFLX3rAs">
-      <b data-page-node-id="Y609ucsPCRYlAYDdk5698B">研学小提示</b>
-      <span data-page-node-id="sHAM0PSwJE3AGWIGJmfuOx">本线路全程位于苏州文庙，适合半日 Citywalk：优先看四大宋碑，再参观大成殿、拜范仲淹像；春秋两季银杏季景致最佳。</span>
-      <span class="seal" data-page-node-id="Y6f3Xg4CNKgPWOTSUg3f2i">学</span>
-    </div>
+  <div class="nav active" id="nav-xmq">
+    <a href="#xmq-gaikuang">古村概况</a>
+    <a href="#xmq-jiwei">拍照机位</a>
+    <a href="#xmq-meishi">美食打卡</a>
   </div>
-
-  <!-- ============================================================ -->
-  <!-- 线路二 胥江胥门 -->
-  <!-- ============================================================ -->
-  <div class="route" id="r2" data-page-node-id="ghpuG6LFyWQGn23oSe6DBn">
-    <div class="sec-head" data-page-node-id="jmyUDOpPNm2PwP3TxbiE6S">
-      <div class="sec-no" style="background:linear-gradient(140deg,#b98d5f,#8a5a2a)" data-page-node-id="kWTbmqRweZZpNeFG8F0Kym">贰</div>
-      <div data-page-node-id="B6MqDAJiPPzoTYOHWUNBaA"><h2 data-page-node-id="kyQGj3IitAF6ClvWzehAeQ">胥江胥门 · 古城起源探秘</h2><div class="en" data-page-node-id="AADOfJxJECaXr91n6OmMfC">XUJIANG RIVER &amp; XUMEN GATE</div></div>
-    </div>
-    <p class="sec-sub" data-page-node-id="bnYDGVIXuQyaKgX8o1KIiN">主题：古城起源 · 伍子胥相土尝水筑阖闾大城；胥江古运河、万年桥、胥门——苏州建城的源头。</p>
-
-    <div class="spots" data-page-node-id="l97jIyUHDoDkob1sRLOCeB">
-
-    <div class="card card-big" data-page-node-id="E7ZPjU2ABs629bnxkVCtl7">
-      <div class="sn" data-page-node-id="1SACtWAd8zPecyykE2m2Zg">一</div>
-      <h3 data-page-node-id="rjBCH7PUQbtJj5qcjBNJXl"><em data-page-node-id="yqYeWsOEtNkVEH0V88jHNB">第一站</em>苏州最早运河 · 胥江</h3>
-      <span class="tag" data-page-node-id="gJEGIfcbPwd230gOcbIZ4P">伍子胥开凿</span><span class="tag" data-page-node-id="CDTiRk7kC1xRmjQGXSBsOQ">实拍视频</span>
-      <div class="media vid" data-page-node-id="peIWwGLuZW8w25S79Hu1PS">
-        <video controls playsinline webkit-playsinline x5-playsinline preload="metadata"
-               poster="video/xujiang_poster.jpg" data-page-node-id="7QgnebnzmSEyPWACpwVSvt">
-          <source src="video/xujiang.mp4" type="video/mp4" data-page-node-id="h7ERWyfcrrvjtqxK4DBKAA">
-        </video>
-        <div class="cap" data-page-node-id="j2uCzVkslI8RoLyFtwwIoH">胥江实拍 · 19″ 古水悠悠（手机点击播放）</div>
-      </div>
-      <p data-page-node-id="9BsRyhQcGUaxBGG1fYNNo9">胥江，苏州最古老运河，相传由<b data-page-node-id="y7vDFghyRXjH3GWc3FcXYh">伍子胥</b>主持开凿，连接太湖与胥门，是古代苏州对外水运要道。古人言“太湖东南泄水要道”，千百年来太湖水系经胥江滋养古城。</p>
-      <div class="key" data-page-node-id="Hyydr43UhqYSmXK1FuEZvG"><b data-page-node-id="SDBCAkdp1EyX1DU5B393XN">研学要点｜</b>站在胥江边想一件事：没有胥江，就没有古苏州的水运繁荣。看往来船只，想象它两千五百年的水路日常。</div>
-    </div>
-
-    <div class="card" data-page-node-id="4904ov8tkLQUPdn4vomaoi">
-      <div class="sn" data-page-node-id="eq2i6dZCRUrstHiL2Hv6Mt">二</div>
-      <h3 data-page-node-id="bmgM5Hzis7tG1hAzg6vXw0"><em data-page-node-id="7tErLR10BIND2HY5Xp0I0B">第二站</em>苏州城市展览馆 · 立体《平江图》</h3>
-      <span class="tag" data-page-node-id="NpQcH4yTLGIMtnCJ4D2NA2">古城沙盘</span>
-      <div class="media" data-page-node-id="T2w6PBmRWtn20MJXEK0XGr"><img src="images/t2_guihua1.jpg" alt="立体平江图铜质沙盘" loading="lazy" data-page-node-id="7jNPMHuEMjSZgU47GNi4ID"><div class="cap" data-page-node-id="2ZBHpwTCxYm5rpXypHxQbN">立体《平江图》沙盘 —— 宋代石刻地图的立体实景模型</div></div>
-      <div class="media" style="margin-top:8px" data-page-node-id="mJcxa3jsLjXg5z7t7vo4xa"><img src="images/t2_guihua3.jpg" alt="城市展览馆展厅" loading="lazy" data-page-node-id="Rjj4ZnkvzCYFjdBMYuO2is"></div>
-      <p data-page-node-id="VKQI3rbvkr7VsfgY78PJo0">馆内拥有苏州最大的<b data-page-node-id="T7hP0EyXLx1hXpAsTN9cEg">立体《平江图》沙盘</b>，把宋代石刻平江图做成立体实景模型，街巷河道一目了然。</p>
-      <div class="key" data-page-node-id="ahzRP5UNSwWbMfjryZ8tPo"><b data-page-node-id="hAITTeFEahRKqBeuK8RRe3">研学要点｜</b>与文庙石刻《平江图》对照研读：碑上是“图”，沙盘是“城”——立体沙盘尤其适合中老年研学，直观读懂苏州古城双棋盘格局。</div>
-    </div>
-
-    <div class="card" data-page-node-id="TztnYpikPFicnFdjrPKhhK">
-      <div class="sn" data-page-node-id="TVCKBCzIwspIy4NnLTpCHA">三</div>
-      <h3 data-page-node-id="wLUjQSireR9ppp5o3QXLDL"><em data-page-node-id="xMNmoZZHFyH8LBQGtnHYUP">第三站</em>万年桥的前世今生</h3>
-      <span class="tag" data-page-node-id="ZRoT67yxHD2esFGwm9Ba6m">繁华图中桥</span>
-      <div class="media" data-page-node-id="2HKAYd4aSsNb821Em4OcRD"><img src="images/t3_wanqiao_a.jpg" alt="胥江上的万年桥实景" loading="lazy" data-page-node-id="bDrC1RDg6iZmbS2OFbcgXN"><div class="cap" data-page-node-id="2CtQ99A79uB45PvGkkVvC0">今日万年桥 —— 横跨胥江，望向胥门</div></div>
-      <div class="media" style="margin-top:8px" data-page-node-id="KJnFlEpzK4cNs90aXyTj1k"><img src="images/t3_wanqiao_b.jpg" alt="万年桥桥面" loading="lazy" data-page-node-id="y7a67d6q65aOPxwgTBmOIi"></div>
-      <p data-page-node-id="SUkne371aDBtTPmjXEYw53">万年桥，苏州城西知名古桥，横跨胥江。明代始建，历经拆毁、重建，见证胥门码头数百年繁华。</p>
-      <div class="g3" style="margin-top:8px" data-page-node-id="69ri7IeOqKSohzgDGWIv36">
-        <div class="media" data-page-node-id="4fVZj3nu8PJf5OHZAvfmsV"><img src="images/t3_paint_a.jpg" alt="古画中的姑苏万年桥" loading="lazy" data-page-node-id="hXjyetGHywTcQ9WLq4H2Tm"><div class="cap" data-page-node-id="Eu9SRNUb1S1l9rWliVk2rJ">古画 · 姑苏万年桥</div></div>
-        <div class="media" data-page-node-id="6AQuJHQvvqSEfizoCkMffm"><img src="images/t3_paint_b.jpg" alt="繁华图卷中的万年桥" loading="lazy" data-page-node-id="P9BAZNebiSxWignZA0q3kL"><div class="cap" data-page-node-id="b5dSoy4PNC5nON4TW4r6qO">古画 · 万年桥市井</div></div>
-      </div>
-      <div class="key" data-page-node-id="SS8yACaqu4uBbsdhp3zuTl"><b data-page-node-id="dQg2vTOlkvER2OAkukMlAw">研学要点｜</b>《姑苏繁华图》中，万年桥一带是城外最热闹的商埠画面之一。图与画对照——看三百年前桥头的市井，再看今天桥下的流水。</div>
-    </div>
-
-    <div class="card" data-page-node-id="cjkMdg9Q3dofu6I6aFgQZX">
-      <div class="sn" data-page-node-id="CXOYOE7Sj5cNCYEsnUb3oK">四</div>
-      <h3 data-page-node-id="WYXPbpHNXsvjEClBgeHV3s"><em data-page-node-id="3ikPC22OXERZtAnJy4Dw4E">第四站</em>胥门 · 苏州六城门之一</h3>
-      <span class="tag" data-page-node-id="MFiNtG6KKaFiAlFgqQIykL">筑城原点</span>
-      <div class="g2" data-page-node-id="7VJqnAwIUwRqSwBlo30NF4">
-        <div class="media" data-page-node-id="9DJspkSaX8aPvvjvMmoNzk"><img src="images/t4_xumen_statue.jpg" alt="胥门外伍子胥石像" loading="lazy" data-page-node-id="dcU4hBGXgBIwwmKsSuG7DM"><div class="cap" data-page-node-id="x7S4IQBf9Lvp499kgzBQm0">伍子胥石像</div></div>
-        <div class="media" data-page-node-id="M4DUQP3x2d0uIHIb0Q58uZ"><img src="images/t4_xumen_gate.jpg" alt="胥门城门实景" loading="lazy" data-page-node-id="t5zdpDvvUkIt3NKvWTryDi"><div class="cap" data-page-node-id="4T7J0nzvXRb7DiGfGo2nFA">胥门城门</div></div>
-      </div>
-      <p data-page-node-id="4zSGWE1mQWo0jvGDUzX2BC">胥门是苏州<b data-page-node-id="Hot6IXiXha5vJ7zS9I0MqW">现存残存古城门之一</b>。公元前 514 年，伍子胥“相土尝水、象天法地”筑<b data-page-node-id="00Q00mgCcT9sRkN9dbFQuz">阖闾大城</b>，奠定苏州古城两千五百多年的城市框架——胥门正是这场筑城伟业留下的西门。</p>
-      <div class="key" data-page-node-id="GpvnNrFWlxjoCAeDVHp5ur"><b data-page-node-id="L1BOpXiJRWf9mqi4mbyhsZ">名字小考｜</b>胥门因何得名，历来有<b data-page-node-id="ehn9Hs0EZpHNguRKGxnjk3">两种说法</b>：民间相传城门朝向纪念伍子胥，故称“胥门”；而据明代《姑苏志》等地方志考据，胥门实因正对<b data-page-node-id="ORlnE5bIVSkcKwTUXNSsgE">姑胥山</b>（古称，今七子山一带）得名——“胥”为吴语对山岭的称呼，官方考据主此说。传说与考据并存，恰是苏州地名最耐人寻味处。</div>
-    </div>
-
-    </div>
-
-    <div class="tip" data-page-node-id="oIreA7zX9QcuDLaomZIV7j">
-      <b data-page-node-id="NBtCYeZ4MfNVs3lsohwx41">研学小提示</b>
-      <span data-page-node-id="CGqi1jLOTRB9qwDPrv5pD9">适合半日 Citywalk，路线顺序：胥江沿岸 → 苏州城市展览馆 → 万年桥 → 胥门。点位集中、步行强度低，尤其适合长者结伴而行。</span>
-      <span class="seal" data-page-node-id="EF0m4TOy3x4Q5OBoRTjOiu">源</span>
-    </div>
+  <div class="nav" id="nav-jx">
+    <a href="#jx-gaikuang">古镇概况</a>
+    <a href="#jx-jiwei">拍照机位</a>
+    <a href="#jx-meishi">美食打卡</a>
   </div>
-
-  <footer data-page-node-id="1BAXTwsQYqFugNtGCVuGKW">
-    <div class="rule" data-page-node-id="x3ujO0AwDLJZi9vlXHaprR"></div>
-    <p data-page-node-id="PaCdDe6DpJEjDcLI9Qhwtl">吴地时光机 · 文史研学系列</p>
-    <p style="margin-top:6px;font-size:.78rem" data-page-node-id="ZFQOiqSsjA5d684DopSsHb">图文素材 · 实景拍摄｜本页共二线八站，可微信转发</p>
-  </footer>
 </div>
 
-<script>
-// 顶部进度条
-var pb=document.getElementById('pb');
-addEventListener('scroll',function(){
-  var h=document.documentElement.scrollHeight-innerHeight;
-  pb.style.width=(h>0?(scrollY/h*100):0)+'%';
-},{passive:true});
+<main>
 
-// 双线 Tab 切换
-var tabs=[].slice.call(document.querySelectorAll('.tab'));
-var routes=[].slice.call(document.querySelectorAll('.route'));
-tabs.forEach(function(t){
-  t.addEventListener('click',function(){
-    tabs.forEach(function(x){x.classList.remove('on')});
-    t.classList.add('on');
-    var id=t.dataset.r;
-    routes.forEach(function(r){
-      r.classList.toggle('on',r.id===id);
-      // 切回时把首屏拉回顶部导航处
-      if(r.id===id){var y=document.querySelector('.tabbar').getBoundingClientRect().top+scrollY-20;
-        if(scrollY>y)scrollTo({top:Math.max(0,y),behavior:'smooth'});}
+  <!-- ============ 第 1 站 歇马桥 ============ -->
+  <div class="site-block active" id="xmq">
+    <div class="station-head">第 1 站 · 歇马桥古村<span class="en">XIEMAQIAO</span></div>
+
+    <section id="xmq-gaikuang">
+      <h2>一、古村概况<span class="en">OVERVIEW</span></h2>
+      <p class="lead">歇马桥在昆山市千灯镇石浦南郊、苏沪交界处，是<b>昆山唯一的国家级传统村落</b>——一条 500 米古石板街串起南宋抗金名将韩世忠的传说、红色抗战史和百年老屋里的新业态，被称为"古村 + 红学"。免费开放。</p>
+      <div class="facts">
+        <div class="fact"><span class="k">地理</span><span class="v">千灯镇石浦南郊，东邻上海青浦，处苏沪昆三地交界；一条"龙形水系"贯穿南北，村落沿河呈带状分布，"水街相依、窄巷深弄"</span></div>
+        <div class="fact"><span class="k">规模</span><span class="v">村域 3.62 km²；保留 <b>500 米古石板街</b>、约 <b>5000 m² 明清建筑</b>、传统建筑 46 处</span></div>
+        <div class="fact"><span class="k">荣誉</span><span class="v"><b>2014 年第三批中国传统村落</b>（昆山首家国字号传统村落）、国家森林乡村、中国美丽宜居村庄、2020 江苏省特色田园乡村、<b>2025 第七届全国文明村</b></span></div>
+        <div class="fact"><span class="k">定位</span><span class="v">新四军淞沪抗日（千灯）县委中心地；昆山非遗"<b>石浦白切羊肉</b>"发祥地</span></div>
+      </div>
+    </section>
+
+    <section id="xmq-jiwei">
+      <h2>二、拍照机位<span class="en">PHOTO SPOTS</span></h2>
+      <p class="lead">每个机位都配实拍图，所见即所得。歇马桥素材来自网络游记实拍，版权归原作者所有。</p>
+
+      <div class="spot">
+        <h3>机位 1 · 水巷摇橹船 + 木栈桥（封面机位）</h3>
+        <p>村中水巷：河道、手摇船、岸边木栈桥与白墙老屋一镜收进。船过桥洞时连拍，绿荫与睡莲作前景最出片。</p>
+        <div class="cap">▼ 成像效果 —— 摇橹船行于水巷，两岸民居，右侧木栈桥</div>
+        <div class="fig"><img src="img/xmq_shuixiang.jpg" alt="歇马桥水巷摇橹船"><div class="credit">歇马桥游记实拍 · 水巷与木栈桥</div></div>
+      </div>
+
+      <div class="spot">
+        <h3>机位 2 · 皮划艇水上运动（动感新玩法）</h3>
+        <p>村南水面上有皮划艇俱乐部，彩色艇 + 老屋倒影 + 垂柳，适合拍活泼的团建/亲子照，与古镇静谧感形成反差。</p>
+        <div class="cap">▼ 成像效果 —— 彩色皮划艇泊于水上，背景白墙民居</div>
+        <div class="fig"><img src="img/xmq_shuishang.jpg" alt="歇马桥水上皮划艇"><div class="credit">歇马桥游记实拍 · 水上运动俱乐部</div></div>
+      </div>
+
+      <div class="spot">
+        <h3>机位 3 · 临水民居 + 藤蔓墙（文艺出片）</h3>
+        <p>沿石板街走，临河一侧的木楼爬满藤蔓，倒影入水，有小船划过时按快门。适合人像与"江南慢生活"氛围照。</p>
+        <div class="cap">▼ 成像效果 —— 藤蔓覆盖的临水木楼，河道倒影清晰</div>
+        <div class="fig"><img src="img/xmq_minju.jpg" alt="歇马桥临水民居"><div class="credit">歇马桥游记实拍 · 临水民居与藤蔓墙</div></div>
+      </div>
+
+      <div class="spot">
+        <h3>机位 4 · 网红店庭院（枯山水 + 红枫）</h3>
+        <p>改造后的老屋庭院，白墙、卵石水景、红枫与遮阳伞构成小而精的日式庭院感，适合拍人像与静物。</p>
+        <div class="cap">▼ 成像效果 —— 白墙围合的小庭院，红枫、水景、遮阳伞</div>
+        <div class="fig"><img src="img/xmq_tingyuan.jpg" alt="歇马桥网红店庭院"><div class="credit">歇马桥游记实拍 · 老屋改造庭院</div></div>
+      </div>
+
+      <div class="spot">
+        <h3>机位 5 · 对印茶局（老街门面）</h3>
+        <p>老街上的木构门面与白墙招牌，是"老屋里的新业态"代表构图，适合拍街景与打卡照。</p>
+        <div class="cap">▼ 成像效果 —— 木构老屋门面，悬挂"对印茶局"招牌</div>
+        <div class="fig"><img src="img/xmq_chaju.jpg" alt="歇马桥对印茶局"><div class="credit">歇马桥游记实拍 · 老街新业态门店</div></div>
+      </div>
+
+      <div class="spot">
+        <h3>机位 6 · 红色研学（周达明纪念馆）</h3>
+        <p>木构老宅门面上悬挂"新四军淞沪抗日史迹陈列馆""周达明烈士纪念馆"牌匾，是"古村 + 红学"的标志画面。</p>
+        <div class="cap">▼ 成像效果 —— 木门老宅与红色纪念馆牌匾</div>
+        <div class="fig"><img src="img/xmq_hongse.jpg" alt="歇马桥周达明纪念馆"><div class="credit">歇马桥游记实拍 · 苏州市爱国主义教育基地</div></div>
+      </div>
+
+      <div class="note"><b>拍摄时间：</b>上午光线柔和、人少，建议 9:00—11:00 拍摄；石板街窄巷正午顶光偏硬，可躲在屋檐与咖啡馆廊下拍。穿浅色或棉麻素衣与白墙黛瓦最搭。</div>
+    </section>
+
+    <section id="xmq-meishi">
+      <h2>三、美食打卡<span class="en">FOOD</span></h2>
+      <p class="lead">歇马桥是昆山非遗"<b>石浦白切羊肉</b>"发祥地，古村里还藏着多家网红新业态。重点盯羊肉、苏帮菜与一家开在<b>民国老建筑里的创意面馆</b>。评分/人均取自腾讯地图、大众点评公开页面，会变动、以 App 实时为准。</p>
+
+      <div class="shop">
+        <div class="name">歇马面庐<span class="tag">创意面馆</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v">由<b>民国老建筑改造的创意面馆</b>，主打奥灶面等苏式汤面；村口附近、老屋出片</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">约 <b>57 元</b></span></div>
+        <div class="row"><span class="k">评分</span><span class="v">腾讯地图 <b>4.3</b>（满分 5 分）；营业 10:00–20:00，电话 13776303047</span></div>
+        <div class="row"><span class="k">位置</span><span class="v"><b>歇马桥村 20 组 10 号 -1</b>（村口附近）</span></div>
+      </div>
+
+      <div class="shop">
+        <div class="name">百盛人家<span class="tag">黑珍珠餐厅</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v">昆山首家黑珍珠<b>鼎膳·匠宴</b>分店，不设菜牌、应季而做；镇店网红"<b>歇马桥五虾面</b>"</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">偏高（未公开）</span></div>
+        <div class="row"><span class="k">口碑</span><span class="v">黑珍珠品牌店 · 昆山市政府官网力荐</span></div>
+        <div class="row"><span class="k">位置</span><span class="v">歇马桥村内</span></div>
+      </div>
+
+      <div class="shop">
+        <div class="name">老饭店农家菜<span class="tag">本地老店</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v">招牌<b>红烧河鳗</b>、白切羊肉、红烧土鸡、盐水虾</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">约 <b>128 元</b></span></div>
+        <div class="row"><span class="k">口碑</span><span class="v">大众点评口味/服务"很好～非常好"</span></div>
+        <div class="row"><span class="k">位置</span><span class="v">歇马桥市场西首（村内）</span></div>
+      </div>
+
+      <div class="shop">
+        <div class="name">旭马楼<span class="tag">新派苏帮菜</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v">石浦醉仙楼分号，松鼠鳜鱼、响油鳝糊、石浦羊肉、春日腌笃鲜；宋式包厢以词牌命名</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">未公开</span></div>
+        <div class="row"><span class="k">口碑</span><span class="v">昆山市政府官网推荐新店</span></div>
+        <div class="row"><span class="k">位置</span><span class="v">歇马桥村内</span></div>
+      </div>
+
+      <div class="shop">
+        <div class="name">南街小馆<span class="tag">本帮家常</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v">经典本帮菜、江南村宴，适合家庭小聚</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">未公开</span></div>
+        <div class="row"><span class="k">口碑</span><span class="v">政府官网推荐新店</span></div>
+        <div class="row"><span class="k">位置</span><span class="v">歇马桥村内</span></div>
+      </div>
+
+      <div class="shop">
+        <div class="name">一尺花园 / 园林书局 / 对印茶局<span class="tag">咖啡茶饮·打卡</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v">一尺花园招牌"<b>歇马桥大战斧</b>"、园林书局书咖、河畔咖啡；马儿榴榴榴莲甜品</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">未公开</span></div>
+        <div class="row"><span class="k">口碑</span><span class="v">网红打卡 · 政府官网推荐</span></div>
+        <div class="row"><span class="k">位置</span><span class="v">散落古村老屋，拍照出片</span></div>
+      </div>
+
+      <div class="note"><b>午餐怎么选：</b>想吃一碗面 → 歇马面庐；想吃非遗硬菜 → 老饭店（白切羊肉、红烧河鳗）；想吃精致苏帮菜+打卡 → 百盛人家五虾面、旭马楼；只喝茶歇脚 → 一尺花园、园林书局。</div>
+    </section>
+  </div>
+
+  <!-- ============ 第 2 站 锦溪古镇 ============ -->
+  <div class="site-block" id="jx">
+    <div class="station-head">第 2 站 · 锦溪古镇<span class="en">JINXI</span></div>
+
+    <section id="jx-gaikuang">
+      <h2>一、古镇概况<span class="en">OVERVIEW</span></h2>
+      <p class="lead">锦溪古镇，位于江苏省苏州市昆山市西南，地处江苏、浙江、上海三省市交界处，距周庄仅 8 公里、上海约 1 小时车程。它没有周庄、乌镇的喧嚣，是"活着的江南"——原住民还在河边洗衣、阿婆摇着蒲扇，商业味恰到好处。</p>
+      <div class="facts">
+        <div class="fact"><span class="k">级别</span><span class="v">国家 AAAA 级旅游景区、中国历史文化名镇（2008 年）、中国民间文化艺术之乡</span></div>
+        <div class="fact"><span class="k">历史</span><span class="v">五千余年文明史、两千余年发展史（良渚文化时期已有人类活动）</span></div>
+        <div class="fact"><span class="k">别称</span><span class="v">曾用名"陈墓"沿用 800 余年；"中国民间博物馆之乡"</span></div>
+        <div class="fact"><span class="k">规模</span><span class="v">政区面积 92.43 km²；内河道长约 6 公里，"丰"字形河网</span></div>
+        <div class="fact"><span class="k">古桥</span><span class="v">36 座（民谣"三十六座桥，七十二只窑"）</span></div>
+        <div class="fact"><span class="k">古建</span><span class="v">明、清及民国建筑 8.7 万 m²，古巷古弄砖门楼 30 余处</span></div>
+        <div class="fact"><span class="k">名人评价</span><span class="v">沈从文"睡梦中的少女"；刘海粟"江南之最"；冯英子"淡妆浓抹总相宜"</span></div>
+      </div>
+      <div class="oneline"><b>一句话记住锦溪：</b>一溪穿镇、夹岸桃李、满溪跃金——因水得名，又因一段南宋帝妃爱情而更名八百年。</div>
+    </section>
+
+    <section id="jx-jiwei">
+      <h2>二、拍照机位<span class="en">PHOTO SPOTS</span></h2>
+      <p class="lead">每个机位都配实拍图，所见即所得。图片来自央广网记者及摄影师郁永龙（笔名苏龙）实拍，版权归原作者所有。</p>
+
+      <div class="spot">
+        <h3>机位 1 · 古莲桥全景（封面机位）</h3>
+        <p>站五保湖入口或湖岸侧面，把"廊桥 + 湖面倒影 + 莲池"一镜收进。桥洞与倒影恰好拼成满月，晨雾一起就是标准明信片。</p>
+        <div class="cap">▼ 成像效果 —— 蓝天绿柳下廊桥卧波，前有荷花荷叶，后有开阔湖面</div>
+        <div class="fig"><img src="img/02_gulianqiao.png" alt="锦溪古莲桥"><div class="credit">央广网记者 顾炀威 摄 · 锦溪古镇内的古莲桥</div></div>
+      </div>
+
+      <div class="spot">
+        <h3>机位 2 · 十眼桥（小宝带桥）—— 九墩十孔长龙卧波</h3>
+        <p>十眼桥始建于南宋隆兴元年（1163），重建于清乾隆三十八年（1773），九墩十孔、全长 52 米，横架于坟塘港与五保湖口，俗称"小宝带桥"。站在桥的<b>正侧位或远处</b>，最能拍出"长龙卧波"、十孔映水的效果。中秋月夜，月光穿十孔洒湖面，形成"十孔映月"奇景。</p>
+        <div class="cap">▼ 成像效果 —— 桥身横卧水面，多个桥墩桥孔依次排开</div>
+        <div class="fig"><img src="img/shiyanqiao_shen_tu.jpg" alt="锦溪十眼桥桥身"><div class="credit">摄影：郁永龙（笔名苏龙）· 十眼桥多孔桥身</div></div>
+        <div class="cap">▼ 景点标识 —— "十眼桥"碑刻</div>
+        <div class="fig"><img src="img/shiyanqiao_beike.jpg" alt="十眼桥碑刻"><div class="credit">摄影：郁永龙 · 十眼桥介绍碑（九墩十孔、小宝带桥）</div></div>
+        <div class="note"><b>拍摄提示：</b>地面平视受透视遮挡，数不满十个孔。想拍全十孔，需<b>无人机正侧位或高空俯拍</b>，或退到湖对岸远处取景。</div>
+      </div>
+
+      <div class="spot">
+        <h3>机位 3 · 水巷摇橹船 / 廊窗框景</h3>
+        <p>登古莲桥或桥畔，用廊窗作前景框住湖景；或坐手摇船从水上回望白墙石桥。傍晚 4–5 点光线最柔，穿旗袍或汉服拍人像氛围感拉满。</p>
+        <div class="cap">▼ 成像效果 —— 摇橹船穿行水巷，两岸石桥驳岸、白墙民居</div>
+        <div class="fig"><img src="img/01_chuanniang.png" alt="锦溪水巷摇橹船"><div class="credit">央广网记者 顾炀威 摄 · 河中船娘摇橹而过</div></div>
+      </div>
+
+      <div class="spot">
+        <h3>机位 4 · 水巷 / 临水民居（烟火气）</h3>
+        <p>别只盯主街，钻进两侧窄巷，白墙水渍青苔、晾衣养花，人少极易出空镜大片；临河码头泊船、石阶直达水面满是生活气。</p>
+        <div class="cap">▼ 成像效果 —— 游船泊岸，临水白墙黛瓦，前景绿枝作框</div>
+        <div class="fig"><img src="img/03_guzhen.png" alt="锦溪水巷游船"><div class="credit">央广网记者 顾炀威 摄 · 古朴静谧的锦溪古镇</div></div>
+      </div>
+
+      <div class="spot">
+        <h3>机位 5 · 碧波楼 / 临水楼阁</h3>
+        <p>白墙黛瓦、飞檐翘角的临水楼阁与古镇融为一体，是拍建筑层次与倒影的好点位。</p>
+        <div class="cap">▼ 成像效果 —— 两层中式楼阁，飞檐翘角挂红灯笼</div>
+        <div class="fig"><img src="img/05_bibolu.png" alt="锦溪碧波楼"><div class="credit">央广网记者 王姝姝 摄 · 碧波楼与水乡古镇融为一体</div></div>
+      </div>
+
+      <div class="note"><b>拍摄时间：</b>8:00–10:00 拍安静街巷；16:00–17:30 湖边光线最柔拍人像；<b>穿搭：</b>浅色系连衣裙 / 新中式汉服 / 棉麻素衣；石板路多，穿平底鞋。</div>
+    </section>
+
+    <section id="jx-meishi">
+      <h2>三、美食打卡<span class="en">FOOD</span></h2>
+      <p class="lead">锦溪午饭首选"<b>奥灶面</b>"——本地面馆密集、价格实在。以下店铺与评分取自大众点评公开页面及游客实拍攻略，会变动、以 App 实时为准。</p>
+
+      <div class="shop">
+        <div class="name">韩记奥灶面<span class="tag">面馆</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v"><b>鳝丝面（约25元）、焖肉面（约15元）、爆鱼面</b>；红汤地道、浇头多，本地人也常去，去晚鳝丝售罄</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">约 <b>15 元</b></span></div>
+        <div class="row"><span class="k">口碑</span><span class="v">★★★★ 游客推荐（非大众点评官方）</span></div>
+        <div class="row"><span class="k">位置</span><span class="v">长寿路圣荡浜 12 号（停车场旁）</span></div>
+      </div>
+
+      <div class="shop">
+        <div class="name">小毛糕饼店<span class="tag">糕点</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v"><b>袜底酥</b>（椒盐黑芝麻、葱油花生咸口，10 只约16元）、酒酿饼、鲜肉月饼；百年老店、现做现烤</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">约 <b>15 元</b></span></div>
+        <div class="row"><span class="k">口碑</span><span class="v">★★★★★ 游客推荐（非大众点评官方）</span></div>
+        <div class="row"><span class="k">位置</span><span class="v">上塘街 41 号</span></div>
+      </div>
+
+      <div class="shop">
+        <div class="name">外婆家面馆<span class="tag">面馆</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v"><b>爆鱼/鸭肉奥灶面</b>、熏鱼面、万三面；古镇人气面馆，292 条点评</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">约 <b>14 元</b></span></div>
+        <div class="row"><span class="k">评分</span><span class="v">大众点评口味 7.4 / 环境 7.3 / 服务 7.4（单项分，<b>满分 10 分</b>）</span></div>
+        <div class="row"><span class="k">位置</span><span class="v">下塘街 10 号</span></div>
+      </div>
+
+      <div class="shop">
+        <div class="name">蒋小厨农家菜<span class="tag">农家菜</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v"><b>爆鱼奥灶面</b>、昂刺鱼、水芹炒香干；河边长桌、临窗看船娘</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">20–70 元</span></div>
+        <div class="row"><span class="k">评分</span><span class="v">大众点评 4.5 星（门店星级，<b>满分 5 分</b>）</span></div>
+        <div class="row"><span class="k">位置</span><span class="v">古镇河边（中心必经之路）</span></div>
+      </div>
+
+      <div class="shop">
+        <div class="name">香酥鸡小吃店<span class="tag">小吃</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v">香酥鸡（微辣，粉薄肉嫩）</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">10 / 15 / 20 元</span></div>
+        <div class="row"><span class="k">口碑</span><span class="v">游客攻略推荐</span></div>
+        <div class="row"><span class="k">位置</span><span class="v">下塘街 56 号</span></div>
+      </div>
+
+      <div class="shop">
+        <div class="name">阿婆菜馆 / 侬乡园<span class="tag">农家菜</span></div>
+        <div class="row"><span class="k">招牌</span><span class="v">清蒸白水鱼、腌萝卜、土菜；本地阿姨掌勺</span></div>
+        <div class="row"><span class="k">人均</span><span class="v">未公开</span></div>
+        <div class="row"><span class="k">口碑</span><span class="v">河岸边多家，按点评评分自选</span></div>
+        <div class="row"><span class="k">位置</span><span class="v">古镇河岸边</span></div>
+      </div>
+
+      <h3>必吃小吃与河鲜</h3>
+      <div class="card">
+        <p><b>必吃小吃：</b>袜底酥（锦溪头号特产现烤才香）、奥灶面（红汤爆鱼面）、海棠糕 / 梅花糕、香酥鸡、臭豆腐、芡实糕、青团、水红菱</p>
+        <p><b>河鲜与家常菜：</b>清蒸白水鱼、酱爆螺蛳 / 盐水虾、腌笃鲜、阿婆菜炒毛豆、桂花糕、酱猪蹄</p>
+      </div>
+
+      <div class="note"><b>评分怎么看：</b>大众点评口味/环境/服务单项分是 <b>10 分制</b>（如外婆家 7.4），门店星级是 <b>5 分制</b>（如蒋小厨 4.5 星），两者各算各的。"★★★★"是游客攻略推荐星级，不是大众点评官方评分。</div>
+    </section>
+  </div>
+
+</main>
+
+<footer>
+  歇马桥 · 锦溪古镇游客游玩攻略<br>
+  图片版权归原作者所有，仅供个人游玩参考。评分、人均、营业时间会变动，出行前请以 App 实时页面为准。
+</footer>
+
+<script>
+(function(){
+  var tabs = document.querySelectorAll('.site-tab');
+  var blocks = document.querySelectorAll('.site-block');
+  var groups = document.querySelectorAll('.nav');
+  var anchors = { xmq:'xmq-gaikuang', jx:'jx-gaikuang' };
+  var lockUntil = 0;
+  function paint(site){
+    tabs.forEach(function(t){ t.classList.toggle('active', t.getAttribute('data-site')===site); });
+    groups.forEach(function(g){ g.classList.toggle('active', g.id==='nav-'+site); });
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      var site = t.getAttribute('data-site');
+      pinned = site;
+      paint(site);
+      lockUntil = Date.now() + 1800;
+      var el = document.getElementById(anchors[site]);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
     });
   });
-});
-
-// 视频点击自动播放提示：iOS 需要用户手势，属性已设 controls 即可
-var v=document.querySelector('video');
-if(v){v.addEventListener('play',function(){v.setAttribute('controls','')});}
+  document.querySelectorAll('.nav a').forEach(function(a){
+    a.addEventListener('click', function(){
+      a.parentNode.querySelectorAll('a').forEach(function(x){ x.classList.remove('visited'); });
+      a.classList.add('visited');
+    });
+  });
+  var pinned = null; // 点过 Tab 后先锁定，等用户手动滚动再交还给位置判断
+  var jxTop = document.getElementById('jx');
+  function paintByPosition(){
+    var y = window.scrollY + 150;
+    paint(jxTop && y >= jxTop.offsetTop ? 'jx' : 'xmq');
+  }
+  window.addEventListener('scroll', function(){
+    if(pinned || Date.now() < lockUntil) return;
+    paintByPosition();
+  }, {passive:true});
+  ['wheel','touchstart','keydown'].forEach(function(ev){
+    window.addEventListener(ev, function(){
+      if(!pinned) return;
+      pinned = null;
+      setTimeout(paintByPosition, 60);
+    }, {passive:true});
+  });
+  paint('xmq');
+})();
 </script>
 </body>
 </html>
